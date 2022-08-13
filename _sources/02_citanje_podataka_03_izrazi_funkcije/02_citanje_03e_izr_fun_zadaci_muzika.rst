@@ -1,8 +1,16 @@
 Изрази и функције - музика
 --------------------------
+Прикажимо сада неколико упита над базом продавнице музичких композиција.
+Упити могу и да се тестирају у систему SQLite Studio. Потребно је да кликне на 
+креирану базу прозору ``Databases`` и потом изабере команда менија ``Tools → Open SQL Editor``. 
+Када се напише упит, кликне се на дугме ``Execute query (F9)`` (плави троуглић).
 
-Прикажимо сада неколико упита над базом продавнице музичких
-композиција.
+Савет је да се у прозору ``Databases`` увек прво провере тачни називи табела, 
+а за сваку табелу и тачни називи колона. 
+
+.. image:: ../../_images/music2.png
+   :width: 300
+   :align: center
 
 .. questionnote::
 
@@ -135,9 +143,9 @@
    :dbfile: music.sql
    :checkcolumnname:
    :showresult:
-   :solutionquery: SELECT name
+   :solutionquery: SELECT naziv
                    FROM kompozicija
-                   WHERE velicina > 10.5 * 1024 * 1024
+                   WHERE round(velicina / (1024 * 1024), 2) > 10.5
 
    
 

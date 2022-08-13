@@ -9,6 +9,9 @@
 За то се може користити услов ``EXISTS`` (или ``NOT EXISTS``, који је
 заправо само негација услова ``EXISTS``).
 
+Корелисани подупити превазилазе домет овог курса. За оне који желе да знају више, 
+приказаћемо неколико примера.
+
 .. questionnote::
 
    Приказати имена ученика који имају неоправдане изостанке.
@@ -104,6 +107,7 @@ EXISTS``.
    
 .. dbpetlja:: db_ugnezdjeni_upiti_exists_01
    :dbfile: dnevnik.sql
+   :showresult:
    :solutionquery: SELECT id, naziv
                    FROM predmet p
                    WHERE EXISTS (SELECT *
