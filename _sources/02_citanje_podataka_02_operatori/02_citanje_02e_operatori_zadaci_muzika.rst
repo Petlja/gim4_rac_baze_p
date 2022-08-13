@@ -4,6 +4,22 @@
 Прикажимо сада неколико упита над базом продавнице музичких
 композиција.
 
+Упити могу и да се тестирају у систему SQLite Studio. Потребно је да кликне на креирану базу 
+прозору ``Databases`` и потом изабере команда менија ``Tools → Open SQL Editor``. 
+Када се напише упит, кликне се на дугме ``Execute query (F9)`` (плави троуглић). 
+Како највероватније имамо више база података, обавезно проверити да ли је поред овог дугмета 
+назив базе у којој желите да вршите упите.
+
+.. image:: ../../_images/music1.png
+   :width: 300
+   :align: center
+
+Савет је да се у прозору ``Databases`` увек прво провере тачни називи табела. 
+
+.. image:: ../../_images/music2.png
+   :width: 300
+   :align: center
+
 .. questionnote::
 
    Приказати податке о песмама које заузимају више од 10 милиона бајтова.
@@ -27,6 +43,7 @@
    "19", "Problem Child", "4", "1", "1", "325041", "10617116", "0.99"
    "20", "Overdose", "4", "1", "1", "369319", "12066294", "0.99"
    ..., ..., ..., ..., ..., ..., ..., ...
+
 
 .. questionnote::
 
@@ -171,7 +188,7 @@
 
 .. questionnote::
 
-   Приказати називе свих композиција које се завршавају са *you*
+   Приказати називе свих композиција који на крају имају реч *you*.
 
 .. dbpetlja:: db_operatori_zadaci_muzika_01
    :dbfile: music.sql
@@ -179,6 +196,7 @@
    :solutionquery: SELECT naziv
                    FROM kompozicija
                    WHERE naziv LIKE '% you'
+
 
 .. questionnote::
 
@@ -192,15 +210,16 @@
                    FROM kupac
                    WHERE ime = 'Luis' AND drzava != 'Brasil'
 
+
 .. questionnote::
 
    Приказати имена, презимена и датуме рођења свих запослених који су
    рођени током 1970-их.
 
-   
 .. dbpetlja:: db_operatori_zadaci_muzika_03
    :dbfile: music.sql
    :showresult:
    :solutionquery: SELECT ime, prezime, datum_rodjenja
                    FROM zaposleni
                    WHERE datum_rodjenja BETWEEN '1970-01-01' AND '1979-12-31'
+

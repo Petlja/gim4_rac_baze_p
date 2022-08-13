@@ -254,9 +254,25 @@
  Приказати све податке о предметима који имају недељни фонд од 2 часа.
 
 
+. dbpetlja:: db_restrikcija_02
+   :dbfile: dnevnik.sql
+   :solutionquery: SELECT *
+                   FROM predmet
+                   WHERE fond = 2
+   :showresult:
+      
+
 .. questionnote::
 
  Издвојити имена и презимена ученика рођених 1. јула 2006. године.
+
+
+.. dbpetlja:: db_restrikcija_01
+   :dbfile: dnevnik.sql
+   :solutionquery: SELECT ime, prezime
+                   FROM ucenik
+                   WHERE datum_rodjenja = '2006-07-01'
+   :showresult:
 
 
 .. learnmorenote:: 

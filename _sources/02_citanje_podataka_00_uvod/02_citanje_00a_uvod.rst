@@ -172,3 +172,8 @@ Studio који си исталирао код себе на рачунару и
 .. questionnote::
 
  Приказати све податке из табеле предмета која има назив ``predmet``. 
+
+.. dbpetlja:: db_uvod_01
+   :dbfile: dnevnik.sql
+   :solutionquery: SELECT *
+                   FROM predmet

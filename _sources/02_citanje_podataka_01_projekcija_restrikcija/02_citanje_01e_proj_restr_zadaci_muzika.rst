@@ -112,8 +112,22 @@
 .. questionnote::
 
  Прикажи називе свих албума извођача чији је идентификатор 1.
+ 
+.. dbpetlja:: db_proj_restr_muz_01
+   :dbfile: music.sql
+   :showresult:
+   :solutionquery: SELECT naziv
+                   FROM album
+                   WHERE id_izvodjac = 1
+				   
 
 .. questionnote::
 
  Прикажи идентификаторе, имена и презимена купаца који се зову ``Jack``.
 
+.. dbpetlja:: db_proj_restr_muz_02
+   :dbfile: music.sql
+   :showresult:
+   :solutionquery:  SELECT id_kupac, ime, prezime
+                    FROM kupac
+                    WHERE ime = 'Jack'

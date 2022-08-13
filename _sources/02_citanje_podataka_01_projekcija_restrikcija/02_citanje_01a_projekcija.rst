@@ -129,6 +129,13 @@
 .. questionnote::
 
  Приказати само називе свих предмета.
+ 
+.. dbpetlja:: db_projekcija_01
+   :dbfile: dnevnik.sql
+   :solutionquery: SELECT naziv
+                   FROM predmet
+   :showresult:
+
 
 .. learnmorenote::
 
