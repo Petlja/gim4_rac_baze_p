@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -698,31 +662,16 @@
 четвртом разреду предаје са 2 часа недељно.</p>
 
     </p></div></div>
-
-    <div id="db_upisivanje_01" class="db" data-db-name="dnevnik.sql" db-check = "INSERT INTO predmet (naziv, razred, fond) VALUES ('Социологија', 4, 2)" db-check-query = "SELECT * FROM predmet"   > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\03_izmene_01_upisivanje\03_izmene_01a_upisivanje.rst</span>, line 130)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_upisivanje_01</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">predmet</span> <span class="p">(</span><span class="n">naziv</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="n">fond</span><span class="p">)</span> <span class="n">VALUES</span> <span class="p">(</span><span class="s1">&#39;Социологија&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+   <span class="p">:</span><span class="n">checkquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">predmet</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -734,31 +683,16 @@
 неоправдани изостанак на првом часу 10. маја 2021.</p>
 
     </p></div></div>
-
-    <div id="db_upisivanje_02" class="db" data-db-name="dnevnik.sql" db-check = "INSERT INTO izostanak (id_ucenik, datum, cas, status) VALUES (1, '2020-05-10', 1, 'неоправдан')" db-check-query = "SELECT * FROM izostanak"   > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\03_izmene_01_upisivanje\03_izmene_01a_upisivanje.rst</span>, line 141)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_upisivanje_02</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">izostanak</span> <span class="p">(</span><span class="n">id_ucenik</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">cas</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span> <span class="n">VALUES</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;2020-05-10&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;неоправдан&#39;</span><span class="p">)</span>
+   <span class="p">:</span><span class="n">checkquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">izostanak</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

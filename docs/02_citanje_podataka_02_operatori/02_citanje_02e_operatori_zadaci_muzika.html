@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -570,6 +534,14 @@
 <h1>Логички и релацијски оператори – музика<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Прикажимо сада неколико упита над базом продавнице музичких
 композиција.</p>
+<p>Упити могу и да се тестирају у систему SQLite Studio. Потребно је да кликне на креирану базу
+прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> и потом изабере команда менија <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">SQL</span> <span class="pre">Editor</span></code>.
+Када се напише упит, кликне се на дугме <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">query</span> <span class="pre">(F9)</span></code> (плави троуглић).
+Како највероватније имамо више база података, обавезно проверити да ли је поред овог дугмета
+назив базе у којој желите да вршите упите.</p>
+<a class="reference internal image-reference" href="../_images/music11.png"><img alt="../_images/music11.png" class="align-center" src="../_images/music11.png" style="width: 300px;" /></a>
+<p>Савет је да се у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> увек прво провере тачни називи табела.</p>
+<a class="reference internal image-reference" href="../_images/music21.png"><img alt="../_images/music21.png" class="align-center" src="../_images/music21.png" style="width: 300px;" /></a>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -992,36 +964,22 @@
                 <img class="corner-image float-right" src="../_static/img/question-mark.png" />
             </h4>
             <p>
-<p>Приказати називе свих композиција које се завршавају са <em>you</em></p>
+<p>Приказати називе свих композиција који на крају имају реч <em>you</em>.</p>
 
     </p></div></div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_02_operatori\02_citanje_02e_operatori_zadaci_muzika.rst</span>, line 198)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_operatori_zadaci_muzika_01</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">naziv</span>
+                   <span class="n">FROM</span> <span class="n">kompozicija</span>
+                   <span class="n">WHERE</span> <span class="n">naziv</span> <span class="n">LIKE</span> <span class="s1">&#39;% you&#39;</span>
 
-    <div id="db_operatori_zadaci_muzika_01" class="db" data-db-name="music.sql" db-check = "SELECT naziv
-FROM kompozicija
-WHERE naziv LIKE '% you'"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1033,33 +991,19 @@ WHERE naziv LIKE '% you'"    db-show-result>
 а нису из Бразила.</p>
 
     </p></div></div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_02_operatori\02_citanje_02e_operatori_zadaci_muzika.rst</span>, line 211)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_operatori_zadaci_muzika_02</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">drzava</span>
+                   <span class="n">FROM</span> <span class="n">kupac</span>
+                   <span class="n">WHERE</span> <span class="n">ime</span> <span class="o">=</span> <span class="s1">&#39;Luis&#39;</span> <span class="n">AND</span> <span class="n">drzava</span> <span class="o">!=</span> <span class="s1">&#39;Brasil&#39;</span>
 
-    <div id="db_operatori_zadaci_muzika_02" class="db" data-db-name="music.sql" db-check = "SELECT ime, prezime, drzava
-FROM kupac
-WHERE ime = 'Luis' AND drzava != 'Brasil'"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1071,33 +1015,18 @@ WHERE ime = 'Luis' AND drzava != 'Brasil'"    db-show-result>
 рођени током 1970-их.</p>
 
     </p></div></div>
-
-    <div id="db_operatori_zadaci_muzika_03" class="db" data-db-name="music.sql" db-check = "SELECT ime, prezime, datum_rodjenja
-FROM zaposleni
-WHERE datum_rodjenja BETWEEN '1970-01-01' AND '1979-12-31'"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_02_operatori\02_citanje_02e_operatori_zadaci_muzika.rst</span>, line 224)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_operatori_zadaci_muzika_03</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">datum_rodjenja</span>
+                   <span class="n">FROM</span> <span class="n">zaposleni</span>
+                   <span class="n">WHERE</span> <span class="n">datum_rodjenja</span> <span class="n">BETWEEN</span> <span class="s1">&#39;1970-01-01&#39;</span> <span class="n">AND</span> <span class="s1">&#39;1979-12-31&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

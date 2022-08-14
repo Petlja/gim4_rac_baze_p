@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -568,6 +532,8 @@
     
   <div class="section" id="id1">
 <h1>Сортирање и ограничавање - задаци (дневник)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Покушај самостално да урадиш наредних неколико задатака.
+Решења можеш да тестираш овде, а можеш задатке да урадиш и у систему SQLite Studio.</p>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -578,33 +544,18 @@
 <p>Прикажи сва различита мушка имена која почињу на слово <code class="docutils literal notranslate"><span class="pre">M</span></code>.</p>
 
     </p></div></div>
-
-    <div id="db_sortiranje_zadaci_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT DISTINCT ime
-FROM ucenik
-WHERE pol = 'м' AND ime LIKE 'М%'"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_04_soritiranje\02_citanje_04e_sort_ogr_zadaci_skola.rst</span>, line 18)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_sortiranje_zadaci_01</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">DISTINCT</span> <span class="n">ime</span>
+                   <span class="n">FROM</span> <span class="n">ucenik</span>
+                   <span class="n">WHERE</span> <span class="n">pol</span> <span class="o">=</span> <span class="s1">&#39;м&#39;</span> <span class="n">AND</span> <span class="n">ime</span> <span class="n">LIKE</span> <span class="s1">&#39;М%&#39;</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -615,34 +566,19 @@ WHERE pol = 'м' AND ime LIKE 'М%'"    db-show-result>
 <p>Прикажи списак првих 10 различитих презимена у азбучном редоследу.</p>
 
     </p></div></div>
-
-    <div id="db_sortiranje_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT DISTINCT prezime
-FROM ucenik
-ORDER BY prezime
-LIMIT 10"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_04_soritiranje\02_citanje_04e_sort_ogr_zadaci_skola.rst</span>, line 29)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_sortiranje_zadaci_02</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">DISTINCT</span> <span class="n">prezime</span>
+                   <span class="n">FROM</span> <span class="n">ucenik</span>
+                   <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">prezime</span>
+                   <span class="n">LIMIT</span> <span class="mi">10</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -654,34 +590,19 @@ LIMIT 10"    db-show-result>
 опадајући по оцени.</p>
 
     </p></div></div>
-
-    <div id="db_sortiranje_zadaci_03" class="db" data-db-name="dnevnik.sql" db-check = "SELECT *
-FROM ocena
-WHERE vrsta = 'писмени задатак'
-ORDER BY ocena DESC"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_04_soritiranje\02_citanje_04e_sort_ogr_zadaci_skola.rst</span>, line 42)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_sortiranje_zadaci_03</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="o">*</span>
+                   <span class="n">FROM</span> <span class="n">ocena</span>
+                   <span class="n">WHERE</span> <span class="n">vrsta</span> <span class="o">=</span> <span class="s1">&#39;писмени задатак&#39;</span>
+                   <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">ocena</span> <span class="n">DESC</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

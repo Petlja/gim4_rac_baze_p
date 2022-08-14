@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -699,7 +663,7 @@
     </p></div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="mi">37</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fond</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">74</span><span class="p">;</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="mi">37</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">74</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -754,7 +718,7 @@
 и у склопу клаузуле <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">naziv</span><span class="p">,</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="mi">37</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fond</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">godisnji_fond</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">godisnji_fond</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">74</span><span class="p">;</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">godisnji_fond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">74</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -917,7 +881,8 @@
             <p>
 <p>Направити преглед регулисаних и нерегулисаних изостанака, тако што
 се уз идентификатор сваког изостанка прикаже да ли је нерегулисан
-или регулисан (било да је оправдан или неоправдан).</p>
+или регулисан (било да је оправдан или неоправдан). Истаћи нерегулисане
+изостанке поруком: „потребно да се регулише“.</p>
 
     </p></div></div>
 <p>Задатак ћемо решити употребом гранања. Основни облик гранања у језику
@@ -937,7 +902,7 @@ SQL је израз <code class="docutils literal notranslate"><span class="pre"
 која је наведена уз <code class="docutils literal notranslate"><span class="pre">ELSE</span></code>. У нашем примеру, гранање можемо постићи
 на следећи начин:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="k">CASE</span><span class="w"></span>
-<span class="w">              </span><span class="k">WHEN</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;нерегулисан&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;нерегулисан&#39;</span><span class="w"></span>
+<span class="w">              </span><span class="k">WHEN</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;нерегулисан&#39;</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;потребно да се регулише&#39;</span><span class="w"></span>
 <span class="w">              </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;регулисан&#39;</span><span class="w"></span>
 <span class="w">           </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="p">;</span><span class="w"></span>
@@ -962,10 +927,10 @@ SQL је израз <code class="docutils literal notranslate"><span class="pre"
 <td><p>регулисан</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
-<td><p>нерегулисан</p></td>
+<td><p>потребно да се регулише</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
-<td><p>нерегулисан</p></td>
+<td><p>потребно да се регулише</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
 <td><p>регулисан</p></td>
@@ -1037,21 +1002,10 @@ SQL је израз <code class="docutils literal notranslate"><span class="pre"
 </tr>
 </tbody>
 </table>
-
-    <div data-component="reveal" id="funkcija_if"   data-showtitle="🤓 О функцији IF" data-hidetitle="Сакриј текст о функцији IF">
-    <p>🤓 функција IF</p>
-<p>Неки системи за управљање базама података
-подржавају и функцију облика <code class="docutils literal notranslate"><span class="pre">IF(uslov,</span> <span class="pre">vrednost_tacno,</span>
-<span class="pre">vrednost_netacno)</span></code>. Вредност таквог израза једнака је вредности
-<code class="docutils literal notranslate"><span class="pre">vrednost_tacno</span></code> ако je услов испуњен тј. вредности
-<code class="docutils literal notranslate"><span class="pre">vrednost_netacno</span></code> ако услов није испуњен.</p>
-<p>У Sqlite ова функција се назива <code class="docutils literal notranslate"><span class="pre">IIF</span></code>, али пошто постоји само
-у неким новијим верзијама, нећемо је користити.</p>
-
-    </div>
-    <div class="section" id="id2">
+<div class="section" id="id2">
 <h2>Вежба<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Наредних неколико упита пробај да напишеш самостално.</p>
+<p>Наредних неколико упита пробај да напишеш самостално. Решења можеш да тестираш овде,
+а можеш све задатке да урадиш и у систему SQLite Studio.</p>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1066,32 +1020,18 @@ SQL је израз <code class="docutils literal notranslate"><span class="pre"
 добијају за ту оцену.</p>
 
     </p></div></div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_03_izrazi_funkcije\02_citanje_03a_izrazi.rst</span>, line 276)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_izrazi_01</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">id_ucenik</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">ocena</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="n">AS</span> <span class="n">poeni</span>
+                   <span class="n">FROM</span> <span class="n">ocena</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
 
-    <div id="db_izrazi_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT id_ucenik, 5 * (ocena - 1) AS poeni
-FROM ocena"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1104,37 +1044,23 @@ FROM ocena"    db-show-result>
 а уз нерегулисане 0 (та колона треба да се зове <code class="docutils literal notranslate"><span class="pre">status</span></code>).</p>
 
     </p></div></div>
-
-    <div id="db_izrazi_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT id, id_ucenik, datum, cas,
-       CASE
-         WHEN status = 'оправдан' THEN 1
-         WHEN status = 'неоправдан' THEN 2
-         WHEN status = 'нерегулисан' THEN 0
-       END AS status
-FROM izostanak"  db-check-col-name  db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_03_izrazi_funkcije\02_citanje_03a_izrazi.rst</span>, line 289)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_izrazi_02</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="nb">id</span><span class="p">,</span> <span class="n">id_ucenik</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">cas</span><span class="p">,</span>
+                          <span class="n">CASE</span>
+                            <span class="n">WHEN</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;оправдан&#39;</span> <span class="n">THEN</span> <span class="mi">1</span>
+                            <span class="n">WHEN</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;неоправдан&#39;</span> <span class="n">THEN</span> <span class="mi">2</span>
+                            <span class="n">WHEN</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;нерегулисан&#39;</span> <span class="n">THEN</span> <span class="mi">0</span>
+                          <span class="n">END</span> <span class="n">AS</span> <span class="n">status</span>
+                   <span class="n">FROM</span> <span class="n">izostanak</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">checkcolumnname</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -591,37 +555,21 @@
 
     </p></div></div>
 <p>Покушај прво да самостално решиш задатак.</p>
-
-    <div id="db_ugnezdjeni_upiti_zadaci_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT razred, odeljenje, MAX(broj) AS max_broj
-FROM (SELECT razred, odeljenje, datum_rodjenja, COUNT(datum_rodjenja) AS broj
-      FROM ucenik
-      GROUP BY datum_rodjenja, razred, odeljenje)
-GROUP BY razred, odeljenje
-HAVING max_broj > 1
-ORDER BY razred, odeljenje;"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_07_ugnezdjeni_upiti\02_citanje_07e_ugnezdjeni_zadaci_skola.rst</span>, line 30)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_ugnezdjeni_upiti_zadaci_01</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="n">MAX</span><span class="p">(</span><span class="n">broj</span><span class="p">)</span> <span class="n">AS</span> <span class="n">max_broj</span>
+                   <span class="n">FROM</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="n">datum_rodjenja</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="n">datum_rodjenja</span><span class="p">)</span> <span class="n">AS</span> <span class="n">broj</span>
+                         <span class="n">FROM</span> <span class="n">ucenik</span>
+                         <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">datum_rodjenja</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">)</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span>
+                   <span class="n">HAVING</span> <span class="n">max_broj</span> <span class="o">&gt;</span> <span class="mi">1</span>
+                   <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
 <p>У наставку је описано и решење.</p>
 <p>У првој фази решавања задатка ћемо за сваки датум, разред и одељење
 израчунати број ученика тог одељења који су рођени на тај датум.</p>
@@ -741,35 +689,19 @@ ORDER BY razred, odeljenje;"    >
 
     </p></div></div>
 <p>Покушај прво да самостално решиш задатак.</p>
-
-    <div id="db_ugnezdjeni_upiti_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.id, u.ime, u.prezime, COUNT(*) AS broj_ocena_iz_matematike
-FROM ucenik u JOIN
-     ocena o ON u.id = o.id_ucenik
-WHERE o.id_predmet IN (SELECT id FROM predmet WHERE naziv = 'Математика')
-GROUP BY u.id;"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_07_ugnezdjeni_upiti\02_citanje_07e_ugnezdjeni_zadaci_skola.rst</span>, line 97)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_ugnezdjeni_upiti_zadaci_02</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">AS</span> <span class="n">broj_ocena_iz_matematike</span>
+                   <span class="n">FROM</span> <span class="n">ucenik</span> <span class="n">u</span> <span class="n">JOIN</span>
+                        <span class="n">ocena</span> <span class="n">o</span> <span class="n">ON</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">id_ucenik</span>
+                   <span class="n">WHERE</span> <span class="n">o</span><span class="o">.</span><span class="n">id_predmet</span> <span class="n">IN</span> <span class="p">(</span><span class="n">SELECT</span> <span class="nb">id</span> <span class="n">FROM</span> <span class="n">predmet</span> <span class="n">WHERE</span> <span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Математика&#39;</span><span class="p">)</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
 <p>У наставку је описано и решење.</p>
 <p>Важан корак у решењу је да се издвоје само оне оцене које су из
 математике. Један начин да то урадимо је да у првој фази, у засебном
@@ -878,39 +810,23 @@ GROUP BY u.id;"    >
 
     </p></div></div>
 <p>Покушај прво да самостално решиш задатак.</p>
-
-    <div id="db_ugnezdjeni_upiti_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.id, u.ime, u.prezime, u.razred, u.odeljenje
-FROM ocena o JOIN
-     ucenik u ON o.id_ucenik = u.id
-WHERE id_predmet IN (SELECT id
-                     FROM predmet
-                     WHERE naziv = 'Српски језик')
-GROUP BY u.id
-HAVING AVG(ocena) >= 4.5
-ORDER BY razred, odeljenje, prezime, ime;"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_07_ugnezdjeni_upiti\02_citanje_07e_ugnezdjeni_zadaci_skola.rst</span>, line 170)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_ugnezdjeni_upiti_zadaci_02</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">razred</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">odeljenje</span>
+                   <span class="n">FROM</span> <span class="n">ocena</span> <span class="n">o</span> <span class="n">JOIN</span>
+                        <span class="n">ucenik</span> <span class="n">u</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">WHERE</span> <span class="n">id_predmet</span> <span class="n">IN</span> <span class="p">(</span><span class="n">SELECT</span> <span class="nb">id</span>
+                                        <span class="n">FROM</span> <span class="n">predmet</span>
+                                        <span class="n">WHERE</span> <span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Српски језик&#39;</span><span class="p">)</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">HAVING</span> <span class="n">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">4.5</span>
+                   <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">ime</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
 <p>У наставку је описано и једно решење. Задатак је прилично сличан
 претходном, јер захтева да се издвоје само оне оцене које су из
 српског језика. То можемо поново урадити тако што у засебном подупиту
@@ -995,41 +911,26 @@ ORDER BY razred, odeljenje, prezime, ime;"    >
 
     </p></div></div>
 <p>Покушај прво да самостално решиш задатак.</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_07_ugnezdjeni_upiti\02_citanje_07e_ugnezdjeni_zadaci_skola.rst</span>, line 221)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_ugnezdjeni_upiti_zadaci_02</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">AS</span> <span class="n">broj_izostanaka</span>
+                   <span class="n">FROM</span> <span class="n">izostanak</span> <span class="n">i</span> <span class="n">JOIN</span>
+                        <span class="n">ucenik</span> <span class="n">u</span> <span class="n">ON</span> <span class="n">i</span><span class="o">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">WHERE</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="n">IN</span> <span class="p">(</span><span class="n">SELECT</span> <span class="n">id_ucenik</span>
+                                  <span class="n">FROM</span> <span class="n">ocena</span>
+                                  <span class="n">WHERE</span> <span class="n">id_predmet</span> <span class="n">IN</span> <span class="p">(</span><span class="n">SELECT</span> <span class="nb">id</span>
+                                                       <span class="n">FROM</span> <span class="n">predmet</span>
+                                                       <span class="n">WHERE</span> <span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Математика&#39;</span><span class="p">)</span>
+                                  <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">id_ucenik</span>
+                                  <span class="n">HAVING</span> <span class="n">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">4.5</span><span class="p">)</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="p">;</span>
 
-    <div id="db_ugnezdjeni_upiti_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.id, u.ime, u.prezime, COUNT(*) AS broj_izostanaka
-FROM izostanak i JOIN
-     ucenik u ON i.id_ucenik = u.id
-WHERE u.id IN (SELECT id_ucenik
-               FROM ocena
-               WHERE id_predmet IN (SELECT id
-                                    FROM predmet
-                                    WHERE naziv = 'Математика')
-               GROUP BY id_ucenik
-               HAVING AVG(ocena) >= 4.5)
-GROUP BY u.id;"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+</pre></div>
+</div>
+</div>
 <p>У наставку је описано и једно решење. Идеја је да у угнежђеном
 подупиту одредимо идентификаторе свих ученика који би по тренутним
 оценама имали закључену оцену 5 из математике. Интересантно, тај

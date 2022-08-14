@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -572,36 +536,16 @@
     <div class="quiz-question">
 
             <div class="course-box course-box-question course-content">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="dizajn_specifikacija">
-            <p>Q-14: Шта је спецификација базе података?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_12">
+            <p>Q-24: Шта је спецификација базе података?</p>
 
-            <li data-component="answer"  id="dizajn_specifikacija_opt_a">Формалан опис базе података, који се обично користи за њено аутоматско генерисање.</li><li data-component="feedback" id="dizajn_specifikacija_opt_a"></li>
+            <li data-component="answer"  id="Pitanje_12_opt_a">Формалан опис базе података, који се обично користи за њено аутоматско генерисање.</li><li data-component="feedback" id="Pitanje_12_opt_a"></li>
             
-            <li data-component="answer"  id="dizajn_specifikacija_opt_b">Документација, која објашњава постојећу базу података.</li><li data-component="feedback" id="dizajn_specifikacija_opt_b"></li>
+            <li data-component="answer"  id="Pitanje_12_opt_b">Документација, која објашњава постојећу базу података.</li><li data-component="feedback" id="Pitanje_12_opt_b"></li>
             
-            <li data-component="answer" data-correct id="dizajn_specifikacija_opt_c">Детаљан и прецизан, али неформалан опис будуће базе података.</li><li data-component="feedback" id="dizajn_specifikacija_opt_c"></li>
+            <li data-component="answer" data-correct id="Pitanje_12_opt_c">Детаљан и прецизан, али неформалан опис будуће базе података.</li><li data-component="feedback" id="Pitanje_12_opt_c"></li>
             
-            <li data-component="answer"  id="dizajn_specifikacija_opt_d">Упутство на основу ког изгубљена база података може да се регенерише.</li><li data-component="feedback" id="dizajn_specifikacija_opt_d"></li>
-            
-
-            </ul>
-            </div>
-            
-    </div>
-
-    <div class="quiz-question">
-
-            <div class="course-box course-box-question course-content">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="dizajn_jedan_vise">
-            <p>Q-15: Како се обично реализује веза „један према више” између две табеле?</p>
-
-            <li data-component="answer" data-correct id="dizajn_jedan_vise_opt_a">Убацивањем страног кључа у табели на страни "више", који је примарни кључ у табели на страни "један"</li><li data-component="feedback" id="dizajn_jedan_vise_opt_a"></li>
-            
-            <li data-component="answer"  id="dizajn_jedan_vise_opt_b">Убацивањем страног кључа у табели на страни "један", који је примарни кључ у табели на страни "више"</li><li data-component="feedback" id="dizajn_jedan_vise_opt_b"></li>
-            
-            <li data-component="answer"  id="dizajn_jedan_vise_opt_c">Спајањем тих табела у једну и додавањем колона по потреби</li><li data-component="feedback" id="dizajn_jedan_vise_opt_c"></li>
-            
-            <li data-component="answer"  id="dizajn_jedan_vise_opt_d">Додавањем примарног кључа сваке од тих табела као страног кључа у другој табели</li><li data-component="feedback" id="dizajn_jedan_vise_opt_d"></li>
+            <li data-component="answer"  id="Pitanje_12_opt_d">Упутство на основу ког изгубљена база података може да се регенерише.</li><li data-component="feedback" id="Pitanje_12_opt_d"></li>
             
 
             </ul>
@@ -612,16 +556,56 @@
     <div class="quiz-question">
 
             <div class="course-box course-box-question course-content">
-            <ul data-component="multiplechoice" data-multipleanswers="false"  id="dizajn_vise_vise">
-            <p>Q-16: Како се обично реализује веза „више према више” између две табеле?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_13">
+            <p>Q-25: Које ентитете, односно табеле, можемо да уочимо уколико правимо базу података за продавницу?</p>
 
-            <li data-component="answer"  id="dizajn_vise_vise_opt_a">Додавањем примарног кључа сваке од тих табела као страног кључа у другој табели.</li><li data-component="feedback" id="dizajn_vise_vise_opt_a"></li>
+            <li data-component="answer"  id="Pitanje_13_opt_a">банкар, клијент, рачун, трансакција (уплата/исплата), кредит</li><li data-component="feedback" id="Pitanje_13_opt_a"></li>
             
-            <li data-component="answer" data-correct id="dizajn_vise_vise_opt_b">Убацивањем нове табеле која је у вези "један према више" са сваком од датих табела.</li><li data-component="feedback" id="dizajn_vise_vise_opt_b"></li>
+            <li data-component="answer" data-correct id="Pitanje_13_opt_b">производ, произвођач, наруџбеница, рачун</li><li data-component="feedback" id="Pitanje_13_opt_b"></li>
             
-            <li data-component="answer"  id="dizajn_vise_vise_opt_c">Проширивањем обе табеле са по више нових колона.</li><li data-component="feedback" id="dizajn_vise_vise_opt_c"></li>
+            <li data-component="answer"  id="Pitanje_13_opt_c">лекар, пацијент, преглед, рецепт, упут</li><li data-component="feedback" id="Pitanje_13_opt_c"></li>
             
-            <li data-component="answer"  id="dizajn_vise_vise_opt_d">Веза "више према више" се не реализује на неки посебан начин, само се препознаје на основу веза између стварних објеката.</li><li data-component="feedback" id="dizajn_vise_vise_opt_d"></li>
+            <li data-component="answer"  id="Pitanje_13_opt_d">студент, предмет, професор, испит</li><li data-component="feedback" id="Pitanje_13_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            
+    </div>
+
+    <div class="quiz-question">
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_14">
+            <p>Q-26: За коју базу података су нам потребни следећи ентитети: лекар, пацијент, преглед, рецепт, упут?</p>
+
+            <li data-component="answer"  id="Pitanje_14_opt_a">банка</li><li data-component="feedback" id="Pitanje_14_opt_a"></li>
+            
+            <li data-component="answer"  id="Pitanje_14_opt_b">факултет</li><li data-component="feedback" id="Pitanje_14_opt_b"></li>
+            
+            <li data-component="answer"  id="Pitanje_14_opt_c">ауто-школа</li><li data-component="feedback" id="Pitanje_14_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="Pitanje_14_opt_d">дом здравља</li><li data-component="feedback" id="Pitanje_14_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            
+    </div>
+
+    <div class="quiz-question">
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_15">
+            <p>Q-27: Допуни следећу спецификацију. За сваки филм познати су следећи подаци:</p>
+
+            <li data-component="answer"  id="Pitanje_15_opt_a">име, презиме, датум рођења, место рођења, држава рођења</li><li data-component="feedback" id="Pitanje_15_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="Pitanje_15_opt_b">назив, година настанка, дужина трајања у минутима, режисер,  жанр</li><li data-component="feedback" id="Pitanje_15_opt_b"></li>
+            
+            <li data-component="answer"  id="Pitanje_15_opt_c">број рачуна, датум отварања, врста рачуна, валута, стање на рачуну</li><li data-component="feedback" id="Pitanje_15_opt_c"></li>
+            
+            <li data-component="answer"  id="Pitanje_15_opt_d">датум наруџбине, адреса наплате, град наплате, држава наплате, укупна цена наруџбине</li><li data-component="feedback" id="Pitanje_15_opt_d"></li>
             
 
             </ul>
@@ -633,16 +617,99 @@
 <a class="reference internal image-reference" href="../_images/q_erd_1.png"><img alt="../_images/q_erd_1.png" class="align-center" src="../_images/q_erd_1.png" style="width: 400px;" /></a>
 
             <div class="course-box course-box-question course-content">
-            <ul data-component="multiplechoice" data-multipleanswers="true"  id="dizajn_">
-            <p>Q-17: Шта од наведеног, на основу приказаног дијаграма важи за везу између табела „Objekat tipa A” и „Objekat tipa B”?</p>
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="Pitanje_16">
+            <p>Q-28: Шта од наведеног, на основу приказаног дијаграма важи за везу између табела „Objekat tipa A” и „Objekat tipa B”?</p>
 
-            <li data-component="answer"  id="dizajn__opt_a">Веза између ове две табеле је типа "више према више".</li><li data-component="feedback" id="dizajn__opt_a"></li>
+            <li data-component="answer"  id="Pitanje_16_opt_a">Веза између ове две табеле је типа "више према више".</li><li data-component="feedback" id="Pitanje_16_opt_a"></li>
             
-            <li data-component="answer" data-correct id="dizajn__opt_b">Сваком објекту типа А одговара тачно један објекат типа Б.</li><li data-component="feedback" id="dizajn__opt_b"></li>
+            <li data-component="answer" data-correct id="Pitanje_16_opt_b">Сваком објекту типа А одговара тачно један објекат типа Б.</li><li data-component="feedback" id="Pitanje_16_opt_b"></li>
             
-            <li data-component="answer"  id="dizajn__opt_c">Сваком објекту типа Б одговара један или више објеката типа А.</li><li data-component="feedback" id="dizajn__opt_c"></li>
+            <li data-component="answer"  id="Pitanje_16_opt_c">Сваком објекту типа Б одговара један или више објеката типа А.</li><li data-component="feedback" id="Pitanje_16_opt_c"></li>
             
-            <li data-component="answer"  id="dizajn__opt_d">Бољи дизајн би се добио спајањем ове две табеле.</li><li data-component="feedback" id="dizajn__opt_d"></li>
+            <li data-component="answer"  id="Pitanje_16_opt_d">Бољи дизајн би се добио спајањем ове две табеле.</li><li data-component="feedback" id="Pitanje_16_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            
+    </div>
+
+    <div class="quiz-question">
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_17">
+            <dl class="simple">
+<dt>Q-29: Која веза је описана на следећи начин? Сваком писцу одговара нула или више романа.</dt><dd><p>Сваком роману одговара тачно један писац.</p>
+</dd>
+</dl>
+
+            <li data-component="answer"  id="Pitanje_17_opt_a">Веза један-према-један</li><li data-component="feedback" id="Pitanje_17_opt_a"></li>
+            
+            <li data-component="answer"  id="Pitanje_17_opt_b">Веза један-према-више, ентитет који одговара писцу је на крају "више", а ентитет који одговара роману је на крају "један"</li><li data-component="feedback" id="Pitanje_17_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="Pitanje_17_opt_c">Веза један-према-више, ентитет који одговара писцу је на крају "један", а ентитет који одговара роману је на крају "више"</li><li data-component="feedback" id="Pitanje_17_opt_c"></li>
+            
+            <li data-component="answer"  id="Pitanje_17_opt_d">Веза више-према-више</li><li data-component="feedback" id="Pitanje_17_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            
+    </div>
+
+    <div class="quiz-question">
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_18">
+            <p>Q-30:         Како се обично реализује веза „један-према-више” између две табеле?</p>
+
+            <li data-component="answer" data-correct id="Pitanje_18_opt_a">Убацивањем страног кључа у табели на страни "више", који је примарни кључ у табели на страни "један"</li><li data-component="feedback" id="Pitanje_18_opt_a"></li>
+            
+            <li data-component="answer"  id="Pitanje_18_opt_b">Убацивањем страног кључа у табели на страни "један", који је примарни кључ у табели на страни "више"</li><li data-component="feedback" id="Pitanje_18_opt_b"></li>
+            
+            <li data-component="answer"  id="Pitanje_18_opt_c">Спајањем тих табела у једну и додавањем колона по потреби</li><li data-component="feedback" id="Pitanje_18_opt_c"></li>
+            
+            <li data-component="answer"  id="Pitanje_18_opt_d">Додавањем примарног кључа сваке од тих табела као страног кључа у другој табели</li><li data-component="feedback" id="Pitanje_18_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            
+    </div>
+
+    <div class="quiz-question">
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_19">
+            <p>Q-31:         Која веза је описана на следећи начин? Сваком аутору одговара нула или више уџбеника. Сваком уџбенику одговара један или више аутора.</p>
+
+            <li data-component="answer"  id="Pitanje_19_opt_a">Веза један-према-један</li><li data-component="feedback" id="Pitanje_19_opt_a"></li>
+            
+            <li data-component="answer"  id="Pitanje_19_opt_b">Веза један-према-више, ентитет који одговара аутору је на крају "више", а ентитет који одговара уџбенику је на крају "један"</li><li data-component="feedback" id="Pitanje_19_opt_b"></li>
+            
+            <li data-component="answer"  id="Pitanje_19_opt_c">Веза један-према-више, ентитет који одговара аутору је на крају "један", а ентитет који одговара уџбенику је на крају "више"</li><li data-component="feedback" id="Pitanje_19_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="Pitanje_19_opt_d">Веза више-према-више</li><li data-component="feedback" id="Pitanje_19_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            
+    </div>
+
+    <div class="quiz-question">
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_20">
+            <p>Q-32: Како се обично реализује веза „више према више” између две табеле?</p>
+
+            <li data-component="answer"  id="Pitanje_20_opt_a">Додавањем примарног кључа сваке од тих табела као страног кључа у другој табели.</li><li data-component="feedback" id="Pitanje_20_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="Pitanje_20_opt_b">Убацивањем нове табеле која је у вези "један према више" са сваком од датих табела.</li><li data-component="feedback" id="Pitanje_20_opt_b"></li>
+            
+            <li data-component="answer"  id="Pitanje_20_opt_c">Проширивањем обе табеле са по више нових колона.</li><li data-component="feedback" id="Pitanje_20_opt_c"></li>
+            
+            <li data-component="answer"  id="Pitanje_20_opt_d">Веза "више према више" се не реализује на неки посебан начин, само се препознаје на основу веза између стварних објеката.</li><li data-component="feedback" id="Pitanje_20_opt_d"></li>
             
 
             </ul>

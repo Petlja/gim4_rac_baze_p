@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -573,7 +537,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="sqlite_priprema">
-            <p>Q-73: Шта је потребно урадити да би у Пајтон програмима могли да се извршавају упити над SQLite базама?</p>
+            <p>Q-95: Шта је потребно урадити да би у Пајтон програмима могли да се извршавају упити над SQLite базама?</p>
 
             <li data-component="answer"  id="sqlite_priprema_opt_a">Потребно је инсталирати одговарајући пакет са Пајтон библиотеком, а затим је укључити у сваки програм.</li><li data-component="feedback" id="sqlite_priprema_opt_a"></li>
             
@@ -591,7 +555,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="sqlite_api">
-            <p>Q-74: Шта све обезбеђује библиотека sqlite3? Означи све тачне одговоре.</p>
+            <p>Q-96: Шта све обезбеђује библиотека sqlite3? Означи све тачне одговоре.</p>
 
             <li data-component="answer" data-correct id="sqlite_api_opt_a">функције за повезивање са СУБП</li><li data-component="feedback" id="sqlite_api_opt_a"></li>
             
@@ -611,7 +575,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="sqlite_konekcija">
-            <p>Q-75: Шта као параметре прима функција <code class="docutils literal notranslate"><span class="pre">sqlite3.connect</span></code>?</p>
+            <p>Q-97: Шта као параметре прима функција <code class="docutils literal notranslate"><span class="pre">sqlite3.connect</span></code>?</p>
 
             <li data-component="answer" data-correct id="sqlite_konekcija_opt_a">Само један параметар, име датотеке (по потреби са путањом) у којој се налази база података.</li><li data-component="feedback" id="sqlite_konekcija_opt_a"></li>
             
@@ -631,7 +595,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="sqlite_izvrsavanje_upita_1">
-            <p>Q-76: Како називамо објекат, чијом методом <code class="docutils literal notranslate"><span class="pre">execute</span></code> извршавамо SQL упите?</p>
+            <p>Q-98: Како називамо објекат, чијом методом <code class="docutils literal notranslate"><span class="pre">execute</span></code> извршавамо SQL упите?</p>
 
             <li data-component="answer"  id="sqlite_izvrsavanje_upita_1_opt_a">connection (конекција)</li><li data-component="feedback" id="sqlite_izvrsavanje_upita_1_opt_a"></li>
             
@@ -651,7 +615,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="sqlite_izvrsavanje_upita_2">
-            <p>Q-77: Методу <code class="docutils literal notranslate"><span class="pre">execute</span></code> се увек као први аргумент прослеђује ниска (стринг) која садржи упит.</p>
+            <p>Q-99: Методу <code class="docutils literal notranslate"><span class="pre">execute</span></code> се увек као први аргумент прослеђује ниска (стринг) која садржи упит.</p>
 <p>Шта све могу да буду остали аргументи овог метода? Означи све тачне одговоре.</p>
 
             <li data-component="answer" data-correct id="sqlite_izvrsavanje_upita_2_opt_a">Ако сам упит није параметризован, методу ``execute`` се не прослеђују додатни аргументи.</li><li data-component="feedback" id="sqlite_izvrsavanje_upita_2_opt_a"></li>
@@ -672,7 +636,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="sqlite_SQL_injection">
-            <p>Q-78: Шта је <em>SQL injection</em>?</p>
+            <p>Q-100: Шта је <em>SQL injection</em>?</p>
 
             <li data-component="answer"  id="sqlite_SQL_injection_opt_a">Уметање листе SQL упита у Пајтон програм.</li><li data-component="feedback" id="sqlite_SQL_injection_opt_a"></li>
             
@@ -692,7 +656,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="sqlite_vise_upita">
-            <p>Q-79: Како можемо једном наредбом да више пута извршимо параметризовани упит, сваки пут са другачијим вредностима параметара упита?</p>
+            <p>Q-101: Како можемо једном наредбом да више пута извршимо параметризовани упит, сваки пут са другачијим вредностима параметара упита?</p>
 
             <li data-component="answer"  id="sqlite_vise_upita_opt_a">Тако што методу ``execute`` проследимо листу торки параметара.</li><li data-component="feedback" id="sqlite_vise_upita_opt_a"></li>
             

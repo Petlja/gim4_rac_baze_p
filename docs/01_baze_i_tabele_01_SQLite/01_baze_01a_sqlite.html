@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -574,72 +538,78 @@
 (<a class="reference external" href="https://www.sqlite.org/">https://www.sqlite.org/</a>). Ово је бесплатан софтвер, отвореног кода,
 који је због једноставности коришћења и квалитета имплементације данас
 у најмасовнијој употреби.</p>
-<p><strong>Занимљивост.</strong> Сваки <em>Android</em> и сваки <em>iPhone</em> телефон, сваки
+
+    <div class="note-wrapper learnmorenote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
+        <div class="course-content">
+            <p>
+<p>Сваки <em>Android</em> и сваки <em>iPhone</em> телефон, сваки
 <em>Windows 10</em> или <em>Mac</em> рачунар, сваки <em>Firefox</em>, <em>Chrome</em> или <em>Safari</em>
 прегледач у својој интерној имплементацији користе SQLite. У
 јуну 2021. године се процењује да постоји преко <span class="math notranslate nohighlight">\(10^{12}\)</span> SQLite
 база података које се активно користе.</p>
+
+    </p></div></div>
 <a class="reference internal image-reference" href="../_images/sqlite.png"><img alt="Логотип система SQLite" class="align-center" src="../_images/sqlite.png" style="width: 220px;" /></a>
-<p>Систем SQLite целу базу података чува у једној датотеци, тј. за сваку
-базу података коју користимо имамо по једну датотеку и по називу
-датотеке бирамо базу са којом радимо. Друга карактеристичност система
-SQLite је да може да буде уграђен у апликацију која га користи, што
-значи да корисник не мора да посебно инсталира SQLite, па чак не мора
+<p>Систем SQLite целу базу података чува у једном фајлу, тј. за сваку базу података
+коју користимо имамо по један фајл и по називу фајла бирамо базу са којом радимо.
+Друга карактеристичност система SQLite је да може да буде уграђен у апликацију која га користи,
+што значи да корисник не мора да посебно инсталира SQLite, па чак не мора
 ни да зна да апликација користи SQLite.</p>
 <div class="section" id="id1">
 <h2>Начини интеракције са СУБП<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p><strong>Апликативни интерфејс</strong></p>
-<p>Сваки СУБП подразумева неколико начина интеракције са својим
-корисницима. Свакако најзначајнији је такозвани апликативни програмски
-интерфејс, <strong>АПИ</strong> (енгл. application programming interface).  Њега
-користе програмери када из својих програма приступају базама
-података. И ми ћемо (у склопу изучавања веб-програмирања коришћењем
-програмског језика Python) показати како се из Python програма
-приступа SQLite базама података.</p>
+<p>Сваки сајт за пуштање музике, свака онлајн продавница, електронски дневник,
+свака апликација на мобилном уређају путем које се плаћају рачуни и тако даље,
+користи неку базу података. Уколико размислимо о томе, схватићемо да је сваки
+корисник рачунара и телефона готово свакодневно и корисник неке базе.
+Начин на који ми, корисници рачуанра и телефона, приступамо базама података
+је тако што користимо неку апликацију која заправо обавља интеракцију са самом базом.</p>
+<p>Да би то било могуће, неопходно је да постоји начин интеракције са СУБП који ће
+се уградити у апликацију која се креира. Програмери, када из својих програма
+приступају базама података, користе  апликативни програмски интерфејс, <strong>АПИ</strong>
+(енгл. <em>application programming interface</em>). И ми ћемо (у склопу изучавања
+веб-програмирања коришћењем програмског језика Python) показати како се из Python
+програма приступа SQLite базама података.</p>
+<p>Да би наши програми преко АПИ могли да приступају СУБП, обично је потребно да у
+програм укњучимо посебан модул односно програмску библиотеку (како се већ зове у
+ком програмском језику) која имплементира АПИ за приступ бази.
+Постоје стандардизовани АПИ који омогућавају да апликативни програмер на исти начин
+иницира конекцију према различитим базама или да покрене извршавање упита, али и даље
+обично мора да се у апликацију укључи посебан модул који омогућава рад са конкретним СУБП.</p>
+<p>Када је у питању програмски језик Python, већ у стандардној инсталацији програмског
+језика долази модул za SQLite који се зове <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> и то са уграђеним СУБП за SQLite.
+То значи да ако програмирате у програмском језику Python није потребно ништа додатно
+да инсталирате да бисте користили SQLite. Модул <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> имплементира стандадну
+спецификацију АПИ-а за приступ бази која се зове DB-API 2.0, што значи да када научите
+као у Python-у да користите SQLite на сличан начин ћете моћи да користите и друге релационе базе.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <p><strong>Кориснички интерфејс</strong></p>
-<p>Већ смо рекли да СУБП пре свега служи да пружи услугу коришћења база
-другим програмима, па се СУБП заиста најчешће користе путем
-апликативног програмског интерфејса. Ипак, АПИ није и једини начин
-коришћења базе података преко СУБП. Приликом администрације базе
-података (креирања и подешавања табела, подешавања корисничких налога
-и права приступа подацима и слично), користе се специјализовани
-административни интерфејси. Они могу бити било <strong>команднолинијски
-интерфејси, КЛИ</strong> (енгл. command line interface, CLI), било <strong>графички
-кориснички интерфејси, ГКИ</strong> (engl. graphic user interface, GUI). С
-обзиром на то да је коришћење ГКИ удобније и једноставније, нарочито
-за почетнике, у наставку ћемо се бавити искључиво тим начином
-рада. Сам систем SQLite не пружа ГКИ, међутим, постоји систем који се
-назива SQLite Studio (<a class="reference external" href="https://sqlitestudio.pl/">https://sqlitestudio.pl/</a>) који је бесплатан и
-који се може једноставно преузети и користити.</p>
-<a class="reference internal image-reference" href="../_images/sqlite_studio.png"><img alt="SQLite Studio" class="align-center" src="../_images/sqlite_studio.png" style="width: 500px;" /></a>
+<p>Сваки СУБП подразумева неколико начина интеракције са својим корисницима.
+Већ смо рекли да СУБП пре свега служи да пружи услугу коришћења база другим програмима,
+па се СУБП заиста најчешће користе путем апликативног програмског интерфејса. Ипак,
+АПИ није и једини начин коришћења базе података преко СУБП. Приликом администрације базе података
+(креирања и подешавања табела, подешавања корисничких налога и права приступа подацима и слично),
+користе се специјализовани административни интерфејси. Они могу бити било <strong>команднолинијски интерфејси</strong>,
+<strong>КЛИ</strong> (енгл. <em>command line interface</em>, <em>CLI</em>), било <strong>графички кориснички интерфејси</strong>, <strong>ГКИ</strong> (engl. <em>graphic user interface</em>,
+<em>GUI</em>). С обзиром на то да је коришћење ГКИ удобније и једноставније, нарочито за почетнике, у наставку ћемо се
+бавити искључиво тим начином рада. Сам систем SQLite не пружа ГКИ, међутим, постоји систем који се назива
+SQLite Studio (<a class="reference external" href="https://sqlitestudio.pl/">https://sqlitestudio.pl/</a>) који је бесплатан и који се може једноставно преузети и користити.</p>
+<a class="reference internal image-reference" href="../_images/sqlite_studio.png"><img alt="SQLite Studio" class="align-center" src="../_images/sqlite_studio.png" style="width: 780px;" /></a>
 </div>
 <div class="section" id="id2">
 <h2>Инсталација<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Систем SQLite Studio (<a class="reference external" href="https://sqlitestudio.pl/">https://sqlitestudio.pl/</a>) који пружа ГКИ за
-администрирање SQL база података се може бесплатно преузети са веба и
-инсталирати на разним оперативним системима. SQLite Studio у себи
-садржи уграђен СУБП за SQLite, тако да не треба ништа додатно
-инсталирати да би сте могли да креирате нову или приступите постојећој
+<p>Систем SQLite Studio који пружа ГКИ за администрирање SQL база података се може бесплатно преузети
+са веба и инсталирати на разним оперативним системима. SQLite Studio у себи садржи уграђен СУБП за SQLite,
+тако да не треба ништа додатно инсталирати да би сте могли да креирате нову или приступите постојећој
 SQLite бази података.</p>
-<p>Постоји и апликација која омогућава команднолинијски кориснички
-интерфејс за приступ SQLite бази, али у овом курсу је нећемо
-користити.</p>
-<p>Да би наши програми преко АПИ могли да приступају СУБП, обично је
-потребно да у програм укњучимо посебан модул односно програмску
-библиотеку (како се већ зове у ком програмском језику) која
-имплементира АПИ за приступ бази. Постоје стандардизовани АПИ који
-омогућавају да апликативни програмер на исти начин иницира конекцију
-према различитим базама или да покрене извршавање упита, али и даље
-обично мора да се у апликацију укључи посебан модул који омогућава рад
-са конкретним СУБП.</p>
-<p>Када је у питању програмски језик Python, већ у стандардној
-инсталацији програмског језика долази модул za SQLite који се зове
-<code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> и то са уграђеним СУБП за SQLite.  То значи да ако
-програмирате у програмском језику Python није потребно ништа додатно
-да инсталирате да бисте користили SQLite. Модул <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>
-имплементира стандадну спецификацију АПИ-а за приступ бази која се
-зове DB-API 2.0, што значи да када научите као у Python-у да користите
-SQLite на сличан начин ћете моћи да користите и друге релационе базе.</p>
+<p>На следећој адреси је потребно кликнути на дугме Download и преузети цео систем који се запакован у један zip фајл:</p>
+<p><a class="reference external" href="https://sqlitestudio.pl/">https://sqlitestudio.pl/</a></p>
+<p>Када се преузме, фајл обавезно мора да се распакује, а затим се систем SQLite Studio
+покреће тако што се нађе извршни фајл са истим називом.</p>
 </div>
 </div>
 

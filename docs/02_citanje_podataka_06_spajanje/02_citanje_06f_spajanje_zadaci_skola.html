@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -568,6 +532,14 @@
     
   <div class="section" id="id1">
 <h1>Спајање — задаци (дневник)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>У систему SQLite Studio се упити се пишу након што се кликне на креирану базу <em>dnevnik</em> у прозору
+Databases и потом изабере команда менија <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">SQL</span> <span class="pre">Editor</span></code>. Када се напише упит,
+кликне се на дугме <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">query</span> <span class="pre">(F9)</span></code> (плави троуглић).</p>
+<p>Савет је да се у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> увек прво провере тачни називи табела,
+као и колона. Посебно је важно да проверимо називе страног кључа и примарног
+кључа који му одговара у другој табели када желико да извршимо спајање, тј. да
+прикажемо податке из више табела које су повезане.</p>
+<a class="reference internal image-reference" href="../_images/dnevnik4.png"><img alt="Логотип система SQLite" class="align-center" src="../_images/dnevnik4.png" style="width: 400px;" /></a>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -580,35 +552,20 @@
 предмета, датум добијања оцене и оцену која је добијена.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_zadaci_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.ime, u.prezime, p.naziv, o.datum, o.ocena
-FROM ocena o
-     JOIN ucenik u ON o.id_ucenik = u.id
-     JOIN predmet p ON o.id_predmet = p.id
-WHERE u.razred = 1 AND u.odeljenje = 2 AND o.vrsta = 'контролна вежба'"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06f_spajanje_zadaci_skola.rst</span>, line 31)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_zadaci_01</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">u</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">naziv</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="n">datum</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="n">ocena</span>
+                   <span class="n">FROM</span> <span class="n">ocena</span> <span class="n">o</span>
+                        <span class="n">JOIN</span> <span class="n">ucenik</span> <span class="n">u</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span>
+                        <span class="n">JOIN</span> <span class="n">predmet</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">WHERE</span> <span class="n">u</span><span class="o">.</span><span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">AND</span> <span class="n">u</span><span class="o">.</span><span class="n">odeljenje</span> <span class="o">=</span> <span class="mi">2</span> <span class="n">AND</span> <span class="n">o</span><span class="o">.</span><span class="n">vrsta</span> <span class="o">=</span> <span class="s1">&#39;контролна вежба&#39;</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -622,37 +579,22 @@ WHERE u.razred = 1 AND u.odeljenje = 2 AND o.vrsta = 'контролна веж�
 писменог, просечну оцену и број ученика који су радили писмени.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.razred, u.odeljenje, p.naziv, o.datum, round(AVG(o.ocena), 2) AS prosek, COUNT(*) as broj
-FROM ocena o JOIN
-     predmet p ON o.id_predmet = p.id JOIN
-     ucenik u ON o.id_ucenik = u.id
-WHERE o.vrsta = 'писмени задатак'
-GROUP BY u.razred, u.odeljenje, p.id, o.datum
-HAVING broj >= 25"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06f_spajanje_zadaci_skola.rst</span>, line 47)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_zadaci_02</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">u</span><span class="o">.</span><span class="n">razred</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">odeljenje</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">naziv</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="n">datum</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">AVG</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">ocena</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">prosek</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">broj</span>
+                   <span class="n">FROM</span> <span class="n">ocena</span> <span class="n">o</span> <span class="n">JOIN</span>
+                        <span class="n">predmet</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">id</span> <span class="n">JOIN</span>
+                        <span class="n">ucenik</span> <span class="n">u</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">WHERE</span> <span class="n">o</span><span class="o">.</span><span class="n">vrsta</span> <span class="o">=</span> <span class="s1">&#39;писмени задатак&#39;</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">u</span><span class="o">.</span><span class="n">razred</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">odeljenje</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="n">datum</span>
+                   <span class="n">HAVING</span> <span class="n">broj</span> <span class="o">&gt;=</span> <span class="mi">25</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -666,36 +608,21 @@ HAVING broj >= 25"    >
 месец и број петица.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_zadaci_03" class="db" data-db-name="dnevnik.sql" db-check = "SELECT p.naziv, p.razred, strftime('%m', o.datum) AS mesec, COUNT(*) AS broj
-FROM ocena o JOIN
-     predmet p ON o.id_predmet = p.id
-WHERE o.ocena = 5
-GROUP BY p.id, mesec
-ORDER BY p.naziv, mesec"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06f_spajanje_zadaci_skola.rst</span>, line 66)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_zadaci_03</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">p</span><span class="o">.</span><span class="n">naziv</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">razred</span><span class="p">,</span> <span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m&#39;</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="n">datum</span><span class="p">)</span> <span class="n">AS</span> <span class="n">mesec</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">AS</span> <span class="n">broj</span>
+                   <span class="n">FROM</span> <span class="n">ocena</span> <span class="n">o</span> <span class="n">JOIN</span>
+                        <span class="n">predmet</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">WHERE</span> <span class="n">o</span><span class="o">.</span><span class="n">ocena</span> <span class="o">=</span> <span class="mi">5</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">p</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">mesec</span>
+                   <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">p</span><span class="o">.</span><span class="n">naziv</span><span class="p">,</span> <span class="n">mesec</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -709,36 +636,21 @@ ORDER BY p.naziv, mesec"    >
 изостанака.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_zadaci_04" class="db" data-db-name="dnevnik.sql" db-check = "SELECT razred, odeljenje, strftime('%m', datum) AS mesec, COUNT(*) AS broj
-FROM izostanak i JOIN
-     ucenik u ON i.id_ucenik = u.id
-WHERE status = 'неоправдан'
-GROUP BY mesec, razred, odeljenje
-HAVING broj >= 5"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06f_spajanje_zadaci_skola.rst</span>, line 83)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_zadaci_04</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m&#39;</span><span class="p">,</span> <span class="n">datum</span><span class="p">)</span> <span class="n">AS</span> <span class="n">mesec</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">AS</span> <span class="n">broj</span>
+                   <span class="n">FROM</span> <span class="n">izostanak</span> <span class="n">i</span> <span class="n">JOIN</span>
+                        <span class="n">ucenik</span> <span class="n">u</span> <span class="n">ON</span> <span class="n">i</span><span class="o">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">WHERE</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;неоправдан&#39;</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">mesec</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span>
+                   <span class="n">HAVING</span> <span class="n">broj</span> <span class="o">&gt;=</span> <span class="mi">5</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -751,36 +663,21 @@ HAVING broj >= 5"    >
 називе предмета и просечне оцене заокружене на две децимале).</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_zadaci_05" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.ime, u.prezime, p.naziv, round(AVG(ocena), 2) AS prosek
-FROM ocena o JOIN
-     ucenik u ON o.id_ucenik = u.id JOIN
-     predmet p ON o.id_predmet = p.id
-GROUP BY u.id, p.id
-HAVING COUNT(*) >= 2"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06f_spajanje_zadaci_skola.rst</span>, line 99)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_zadaci_05</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">u</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">naziv</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">prosek</span>
+                   <span class="n">FROM</span> <span class="n">ocena</span> <span class="n">o</span> <span class="n">JOIN</span>
+                        <span class="n">ucenik</span> <span class="n">u</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="n">JOIN</span>
+                        <span class="n">predmet</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">o</span><span class="o">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">HAVING</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -796,38 +693,23 @@ HAVING COUNT(*) >= 2"    >
 презимена оба ученика.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_zadaci_06" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u1.datum_rodjenja, u1.razred, u1.odeljenje,
-       u1.ime, u1.prezime,
-       u2.ime, u2.prezime
-FROM ucenik AS u1 JOIN
-     ucenik AS u2 ON
-         u1.razred = u2.razred AND u1.odeljenje = u2.odeljenje AND
-         u1.datum_rodjenja = u2.datum_rodjenja AND u1.id < u2.id
-ORDER BY u1.razred, u1.odeljenje"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06f_spajanje_zadaci_skola.rst</span>, line 118)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_zadaci_06</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">u1</span><span class="o">.</span><span class="n">datum_rodjenja</span><span class="p">,</span> <span class="n">u1</span><span class="o">.</span><span class="n">razred</span><span class="p">,</span> <span class="n">u1</span><span class="o">.</span><span class="n">odeljenje</span><span class="p">,</span>
+                          <span class="n">u1</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u1</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span>
+                          <span class="n">u2</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u2</span><span class="o">.</span><span class="n">prezime</span>
+                   <span class="n">FROM</span> <span class="n">ucenik</span> <span class="n">AS</span> <span class="n">u1</span> <span class="n">JOIN</span>
+                        <span class="n">ucenik</span> <span class="n">AS</span> <span class="n">u2</span> <span class="n">ON</span>
+                            <span class="n">u1</span><span class="o">.</span><span class="n">razred</span> <span class="o">=</span> <span class="n">u2</span><span class="o">.</span><span class="n">razred</span> <span class="n">AND</span> <span class="n">u1</span><span class="o">.</span><span class="n">odeljenje</span> <span class="o">=</span> <span class="n">u2</span><span class="o">.</span><span class="n">odeljenje</span> <span class="n">AND</span>
+                            <span class="n">u1</span><span class="o">.</span><span class="n">datum_rodjenja</span> <span class="o">=</span> <span class="n">u2</span><span class="o">.</span><span class="n">datum_rodjenja</span> <span class="n">AND</span> <span class="n">u1</span><span class="o">.</span><span class="n">id</span> <span class="o">&lt;</span> <span class="n">u2</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">u1</span><span class="o">.</span><span class="n">razred</span><span class="p">,</span> <span class="n">u1</span><span class="o">.</span><span class="n">odeljenje</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -840,35 +722,20 @@ ORDER BY u1.razred, u1.odeljenje"    >
 броју оцена. Приказати назив предмета, разред и број оцена.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_zadaci_07" class="db" data-db-name="dnevnik.sql" db-check = "SELECT naziv, razred, COUNT(ocena) AS broj_ocena
-FROM predmet LEFT JOIN
-     ocena ON predmet.id = ocena.id_predmet
-GROUP BY predmet.id
-ORDER BY broj_ocena DESC"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06f_spajanje_zadaci_skola.rst</span>, line 136)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_zadaci_07</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">naziv</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="n">AS</span> <span class="n">broj_ocena</span>
+                   <span class="n">FROM</span> <span class="n">predmet</span> <span class="n">LEFT</span> <span class="n">JOIN</span>
+                        <span class="n">ocena</span> <span class="n">ON</span> <span class="n">predmet</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ocena</span><span class="o">.</span><span class="n">id_predmet</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">predmet</span><span class="o">.</span><span class="n">id</span>
+                   <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">broj_ocena</span> <span class="n">DESC</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -881,35 +748,20 @@ ORDER BY broj_ocena DESC"    >
 нулу).</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_zadaci_08" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.ime, u.prezime, COUNT(ocena)
-FROM ucenik u LEFT JOIN
-     (ocena o JOIN
-      predmet p ON p.id = o.id_predmet AND p.naziv = 'Рачунарство и информатика') ON u.id = id_ucenik
-GROUP BY u.id"    > 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06f_spajanje_zadaci_skola.rst</span>, line 151)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_zadaci_08</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">dnevnik</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">u</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span>
+                   <span class="n">FROM</span> <span class="n">ucenik</span> <span class="n">u</span> <span class="n">LEFT</span> <span class="n">JOIN</span>
+                        <span class="p">(</span><span class="n">ocena</span> <span class="n">o</span> <span class="n">JOIN</span>
+                         <span class="n">predmet</span> <span class="n">p</span> <span class="n">ON</span> <span class="n">p</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">id_predmet</span> <span class="n">AND</span> <span class="n">p</span><span class="o">.</span><span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Рачунарство и информатика&#39;</span><span class="p">)</span> <span class="n">ON</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">id_ucenik</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">u</span><span class="o">.</span><span class="n">id</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

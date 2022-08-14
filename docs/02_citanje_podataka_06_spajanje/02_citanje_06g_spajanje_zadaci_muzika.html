@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -570,7 +534,15 @@
 <h1>Спајање — музика<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>У наставку ћемо приказати неколико упита у којима се користи спајање,
 а који читају податке из базе компаније која врши продају музичких
-композиција.</p>
+композиција.
+Упити могу и да се тестирају у систему SQLite Studio. Потребно је да кликне
+на креирану базу прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> и потом изабере команда менија <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">SQL</span> <span class="pre">Editor</span></code>.
+Када се напише упит, кликне се на дугме <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">query</span> <span class="pre">(F9)</span></code> (плави троуглић).</p>
+<p>Савет је да се у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> увек прво провере тачни називи табела,
+а за сваку табелу и тачни називи колона. Посебно је важно да проверимо називе
+страног кључа и примарног кључа који му одговара у другој табели када желико да извршимо
+спајање, тј. да прикажемо податке из више табела које су повезане.</p>
+<a class="reference internal image-reference" href="../_images/music25.png"><img alt="../_images/music25.png" class="align-center" src="../_images/music25.png" style="width: 300px;" /></a>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1189,34 +1161,19 @@ Maiden</em>.</p>
 <p>Приказати списак композиција који садржи назив извођача и назив композиције.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_muzika_01" class="db" data-db-name="music.sql" db-check = "SELECT izvodjac.naziv AS izvodjac, kompozicija.naziv AS kompozicija
-FROM kompozicija JOIN
-     album ON kompozicija.id_album = album.id_album JOIN
-     izvodjac ON izvodjac.id_izvodjac = album.id_izvodjac"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06g_spajanje_zadaci_muzika.rst</span>, line 383)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_muzika_01</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">izvodjac</span><span class="o">.</span><span class="n">naziv</span> <span class="n">AS</span> <span class="n">izvodjac</span><span class="p">,</span> <span class="n">kompozicija</span><span class="o">.</span><span class="n">naziv</span> <span class="n">AS</span> <span class="n">kompozicija</span>
+                   <span class="n">FROM</span> <span class="n">kompozicija</span> <span class="n">JOIN</span>
+                        <span class="n">album</span> <span class="n">ON</span> <span class="n">kompozicija</span><span class="o">.</span><span class="n">id_album</span> <span class="o">=</span> <span class="n">album</span><span class="o">.</span><span class="n">id_album</span> <span class="n">JOIN</span>
+                        <span class="n">izvodjac</span> <span class="n">ON</span> <span class="n">izvodjac</span><span class="o">.</span><span class="n">id_izvodjac</span> <span class="o">=</span> <span class="n">album</span><span class="o">.</span><span class="n">id_izvodjac</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1230,34 +1187,21 @@ FROM kompozicija JOIN
 презиме оног коме је та особа шеф).</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_muzika_02" class="db" data-db-name="music.sql" db-check = "SELECT z1.id_zaposleni, z1.ime, z1.prezime,
-       z2.id_zaposleni, z2.ime, z2.prezime
-FROM zaposleni z1 JOIN
-     zaposleni z2 ON z1.id_zaposleni = z2.id_nadredjeni"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06g_spajanje_zadaci_muzika.rst</span>, line 398)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_muzika_02</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">z1</span><span class="o">.</span><span class="n">id_zaposleni</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span>
+                          <span class="n">z2</span><span class="o">.</span><span class="n">id_zaposleni</span><span class="p">,</span> <span class="n">z2</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">z2</span><span class="o">.</span><span class="n">prezime</span>
+                   <span class="n">FROM</span> <span class="n">zaposleni</span> <span class="n">z1</span> <span class="n">JOIN</span>
+                        <span class="n">zaposleni</span> <span class="n">z2</span> <span class="n">ON</span> <span class="n">z1</span><span class="o">.</span><span class="n">id_zaposleni</span> <span class="o">=</span> <span class="n">z2</span><span class="o">.</span><span class="n">id_nadredjeni</span>
 
 
-            
-    </div>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1270,34 +1214,20 @@ FROM zaposleni z1 JOIN
 за сваког запосленог по именима купаца).</p>
 
     </p></div></div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06g_spajanje_zadaci_muzika.rst</span>, line 415)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_muzika_03</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">k</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">k</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">prezime</span>
+                   <span class="n">FROM</span> <span class="n">kupac</span> <span class="n">k</span> <span class="n">JOIN</span>
+                        <span class="n">zaposleni</span> <span class="n">z</span> <span class="n">ON</span> <span class="n">k</span><span class="o">.</span><span class="n">id_zaposleni</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">id_zaposleni</span>
+                        <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">z</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">k</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">k</span><span class="o">.</span><span class="n">ime</span>
 
-    <div id="db_spajanje_muzika_03" class="db" data-db-name="music.sql" db-check = "SELECT k.ime, k.prezime, z.ime, z.prezime
-FROM kupac k JOIN
-     zaposleni z ON k.id_zaposleni = z.id_zaposleni
-     ORDER BY z.prezime, z.ime, k.prezime, k.ime"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1308,34 +1238,19 @@ FROM kupac k JOIN
 <p>За сваки жанр приказати дужину најкраће и најдуже композиције.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_muzika_04" class="db" data-db-name="music.sql" db-check = "SELECT z.naziv, Min(trajanje), Max(trajanje)
-FROM zanr z JOIN
-     kompozicija k ON z.id_zanr = k.id_zanr
-GROUP BY z.id_zanr"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06g_spajanje_zadaci_muzika.rst</span>, line 428)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_muzika_04</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">z</span><span class="o">.</span><span class="n">naziv</span><span class="p">,</span> <span class="n">Min</span><span class="p">(</span><span class="n">trajanje</span><span class="p">),</span> <span class="n">Max</span><span class="p">(</span><span class="n">trajanje</span><span class="p">)</span>
+                   <span class="n">FROM</span> <span class="n">zanr</span> <span class="n">z</span> <span class="n">JOIN</span>
+                        <span class="n">kompozicija</span> <span class="n">k</span> <span class="n">ON</span> <span class="n">z</span><span class="o">.</span><span class="n">id_zanr</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">id_zanr</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">z</span><span class="o">.</span><span class="n">id_zanr</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1348,37 +1263,22 @@ GROUP BY z.id_zanr"    db-show-result>
 ставки). Резултате сортирати неопадајуће по броју ставки.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_muzika_05" class="db" data-db-name="music.sql" db-check = "SELECT n.id_narudzbenica, k.ime, k.prezime, COUNT(*) AS broj_stavki
-FROM narudzbenica n JOIN
-     stavka_narudzbenice s ON n.id_narudzbenica = s.id_narudzbenica JOIN
-     kupac k ON n.id_kupac = k.id_kupac
-WHERE drzava_dostave = 'Brazil'
-GROUP BY n.id_narudzbenica
-ORDER BY broj_stavki"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06g_spajanje_zadaci_muzika.rst</span>, line 442)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_muzika_05</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">n</span><span class="o">.</span><span class="n">id_narudzbenica</span><span class="p">,</span> <span class="n">k</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">k</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">AS</span> <span class="n">broj_stavki</span>
+                   <span class="n">FROM</span> <span class="n">narudzbenica</span> <span class="n">n</span> <span class="n">JOIN</span>
+                        <span class="n">stavka_narudzbenice</span> <span class="n">s</span> <span class="n">ON</span> <span class="n">n</span><span class="o">.</span><span class="n">id_narudzbenica</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">id_narudzbenica</span> <span class="n">JOIN</span>
+                        <span class="n">kupac</span> <span class="n">k</span> <span class="n">ON</span> <span class="n">n</span><span class="o">.</span><span class="n">id_kupac</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">id_kupac</span>
+                   <span class="n">WHERE</span> <span class="n">drzava_dostave</span> <span class="o">=</span> <span class="s1">&#39;Brazil&#39;</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">n</span><span class="o">.</span><span class="n">id_narudzbenica</span>
+                   <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">broj_stavki</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1391,36 +1291,21 @@ ORDER BY broj_stavki"    db-show-result>
 износе наруџбина. Резултат приказати опадајуће по укупном износу.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_muzika_06" class="db" data-db-name="music.sql" db-check = "SELECT k.ime, k.prezime, ROUND(SUM(n.ukupan_iznos), 2) AS ukupan_iznos
-FROM narudzbenica n JOIN
-     kupac k ON k.id_kupac = n.id_kupac
-GROUP BY k.id_kupac
-ORDER BY ukupan_iznos DESC
-LIMIT 3"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06g_spajanje_zadaci_muzika.rst</span>, line 459)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_muzika_06</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">k</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">k</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">ROUND</span><span class="p">(</span><span class="n">SUM</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">ukupan_iznos</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="n">AS</span> <span class="n">ukupan_iznos</span>
+                   <span class="n">FROM</span> <span class="n">narudzbenica</span> <span class="n">n</span> <span class="n">JOIN</span>
+                        <span class="n">kupac</span> <span class="n">k</span> <span class="n">ON</span> <span class="n">k</span><span class="o">.</span><span class="n">id_kupac</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">id_kupac</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">k</span><span class="o">.</span><span class="n">id_kupac</span>
+                   <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">ukupan_iznos</span> <span class="n">DESC</span>
+                   <span class="n">LIMIT</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
 
     <div class="course-box course-box-special">
         <div class="course-content">
@@ -1433,35 +1318,20 @@ LIMIT 3"    db-show-result>
 запослене којима је тај број једнак нули.</p>
 
     </p></div></div>
-
-    <div id="db_spajanje_muzika_07" class="db" data-db-name="music.sql" db-check = "SELECT z1.id_zaposleni, z1.ime, z1.prezime,
-       COUNT(z2.id_zaposleni) AS broj_podredjenih
-FROM zaposleni z1 LEFT JOIN
-     zaposleni z2 ON z1.id_zaposleni = z2.id_nadredjeni
-GROUP BY z1.id_zaposleni"    db-show-result> 
-        <div class="row">
-        <div class="db-input"> 
-            <div class= "editor-div-db"> 
-            <textarea class="query" rows='6'></textarea>
-            </div>
-            <br>
-            <div class="row">
-                <button class='runQuery btn-db btn-success'>Тестирај упит</button>
-                <button class='test-q btn-db btn-success'>Изврши упит</button>
-                
-                <button class='showresult btn-db btn-success'>Прикажи очекивани резултат</button>
-            </div>
-            <br>
-            <div class='result'  disabled>
-        </div>
-        </div>
-        <div class="stats" > 
-        </div>
-        </div>
-
-
-            
-    </div>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">C:\Users\r_cec\Documents\GitHub\gim4_rac_baze_p\_intermediate\02_citanje_podataka_06_spajanje\02_citanje_06g_spajanje_zadaci_muzika.rst</span>, line 476)</p>
+<p>Unknown directive type „dbpetlja”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">dbpetlja</span><span class="p">::</span> <span class="n">db_spajanje_muzika_07</span>
+   <span class="p">:</span><span class="n">dbfile</span><span class="p">:</span> <span class="n">music</span><span class="o">.</span><span class="n">sql</span>
+   <span class="p">:</span><span class="n">showresult</span><span class="p">:</span>
+   <span class="p">:</span><span class="n">solutionquery</span><span class="p">:</span> <span class="n">SELECT</span> <span class="n">z1</span><span class="o">.</span><span class="n">id_zaposleni</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">prezime</span><span class="p">,</span>
+                          <span class="n">COUNT</span><span class="p">(</span><span class="n">z2</span><span class="o">.</span><span class="n">id_zaposleni</span><span class="p">)</span> <span class="n">AS</span> <span class="n">broj_podredjenih</span>
+                   <span class="n">FROM</span> <span class="n">zaposleni</span> <span class="n">z1</span> <span class="n">LEFT</span> <span class="n">JOIN</span>
+                        <span class="n">zaposleni</span> <span class="n">z2</span> <span class="n">ON</span> <span class="n">z1</span><span class="o">.</span><span class="n">id_zaposleni</span> <span class="o">=</span> <span class="n">z2</span><span class="o">.</span><span class="n">id_nadredjeni</span>
+                   <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">z1</span><span class="o">.</span><span class="n">id_zaposleni</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

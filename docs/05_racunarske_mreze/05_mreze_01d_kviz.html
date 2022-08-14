@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -573,7 +537,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="mreze_uloge_uredjaja">
-            <p>Q-80: Означи тачна тврђења о улогама рачунара и сличних уређаја (таблети, паметни телефони) у мрежној комуникацији?</p>
+            <p>Q-102: Означи тачна тврђења о улогама рачунара и сличних уређаја (таблети, паметни телефони) у мрежној комуникацији?</p>
 
             <li data-component="answer" data-correct id="mreze_uloge_uredjaja_opt_a">При неким комуникацијама уређај не мора да буде ни клијент ни сервер.</li><li data-component="feedback" id="mreze_uloge_uredjaja_opt_a"></li>
             
@@ -593,7 +557,7 @@
 
 <div class="course-box course-box-problem course-content">
 <ul data-component="dragndrop" id="mreze_slojevi_i_opisi">
-    <span data-component="question">Q-81: Упари сваки слој у мрежној комуникацији са кључним појмовима за тај слој.</span>
+    <span data-component="question">Q-103: Упари сваки слој у мрежној комуникацији са кључним појмовима за тај слој.</span>
 	
 
     <li data-component="draggable" id="mreze_slojevi_i_opisi_drag1">апликативни слој </li>
@@ -614,7 +578,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_mac_rutiranje">
-            <p>Q-82: Зашто MAC адресе нису погодне за рутирање у великим мрежама?</p>
+            <p>Q-104: Зашто MAC адресе нису погодне за рутирање у великим мрежама?</p>
 
             <li data-component="answer"  id="mreze_mac_rutiranje_opt_a">Зато што не постоји довољан број различитих MAC адреса.</li><li data-component="feedback" id="mreze_mac_rutiranje_opt_a"></li>
             
@@ -634,7 +598,7 @@
 
 <div class="course-box course-box-problem course-content">
 <ul data-component="dragndrop" id="mreze_upotrebe_adresa">
-    <span data-component="question">Q-83: Упари сваку врсту адресе са њеном наменом.</span>
+    <span data-component="question">Q-105: Упари сваку врсту адресе са њеном наменом.</span>
 	
 
     <li data-component="draggable" id="mreze_upotrebe_adresa_drag1">MAC адресе </li>
@@ -652,7 +616,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_switch_hub">
-            <p>Q-84: У чему је разлика између хаба и свича?</p>
+            <p>Q-106: У чему је разлика између хаба и свича?</p>
 
             <li data-component="answer"  id="mreze_switch_hub_opt_a">Комуникација преко хаба се теже прислушкује, па је безбеднија.</li><li data-component="feedback" id="mreze_switch_hub_opt_a"></li>
             
@@ -672,7 +636,7 @@
 
         <div class="course-box course-box-problem course-content" style="max-width: none;">
         <pre data-component="parsons" id="mreze_slozenost_uredjaja"      >
-        <span data-question> Q-85: Поређај уређаје од најједноставнијег до најсложенијег.</span>Хаб
+        <span data-question> Q-107: Поређај уређаје од најједноставнијег до најсложенијег.</span>Хаб
 Свич
 Рутер
         </pre>
@@ -684,7 +648,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_kablovi_protok">
-            <p>Q-86: Који од жичних комуникационих медијума има највећи проток?</p>
+            <p>Q-108: Који од жичних комуникационих медијума има највећи проток?</p>
 
             <li data-component="answer"  id="mreze_kablovi_protok_opt_a">Упредене парице.</li><li data-component="feedback" id="mreze_kablovi_protok_opt_a"></li>
             
@@ -704,7 +668,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_adsl">
-            <p>Q-87: Коју врсту медијума користи ADSL мрежа?</p>
+            <p>Q-109: Коју врсту медијума користи ADSL мрежа?</p>
 
             <li data-component="answer" data-correct id="mreze_adsl_opt_a">Упредене парице.</li><li data-component="feedback" id="mreze_adsl_opt_a"></li>
             
@@ -724,7 +688,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_kablovski_modem">
-            <p>Q-88: Која врста проводника доводи интернет везу непосредно до кабловског модема (од локалног чворишта)?</p>
+            <p>Q-110: Која врста проводника доводи интернет везу непосредно до кабловског модема (од локалног чворишта)?</p>
 
             <li data-component="answer"  id="mreze_kablovski_modem_opt_a">Упредена парица.</li><li data-component="feedback" id="mreze_kablovski_modem_opt_a"></li>
             

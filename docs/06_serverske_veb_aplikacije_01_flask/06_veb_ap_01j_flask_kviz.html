@@ -24,13 +24,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
     <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
     <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/regex-check.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -119,46 +115,14 @@
     <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/notes.js"></script>
     <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
-    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
-    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
-    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/pycode.js"></script>
-    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
-    <script type="text/javascript" src="../_static/p5js.js"></script>
     <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
     <script type="text/javascript" src="../_static/associations.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
     <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/regex-check.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/regex-check-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/editor.js"></script>
+    <script type="text/javascript" src="../_static/jszip.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -573,7 +537,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="flask_pojam">
-            <p>Q-102: Шта је Flask?</p>
+            <p>Q-124: Шта је Flask?</p>
 
             <li data-component="answer"  id="flask_pojam_opt_a">Пајтон библиотека за писање клијентских скриптова.</li><li data-component="feedback" id="flask_pojam_opt_a"></li>
             
@@ -591,7 +555,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="flask_instaliranje">
-            <p>Q-103: Шта је потребно да се уради да би се користила библиотека Flask?</p>
+            <p>Q-125: Шта је потребно да се уради да би се користила библиотека Flask?</p>
 
             <li data-component="answer" data-correct id="flask_instaliranje_opt_a">Да се инсталира одговарајући пакет и да се укључи библиотека на почетку програма.</li><li data-component="feedback" id="flask_instaliranje_opt_a"></li>
             
@@ -609,7 +573,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="flask_ip_adresa_127_0_0_0">
-            <p>Q-104: Када користимо IP адресу 127.0.0.1?</p>
+            <p>Q-126: Када користимо IP адресу 127.0.0.1?</p>
 
             <li data-component="answer" data-correct id="flask_ip_adresa_127_0_0_0_opt_a">Када преко интерет протокола приступамо истом рачунару са кога ту адресу и користимо.</li><li data-component="feedback" id="flask_ip_adresa_127_0_0_0_opt_a"></li>
             
@@ -627,7 +591,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="flask_rutiranje">
-            <p>Q-105: Шта је рутирање у Flask-у?</p>
+            <p>Q-127: Шта је рутирање у Flask-у?</p>
 
             <li data-component="answer"  id="flask_rutiranje_opt_a">Прослеђивање адресе клијента најближем рутеру.</li><li data-component="feedback" id="flask_rutiranje_opt_a"></li>
             
@@ -645,7 +609,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="flask_sabloni">
-            <p>Q-106: Шта је шаблон у Flask-у?</p>
+            <p>Q-128: Шта је шаблон у Flask-у?</p>
 
             <li data-component="answer" data-correct id="flask_sabloni_opt_a">Датотека са кодом налик на HTML, у који су уметнути параметри, служи као основа за генерисање веб страна.</li><li data-component="feedback" id="flask_sabloni_opt_a"></li>
             
@@ -663,7 +627,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="flask_slicni_sabloni">
-            <p>Q-107: Шта треба да урадимо ако приметимо да имамо велике, а сличне шаблоне у Flask пројекту?</p>
+            <p>Q-129: Шта треба да урадимо ако приметимо да имамо велике, а сличне шаблоне у Flask пројекту?</p>
 
             <li data-component="answer"  id="flask_slicni_sabloni_opt_a">Ништа (само да пазимо да их не помешамо)</li><li data-component="feedback" id="flask_slicni_sabloni_opt_a"></li>
             
@@ -681,7 +645,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="flask_url_for">
-            <p>Q-108: Зашто се у шаблонима за статичке фајлове користи функција url_for, уместо да се директно наведе релативна адреса до одговарајуће датотеке?</p>
+            <p>Q-130: Зашто се у шаблонима за статичке фајлове користи функција url_for, уместо да се директно наведе релативна адреса до одговарајуће датотеке?</p>
 
             <li data-component="answer" data-correct id="flask_url_for_opt_a">Зато што у тренутку писања шаблона не мора да буде позната локација HTML стране која ће настати употребом шаблона.</li><li data-component="feedback" id="flask_url_for_opt_a"></li>
             
@@ -699,7 +663,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="flask_get_post_link">
-            <p>Q-109: Када страници приступамо преко линка, која метода HTTP протокола се користи?</p>
+            <p>Q-131: Када страници приступамо преко линка, која метода HTTP протокола се користи?</p>
 
             <li data-component="answer"  id="flask_get_post_link_opt_a">Може да се користи било GET, било POST метод.</li><li data-component="feedback" id="flask_get_post_link_opt_a"></li>
             
@@ -719,7 +683,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="flask_get_post_dugacki_param">
-            <p>Q-110: Када веб серверу треба проследити параметре велике дужине (нпр. 20 килобајта), која метода HTTP протокола се користи?</p>
+            <p>Q-132: Када веб серверу треба проследити параметре велике дужине (нпр. 20 килобајта), која метода HTTP протокола се користи?</p>
 
             <li data-component="answer"  id="flask_get_post_dugacki_param_opt_a">Може да се користи било GET, било POST метод, о чему најчешће одлучује клијентски скрипт.</li><li data-component="feedback" id="flask_get_post_dugacki_param_opt_a"></li>
             
@@ -739,7 +703,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="flask_get_osobine">
-            <p>Q-111: Означи тачна тврђења о методу GET протокола HTTP.</p>
+            <p>Q-133: Означи тачна тврђења о методу GET протокола HTTP.</p>
 
             <li data-component="answer"  id="flask_get_osobine_opt_a">Параметри се шаљу у оквиру тела HTTP захтева.</li><li data-component="feedback" id="flask_get_osobine_opt_a"></li>
             
@@ -759,7 +723,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="flask_cookie">
-            <p>Q-112: Означи тачна тврђења о колачићима.</p>
+            <p>Q-134: Означи тачна тврђења о колачићима.</p>
 
             <li data-component="answer" data-correct id="flask_cookie_opt_a">Клијент у сваком тренутку може да обрише колачић, без обзира на раније дат пристанак за примање колачића.</li><li data-component="feedback" id="flask_cookie_opt_a"></li>
             
@@ -779,7 +743,7 @@
 
             <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="flask_session">
-            <p>Q-113: Означи тачна тврђења о сесијама.</p>
+            <p>Q-135: Означи тачна тврђења о сесијама.</p>
 
             <li data-component="answer"  id="flask_session_opt_a">Подаци о сесији се памте на клијенту.</li><li data-component="feedback" id="flask_session_opt_a"></li>
             
