@@ -215,10 +215,10 @@
 
 .. dbpetlja:: db_ugnezdjeni_upiti_01
    :dbfile: dnevnik.sql
-   :showresult:
    :solutionquery: SELECT razred, odeljenje, MAX(prosek)
                    FROM (SELECT razred, odeljenje, id_ucenik, ROUND(AVG(ocena), 2) AS prosek
                          FROM ucenik u JOIN
                               ocena o ON u.id = o.id_ucenik
                          GROUP BY u.id)
                    GROUP BY razred, odeljenje
+   :showresult: 

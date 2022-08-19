@@ -169,11 +169,15 @@ lessons:
         title: Функције
         file: 02_citanje_03b_funkcije.rst
         guid: 5ce6c3d2-c316-4ddc-9b37-ac1613512bd3
+      - type: quiz
+        title: Изрази и функције - квиз
+        file: 02_citanje_03c_izr_fun_kviz.rst
+        guid: 6iqCfXUxRUG/62JwKzTU8A==       
       - type: reading
         title: Изрази и функције - задаци (дневник)
         file: 02_citanje_03d_izr_fun_zadaci_skola.rst
         guid: df85e68d-1e53-4a7e-b536-8656dd57e46b
- 
+
 
   - title: "2.4 SQL: Сортирање, уклањање дупликата, ограничавање броја врста"
     guid: f1f704a8-5d37-4c30-baa8-15a94f0dbd10
@@ -360,31 +364,43 @@ lessons:
         guid: ffd323cf-842b-4a03-a5e4-66f08e36b94b
 
 
-### СЕКЦИЈА Računarske mreže
+### СЕКЦИЈА РАЧУНАРСКЕ МРЕЖЕ
   - title: "4.0 Рачунарске мреже"
     guid: 0eb2a0ec-d038-42b7-a30f-e4ef41be3cfd
     folder: 04_racunarske_mreze
     activities:
       - type: reading
-        title: 4.1 Рачунарске мреже
-        file: 04_mreze_01a_pojam_racunarske_mreze.rst
+        title: 4.1 Рачунарске мреже и интернет
+        file: 04_mreze_01a_racunarske_mreze_i_internet.rst
         guid: 3464bc77-999c-4b84-a156-4ac56eb05feb
       - type: reading
-        title: 4.2 Мрежни хардвер и мрежни софтвер
-        file: 04_mreze_01b_mrezni_hardver_i_softver.rst
+        title: 4.2 Мрежни уређаји
+        file: 04_mreze_01b_mrezni_uredjaji.rst
         guid: f73273cc-603e-42f2-bca0-28b3268a3800
       - type: reading
-        title: 4.3 Повезивање и постављање кућне мреже
-        file: 04_mreze_01c_povezivanje_i_postavljanje_mreze.rst
+        title: 4.3 Адресе
+        file: 04_mreze_01c_adrese.rst
         guid: b57c6af0-7b6d-41a1-b190-649caa8bc192
+      - type: reading
+        title: Мрежни слојеви и протоколи
+        file: 04_mreze_01e_mrezni_slojevi_i_protokoli.rst
+        guid: bece5c6d-e08e-4ffd-bde7-1880e9f844f9
+      - type: reading
+        title: Статичке веб-стране HTML/CSS
+        file: 04_mreze_01f_staticke_veb_strane.rst
+        guid: yLZ+5OxVGUuPFqgbTCDETw==
+      - type: reading
+        title: Дизајн веб-стране - CSS
+        file: 04_mreze_01g_dizajn_veb_strane_css.rst
+        guid: xeOLc4Rp50S19Lisep8izg==
+      - type: reading
+        title: Креирање веб-сајта
+        file: 04_mreze_01h_kreiranje_veb_sajta.rst
+        guid: A9gZtu+H6UCavAU89JNUYw==
       - type: quiz
         title: 4.4 Рачунарске мреже - квиз
         file: 04_mreze_01d_kviz.rst
         guid: 5f7b7336-ba9e-4495-9fcd-717c46733085
-      - type: reading
-        title: "4.5 Додатак: мрежни слојеви и протоколи, детаљније"
-        file: 04_mreze_01e_mrezni_slojevi.rst
-        guid: bece5c6d-e08e-4ffd-bde7-1880e9f844f9
 
         
 ### СЕКЦИЈА Flask
