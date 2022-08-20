@@ -370,15 +370,15 @@ lessons:
     folder: 04_racunarske_mreze
     activities:
       - type: reading
-        title: 4.1 Рачунарске мреже и интернет
+        title: Рачунарске мреже и интернет
         file: 04_mreze_01a_racunarske_mreze_i_internet.rst
         guid: 3464bc77-999c-4b84-a156-4ac56eb05feb
       - type: reading
-        title: 4.2 Мрежни уређаји
+        title: Мрежни уређаји
         file: 04_mreze_01b_mrezni_uredjaji.rst
         guid: f73273cc-603e-42f2-bca0-28b3268a3800
       - type: reading
-        title: 4.3 Адресе
+        title: Адресе
         file: 04_mreze_01c_adrese.rst
         guid: b57c6af0-7b6d-41a1-b190-649caa8bc192
       - type: reading
@@ -398,7 +398,7 @@ lessons:
         file: 04_mreze_01h_kreiranje_veb_sajta.rst
         guid: A9gZtu+H6UCavAU89JNUYw==
       - type: quiz
-        title: 4.4 Рачунарске мреже - квиз
+        title: Рачунарске мреже - квиз
         file: 04_mreze_01d_kviz.rst
         guid: 5f7b7336-ba9e-4495-9fcd-717c46733085
 

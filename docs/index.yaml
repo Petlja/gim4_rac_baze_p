@@ -181,12 +181,6 @@ lessons:
     src: 02_citanje_01d_proj_restr_zadaci_skola.rst
     title: Пројекција и селекција - задаци (дневник)
     type: reading
-  - description: ''
-    file: 02_citanje_01e_proj_restr_zadaci_muzika.html
-    guid: 0035d4fe-7f2c-4bce-b835-82a13e51cb33
-    src: 02_citanje_01e_proj_restr_zadaci_muzika.rst
-    title: Пројекција и селекција - задаци (музика)
-    type: reading
   archived-activities: []
   description: ''
   folder: 02_citanje_podataka_01_projekcija_restrikcija
@@ -218,12 +212,6 @@ lessons:
     src: 02_citanje_02d_operatori_zadaci_skola.rst
     title: Оператори - задаци (дневник)
     type: reading
-  - description: ''
-    file: 02_citanje_02e_operatori_zadaci_muzika.html
-    guid: 21bb4ab3-5c49-46ff-b084-6d2771ab5327
-    src: 02_citanje_02e_operatori_zadaci_muzika.rst
-    title: Оператори - задаци (музика)
-    type: reading
   archived-activities: []
   description: ''
   folder: 02_citanje_podataka_02_operatori
@@ -245,7 +233,7 @@ lessons:
     type: reading
   - description: ''
     file: 02_citanje_03c_izr_fun_kviz.html
-    guid: 92ac269f-bb47-4b2a-856d-f080ad8d8a17
+    guid: 6iqCfXUxRUG/62JwKzTU8A==
     src: 02_citanje_03c_izr_fun_kviz.rst
     title: Изрази и функције - квиз
     type: quiz
@@ -255,18 +243,12 @@ lessons:
     src: 02_citanje_03d_izr_fun_zadaci_skola.rst
     title: Изрази и функције - задаци (дневник)
     type: reading
-  - description: ''
-    file: 02_citanje_03e_izr_fun_zadaci_muzika.html
-    guid: 07d3318c-2fda-4f8a-b6d0-9c31285d6544
-    src: 02_citanje_03e_izr_fun_zadaci_muzika.rst
-    title: Изрази и функције - задаци (музика)
-    type: reading
   archived-activities: []
   description: ''
   folder: 02_citanje_podataka_03_izrazi_funkcije
   guid: 5e3c70de-36af-4d83-b3ab-bc97aae31adb
-  normalized_title: 2.3 SQL Изрази и функције
-  title: '2.3 SQL: Изрази и функције'
+  normalized_title: 2.3 SQL Изрази и функције - Додатно
+  title: '2.3 SQL: Изрази и функције - Додатно'
 - activities:
   - description: ''
     file: 02_citanje_04a_sortiranje.html
@@ -297,12 +279,6 @@ lessons:
     guid: 02b0323d-a82f-465e-a379-2c75d659b9a5
     src: 02_citanje_04e_sort_ogr_zadaci_skola.rst
     title: Сортирање и ограничавање - задаци (дневник)
-    type: reading
-  - description: ''
-    file: 02_citanje_04f_sort_ogr_zadaci_muzika.html
-    guid: 00aac1de-669b-4f4f-813d-8d40bad9d41d
-    src: 02_citanje_04f_sort_ogr_zadaci_muzika.rst
-    title: Сортирање и ограничавање - задаци (музика)
     type: reading
   archived-activities: []
   description: ''
@@ -340,12 +316,6 @@ lessons:
     guid: 86b92d7a-5be9-4af8-9e60-9ad7abd28b13
     src: 02_citanje_05e_agregatne_zadaci_skola.rst
     title: Агрегатне функције и груписање - задаци (дневник)
-    type: reading
-  - description: ''
-    file: 02_citanje_05f_agregatne_zadaci_muzika.html
-    guid: fb620597-1bee-4b50-a803-7c1f4767a09d
-    src: 02_citanje_05f_agregatne_zadaci_muzika.rst
-    title: Агрегатне функције и груписање - задаци (музика)
     type: reading
   archived-activities: []
   description: ''
@@ -390,12 +360,6 @@ lessons:
     src: 02_citanje_06f_spajanje_zadaci_skola.rst
     title: Спајање - задаци (дневник)
     type: reading
-  - description: ''
-    file: 02_citanje_06g_spajanje_zadaci_muzika.html
-    guid: 2dd25213-5056-4713-93db-e5e871db32ca
-    src: 02_citanje_06g_spajanje_zadaci_muzika.rst
-    title: Спајање - задаци (музика)
-    type: reading
   archived-activities: []
   description: ''
   folder: 02_citanje_podataka_06_spajanje
@@ -410,18 +374,6 @@ lessons:
     title: Угнежђени упити
     type: reading
   - description: ''
-    file: 02_citanje_07b_korelisani_podupiti.html
-    guid: 432ec19b-8cf7-4675-ae10-083933890ed1
-    src: 02_citanje_07b_korelisani_podupiti.rst
-    title: Корелисани подупити
-    type: reading
-  - description: ''
-    file: 02_citanje_07c_provera_postojanja.html
-    guid: 51df3cec-1076-467a-bc9c-0eb45c40dd59
-    src: 02_citanje_07c_provera_postojanja.rst
-    title: Провера постојања
-    type: reading
-  - description: ''
     file: 02_citanje_07d_ugnezdjeni_kviz.html
     guid: 9fe307aa-2dfe-4599-a344-55ee26746186
     src: 02_citanje_07d_ugnezdjeni_kviz.rst
@@ -433,18 +385,31 @@ lessons:
     src: 02_citanje_07e_ugnezdjeni_zadaci_skola.rst
     title: Угнежђени упити - задаци (дневник)
     type: reading
-  - description: ''
-    file: 02_citanje_07f_ugnezdjeni_zadaci_muzika.html
-    guid: d61e4960-55e4-423f-916b-390612aa197a
-    src: 02_citanje_07f_ugnezdjeni_zadaci_muzika.rst
-    title: Угнежђени упити - задаци (музика)
-    type: reading
   archived-activities: []
   description: ''
   folder: 02_citanje_podataka_07_ugnezdjeni_upiti
   guid: b9fa3311-1b8c-4a6b-92f8-fa44d376d7e2
   normalized_title: 2.7 SQL Угнежђени упити
   title: '2.7 SQL: Угнежђени упити'
+- activities:
+  - description: ''
+    file: 02_citanje_07b_korelisani_podupiti.html
+    guid: 432ec19b-8cf7-4675-ae10-083933890ed1
+    src: 02_citanje_07b_korelisani_podupiti.rst
+    title: Корелисани подупити
+    type: reading
+  - description: ''
+    file: 02_citanje_07c_provera_postojanja.html
+    guid: 51df3cec-1076-467a-bc9c-0eb45c40dd59
+    src: 02_citanje_07c_provera_postojanja.rst
+    title: Провера постојања
+    type: reading
+  archived-activities: []
+  description: ''
+  folder: 02_citanje_podataka_08_napredni_upiti
+  guid: f49bddca-0f46-42f6-ad4c-2a575231c8da
+  normalized_title: 2.8 SQL Сложенији угњеждени упити - Додатно
+  title: '2.8 SQL: Сложенији угњеждени упити - Додатно'
 - activities:
   - description: ''
     file: 02_citanje_08a_pogledi.html
@@ -466,10 +431,10 @@ lessons:
     type: reading
   archived-activities: []
   description: ''
-  folder: 02_citanje_podataka_08_pogledi
+  folder: 02_citanje_podataka_09_pogledi
   guid: 2567b15f-97b6-4596-9ff4-8618c7706f93
-  normalized_title: 2.8 SQL Погледи
-  title: '2.8 SQL: Погледи'
+  normalized_title: 2.9 SQL Погледи
+  title: '2.9 SQL: Погледи'
 - activities:
   - description: ''
     file: 03_izmene_00a_uvod.html
@@ -548,249 +513,218 @@ lessons:
   title: '3.3 SQL: Брисање података из табела'
 - activities:
   - description: ''
-    file: 04_python_sqlite_01a_uvod.html
-    guid: fc3cdc65-e16a-45f9-a716-432d11e8773d
-    src: 04_python_sqlite_01a_uvod.rst
-    title: 4.1 Python SQLite API - увод
-    type: reading
-  - description: ''
-    file: 04_python_sqlite_01b_povezivanje.html
-    guid: a56df623-e387-4ca8-ae8c-ec99937d4a69
-    src: 04_python_sqlite_01b_povezivanje.rst
-    title: 4.2 Повезивање са базом
-    type: reading
-  - description: ''
-    file: 04_python_sqlite_01c_postavljanje_upita.html
-    guid: 239c0083-8c4a-426e-9ac1-b9ee3e1824ca
-    src: 04_python_sqlite_01c_postavljanje_upita.rst
-    title: 4.3 Постављање упита
-    type: reading
-  - description: ''
-    file: 04_python_sqlite_01d_upiti_sa_parametrima.html
-    guid: 41581677-98cd-4b4e-9e8a-e7f4c54a782c
-    src: 04_python_sqlite_01d_upiti_sa_parametrima.rst
-    title: 4.4 Упити са параметрима
-    type: reading
-  - description: ''
-    file: 04_python_sqlite_01e_kolacione_sekvence.html
-    guid: e797e25b-ee9f-4595-b8b4-d5fa1441e703
-    src: 04_python_sqlite_01e_kolacione_sekvence.rst
-    title: 4.5 Колационе секвенце
-    type: reading
-  - description: ''
-    file: 04_python_sqlite_01f_pomocne_funkcije.html
-    guid: 4408ab43-0efa-4bd6-a330-65f6cd053c42
-    src: 04_python_sqlite_01f_pomocne_funkcije.rst
-    title: 4.6 Дефинисање помоћних функција
-    type: reading
-  - description: ''
-    file: 04_python_sqlite_01g_kviz.html
-    guid: 2725662f-8188-430e-af75-dc4d9b701d4c
-    src: 04_python_sqlite_01g_kviz.rst
-    title: 4.7 Python SQLite API - квиз
-    type: quiz
-  archived-activities: []
-  description: ''
-  folder: 04_python_sqlite
-  guid: c94e776e-36e8-452d-8d12-5086106018e9
-  normalized_title: 4.0 Python SQLite API
-  title: 4.0 Python SQLite API
-- activities:
-  - description: ''
-    file: 05_mreze_01a_pojam_racunarske_mreze.html
+    file: 04_mreze_01a_racunarske_mreze_i_internet.html
     guid: 3464bc77-999c-4b84-a156-4ac56eb05feb
-    src: 05_mreze_01a_pojam_racunarske_mreze.rst
-    title: 5.1 Рачунарске мреже
+    src: 04_mreze_01a_racunarske_mreze_i_internet.rst
+    title: Рачунарске мреже и интернет
     type: reading
   - description: ''
-    file: 05_mreze_01b_mrezni_hardver_i_softver.html
+    file: 04_mreze_01b_mrezni_uredjaji.html
     guid: f73273cc-603e-42f2-bca0-28b3268a3800
-    src: 05_mreze_01b_mrezni_hardver_i_softver.rst
-    title: 5.2 Мрежни хардвер и мрежни софтвер
+    src: 04_mreze_01b_mrezni_uredjaji.rst
+    title: Мрежни уређаји
     type: reading
   - description: ''
-    file: 05_mreze_01c_povezivanje_i_postavljanje_mreze.html
+    file: 04_mreze_01c_adrese.html
     guid: b57c6af0-7b6d-41a1-b190-649caa8bc192
-    src: 05_mreze_01c_povezivanje_i_postavljanje_mreze.rst
-    title: 5.3 Повезивање и постављање кућне мреже
+    src: 04_mreze_01c_adrese.rst
+    title: Адресе
     type: reading
   - description: ''
-    file: 05_mreze_01d_kviz.html
-    guid: 5f7b7336-ba9e-4495-9fcd-717c46733085
-    src: 05_mreze_01d_kviz.rst
-    title: 5.4 Рачунарске мреже - квиз
-    type: quiz
-  - description: ''
-    file: 05_mreze_01e_mrezni_slojevi.html
+    file: 04_mreze_01e_mrezni_slojevi_i_protokoli.html
     guid: bece5c6d-e08e-4ffd-bde7-1880e9f844f9
-    src: 05_mreze_01e_mrezni_slojevi.rst
-    title: '5.5 Додатак: мрежни слојеви и протоколи, детаљније'
+    src: 04_mreze_01e_mrezni_slojevi_i_protokoli.rst
+    title: Мрежни слојеви и протоколи
     type: reading
+  - description: ''
+    file: 04_mreze_01f_staticke_veb_strane.html
+    guid: yLZ+5OxVGUuPFqgbTCDETw==
+    src: 04_mreze_01f_staticke_veb_strane.rst
+    title: Статичке веб-стране HTML/CSS
+    type: reading
+  - description: ''
+    file: 04_mreze_01g_dizajn_veb_strane_css.html
+    guid: xeOLc4Rp50S19Lisep8izg==
+    src: 04_mreze_01g_dizajn_veb_strane_css.rst
+    title: Дизајн веб-стране - CSS
+    type: reading
+  - description: ''
+    file: 04_mreze_01h_kreiranje_veb_sajta.html
+    guid: A9gZtu+H6UCavAU89JNUYw==
+    src: 04_mreze_01h_kreiranje_veb_sajta.rst
+    title: Креирање веб-сајта
+    type: reading
+  - description: ''
+    file: 04_mreze_01d_kviz.html
+    guid: 5f7b7336-ba9e-4495-9fcd-717c46733085
+    src: 04_mreze_01d_kviz.rst
+    title: Рачунарске мреже - квиз
+    type: quiz
   archived-activities: []
   description: ''
-  folder: 05_racunarske_mreze
+  folder: 04_racunarske_mreze
   guid: 0eb2a0ec-d038-42b7-a30f-e4ef41be3cfd
-  normalized_title: 5.0 Рачунарске мреже
-  title: 5.0 Рачунарске мреже
+  normalized_title: 4.0 Рачунарске мреже
+  title: 4.0 Рачунарске мреже
 - activities:
   - description: ''
-    file: 06_veb_ap_00a_uvod.html
+    file: 05_veb_ap_00a_uvod.html
     guid: 34a122ff-097e-4289-bd11-27e5d69e794c
-    src: 06_veb_ap_00a_uvod.rst
+    src: 05_veb_ap_00a_uvod.rst
     title: Веб-апликације - увод
     type: reading
   - description: ''
-    file: 06_veb_ap_00b_http_zahtevi.html
+    file: 05_veb_ap_00b_http_zahtevi.html
     guid: 7785bbe6-08f1-4b77-b95f-1e825301e355
-    src: 06_veb_ap_00b_http_zahtevi.rst
+    src: 05_veb_ap_00b_http_zahtevi.rst
     title: Протокол HTTP
     type: reading
   - description: ''
-    file: 06_veb_ap_00c_http_kviz.html
+    file: 05_veb_ap_00c_http_kviz.html
     guid: 1858e7f5-96d2-4f66-b531-05d4f6afcab1
-    src: 06_veb_ap_00c_http_kviz.rst
+    src: 05_veb_ap_00c_http_kviz.rst
     title: Протокол HTTP - квиз
     type: quiz
   archived-activities: []
   description: ''
-  folder: 06_serverske_veb_aplikacije_00_uvod
+  folder: 05_serverske_veb_aplikacije_00_uvod
   guid: 625ae3ea-40d7-4d46-8512-fccc74050597
-  normalized_title: 6.0 Серверско веб-програмирање
-  title: 6.0 Серверско веб-програмирање
+  normalized_title: 5.0 Серверско веб-програмирање
+  title: 5.0 Серверско веб-програмирање
 - activities:
   - description: ''
-    file: 06_veb_ap_01a_flask_uvod.html
+    file: 05_veb_ap_01a_flask_uvod.html
     guid: f0ea5ca8-a012-4142-b689-4e1c59825c50
-    src: 06_veb_ap_01a_flask_uvod.rst
+    src: 05_veb_ap_01a_flask_uvod.rst
     title: Библиотека Flask - увод
     type: reading
   - description: ''
-    file: 06_veb_ap_01b_flask_prvi_program.html
+    file: 05_veb_ap_01b_flask_prvi_program.html
     guid: d5387ecb-837c-4719-8d22-fd30764d0434
-    src: 06_veb_ap_01b_flask_prvi_program.rst
+    src: 05_veb_ap_01b_flask_prvi_program.rst
     title: Библиотека Flask - први програм, путање
     type: reading
   - description: ''
-    file: 06_veb_ap_01c_flask_sabloni.html
+    file: 05_veb_ap_01c_flask_sabloni.html
     guid: 4e988ce0-d217-4b23-871c-0320c094c76f
-    src: 06_veb_ap_01c_flask_sabloni.rst
+    src: 05_veb_ap_01c_flask_sabloni.rst
     title: Библиотека Flask - шаблони
     type: reading
   - description: ''
-    file: 06_veb_ap_01d_flask_staticke_datoteke.html
+    file: 05_veb_ap_01d_flask_staticke_datoteke.html
     guid: 8a3021fe-37f1-4f8f-b025-5f7d636ebacd
-    src: 06_veb_ap_01d_flask_staticke_datoteke.rst
+    src: 05_veb_ap_01d_flask_staticke_datoteke.rst
     title: Библиотека Flask - пратеће статичке датотеке и линкови унутар веб-апликације
     type: reading
   - description: ''
-    file: 06_veb_ap_01e_flask_parametri_get.html
+    file: 05_veb_ap_01e_flask_parametri_get.html
     guid: 7624ef28-0ed6-4498-a6ba-0e3dd528fdce
-    src: 06_veb_ap_01e_flask_parametri_get.rst
+    src: 05_veb_ap_01e_flask_parametri_get.rst
     title: Библиотека Flask - Метода GET
     type: reading
   - description: ''
-    file: 06_veb_ap_01f_flask_parametri_post.html
+    file: 05_veb_ap_01f_flask_parametri_post.html
     guid: 9f4f163c-eb3f-4276-ac9f-0e6d56ad60ae
-    src: 06_veb_ap_01f_flask_parametri_post.rst
+    src: 05_veb_ap_01f_flask_parametri_post.rst
     title: Библиотека Flask - Метода POST
     type: reading
   - description: ''
-    file: 06_veb_ap_01g_flask_parametri_rutiranje.html
+    file: 05_veb_ap_01g_flask_parametri_rutiranje.html
     guid: 1e7d3ba9-64e7-40fc-9436-8027d3a40aac
-    src: 06_veb_ap_01g_flask_parametri_rutiranje.rst
+    src: 05_veb_ap_01g_flask_parametri_rutiranje.rst
     title: Библиотека Flask - путање са параметрима
     type: reading
   - description: ''
-    file: 06_veb_ap_01h_flask_kolacici.html
+    file: 05_veb_ap_01h_flask_kolacici.html
     guid: b2f2e885-b34c-4427-af5e-33740504d684
-    src: 06_veb_ap_01h_flask_kolacici.rst
+    src: 05_veb_ap_01h_flask_kolacici.rst
     title: Библиотека Flask - колачићи
     type: reading
   - description: ''
-    file: 06_veb_ap_01i_flask_sesije.html
+    file: 05_veb_ap_01i_flask_sesije.html
     guid: f565976d-3b38-49c1-8529-cf53433509f9
-    src: 06_veb_ap_01i_flask_sesije.rst
+    src: 05_veb_ap_01i_flask_sesije.rst
     title: Библиотека Flask - сесије
     type: reading
   - description: ''
-    file: 06_veb_ap_01j_flask_kviz.html
+    file: 05_veb_ap_01j_flask_kviz.html
     guid: d99d4b14-4e5c-48c0-9e2f-2d85569cfe34
-    src: 06_veb_ap_01j_flask_kviz.rst
+    src: 05_veb_ap_01j_flask_kviz.rst
     title: Библиотека Flask - квиз
     type: quiz
   archived-activities: []
   description: ''
-  folder: 06_serverske_veb_aplikacije_01_flask
+  folder: 05_serverske_veb_aplikacije_01_flask
   guid: 453b61a9-27e3-4ccb-9868-ad3143daea52
-  normalized_title: 6.1 Библиотека Flask - основни појмови
-  title: 6.1 Библиотека Flask - основни појмови
+  normalized_title: 5.1 Библиотека Flask - основни појмови
+  title: 5.1 Библиотека Flask - основни појмови
 - activities:
   - description: ''
-    file: 06_veb_ap_02a_povezivanje_i_osnovni_upiti.html
+    file: 05_veb_ap_02a_povezivanje_i_osnovni_upiti.html
     guid: 67cb551d-6234-40b3-8f14-4b36519ceaaf
-    src: 06_veb_ap_02a_povezivanje_i_osnovni_upiti.rst
+    src: 05_veb_ap_02a_povezivanje_i_osnovni_upiti.rst
     title: Повезивање са базом и постављање упита
     type: reading
   - description: ''
-    file: 06_veb_ap_02b_prenos_argumenata_upita.html
+    file: 05_veb_ap_02b_prenos_argumenata_upita.html
     guid: 0ac7a838-4a75-40ff-b219-0b4adb162b9e
-    src: 06_veb_ap_02b_prenos_argumenata_upita.rst
+    src: 05_veb_ap_02b_prenos_argumenata_upita.rst
     title: Пренос параметара упита
     type: reading
   - description: ''
-    file: 06_veb_ap_02c_formulari_i_baze.html
+    file: 05_veb_ap_02c_formulari_i_baze.html
     guid: a32d6322-a8d5-4b2a-9ea2-8f109899fbe8
-    src: 06_veb_ap_02c_formulari_i_baze.rst
+    src: 05_veb_ap_02c_formulari_i_baze.rst
     title: Формулари и упити
     type: reading
   - description: ''
-    file: 06_veb_ap_02d_upis_u_bazu.html
+    file: 05_veb_ap_02d_upis_u_bazu.html
     guid: d69808d3-599f-4580-998b-d64df71502a4
-    src: 06_veb_ap_02d_upis_u_bazu.rst
+    src: 05_veb_ap_02d_upis_u_bazu.rst
     title: Упис података у базу
     type: reading
   - description: ''
-    file: 06_veb_ap_02e_flesovane_poruke.html
+    file: 05_veb_ap_02e_flesovane_poruke.html
     guid: 4d8856f1-b73e-45a6-98e5-7ab96d0fbfcf
-    src: 06_veb_ap_02e_flesovane_poruke.rst
+    src: 05_veb_ap_02e_flesovane_poruke.rst
     title: Флешоване поруке
     type: reading
   - description: ''
-    file: 06_veb_ap_02f_validacija_formulara.html
+    file: 05_veb_ap_02f_validacija_formulara.html
     guid: 33148d53-ff5a-4e86-af4f-2c03a4948d76
-    src: 06_veb_ap_02f_validacija_formulara.rst
+    src: 05_veb_ap_02f_validacija_formulara.rst
     title: Валидација података унетих у формулар
     type: reading
   - description: ''
-    file: 06_veb_ap_02g_baze_i_ajax.html
+    file: 05_veb_ap_02g_baze_i_ajax.html
     guid: ff6691b9-e045-48e1-b645-e23cbef6b4ec
-    src: 06_veb_ap_02g_baze_i_ajax.rst
+    src: 05_veb_ap_02g_baze_i_ajax.rst
     title: AJAX
     type: reading
   archived-activities: []
   description: ''
-  folder: 06_serverske_veb_aplikacije_02_baze
+  folder: 05_serverske_veb_aplikacije_02_baze
   guid: 0d2c244b-ca2c-474b-b586-61b4ba200038
-  normalized_title: 6.2 Библиотека Flask - повезивање са базом података
-  title: 6.2 Библиотека Flask - повезивање са базом података
+  normalized_title: 5.2 Библиотека Flask - повезивање са базом података
+  title: 5.2 Библиотека Flask - повезивање са базом података
 - activities:
   - description: ''
-    file: 07_projekat_01b_uvod.html
+    file: 06_projekat_01b_uvod.html
     guid: 69ce8159-5dc7-4198-a928-b337eb942798
-    src: 07_projekat_01b_uvod.rst
+    src: 06_projekat_01b_uvod.rst
     title: О пројектном задатку
     type: reading
   - description: ''
-    file: 07_projekat_01a_registracija_i_logovanje.html
+    file: 06_projekat_01a_registracija_i_logovanje.html
     guid: e279469e-e31c-41c9-8df8-227de0cdb002
-    src: 07_projekat_01a_registracija_i_logovanje.rst
+    src: 06_projekat_01a_registracija_i_logovanje.rst
     title: Регистрација корисника и логовање
     type: reading
   archived-activities: []
   description: ''
-  folder: 07_projekat
+  folder: 06_projekat
   guid: a31afe76-871b-4578-91df-d79a067fde45
-  normalized_title: 7.0 Библиотека Flask - пројектни задатак
-  title: 7.0 Библиотека Flask - пројектни задатак
+  normalized_title: 6.0 Библиотека Flask - пројектни задатак
+  title: 6.0 Библиотека Flask - пројектни задатак
 title: Базе података, рачунарске мреже и серверско веб програмирање за четврти разред
   гимназије природни смер

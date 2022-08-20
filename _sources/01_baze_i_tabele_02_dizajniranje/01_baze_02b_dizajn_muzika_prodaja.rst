@@ -132,7 +132,7 @@
 Дизајн базе до којег смо дошли може да се прикаже и следећим дијаграмом:
 
 .. image:: ../../_images/erd-muzika-prodaja.png
-   :width: 800
+   :width: 780
    :align: center
    :alt: Дијаграм базе
 
