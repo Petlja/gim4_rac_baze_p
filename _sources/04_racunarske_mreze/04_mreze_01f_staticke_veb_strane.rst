@@ -91,7 +91,7 @@ Chrome.
 
 Фајл за рад можеш да преузмеш овде:
 
-`strana1_mrezni_slojevi_protokoli.txt <strana1_mrezni_slojevi_protokoli.txt>`_
+`strana1_mrezni_slojevi_protokoli.txt <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/strana1_mrezni_slojevi_protokoli.txt>`_
 
 Преузети фајл сачувати у другом формату да бисмо могли од њега да добијемо
 веб-страницу. У едитору текста изабрати са менија ``File/Save As...``, а затим

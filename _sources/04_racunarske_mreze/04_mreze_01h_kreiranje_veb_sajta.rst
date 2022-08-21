@@ -46,11 +46,11 @@
 
  У фолдер са сликама додати и слике које можеш да преузмеш овде:
 
- `pocetna_slika1.jpg <pocetna_slika1.jpg>`_  
+ `pocetna_slika1.jpg <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/pocetna_slika1.jpg>`_  
 
- `pocetna_slika2.jpg <pocetna_slika2.jpg>`_
+ `pocetna_slika2.jpg <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/pocetna_slika2.jpg>`_
 
- `pocetna_slika3.jpg <pocetna_slika3.jpg>`_
+ `pocetna_slika3.jpg <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/pocetna_slika3.jpg>`_
 
  .. image:: ../../_images/Picture20.png
     :width: 780px
@@ -58,11 +58,11 @@
 
  У фолдер ставити и следеће фајлове које можеш да преузмеш овде:
 
- `pocetna_racunarske_mreze.txt <pocetna_racunarske_mreze.txt>`_
+ `pocetna_racunarske_mreze.txt <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/pocetna_racunarske_mreze.txt>`_
 
- `strana2_adrese.txt <strana2_adrese.txt>`_
+ `strana2_adrese.txt <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/strana2_adrese.txt>`_
 
- `strana3_detaljnije_mrezni_slojevi_protokoli.txt <strana3_detaljnije_mrezni_slojevi_protokoli.txt>`_
+ `strana3_detaljnije_mrezni_slojevi_protokoli.txt <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/strana3_detaljnije_mrezni_slojevi_protokoli.txt>`_
 
  Сваки од ова три фајла отворити у едитору текста, а затим урадити
  File/Save As...

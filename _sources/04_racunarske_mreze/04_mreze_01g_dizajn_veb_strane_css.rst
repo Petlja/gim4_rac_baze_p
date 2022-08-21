@@ -91,9 +91,9 @@
 
  У исти фолдер ставити и слике које можеш да преузмеш овде:
 
- `strana1_slika1.jpg  <strana1_slika1.jpg>`_
+ `strana1_slika1.jpg  <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/strana1_slika1.jpg>`_
 
- `strana1_slika2.jpg <strana1_slika2.jpg>`_
+ `strana1_slika2.jpg <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/strana1_slika2.jpg>`_
 
  Креирати у истом фолдеру и документ ``dizajn.css`` како је управо описано.
 
