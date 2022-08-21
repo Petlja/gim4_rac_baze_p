@@ -6,7 +6,6 @@
     <title>Уклањање дупликата (DISTINCT)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -539,8 +537,8 @@
 <p>Приказати сва различита имена ученика (без понављања).</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">ime</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">ime</span>
+<span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -569,9 +567,9 @@
 </table>
 <p>Ако бисмо желели да имена буду сортирана по азбучном реду, додали
 бисмо клаузулу <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code>.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">ime</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">ime</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">ime</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -610,9 +608,9 @@
 <p>Приказати сва различита женска имена ученица школе.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">ime</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">pol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ж&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">ime</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">pol</span> <span class="o">=</span> <span class="s1">&#39;ж&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -652,9 +650,9 @@
 има изостанке.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">datum</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">datum</span>
+<span class="k">FROM</span> <span class="n">izostanak</span>
+<span class="k">WHERE</span> <span class="n">id_ucenik</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -692,8 +690,8 @@
 <p>Приказати сва одељења у школи.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span>
+<span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>

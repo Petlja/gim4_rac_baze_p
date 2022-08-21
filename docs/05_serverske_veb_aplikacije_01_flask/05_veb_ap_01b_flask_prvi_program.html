@@ -6,7 +6,6 @@
     <title>Први програм</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -569,7 +567,7 @@
   <span class="n">WARNING</span><span class="p">:</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">development</span> <span class="n">server</span><span class="o">.</span> <span class="n">Do</span> <span class="ow">not</span> <span class="n">use</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">production</span> <span class="n">deployment</span><span class="o">.</span>
   <span class="n">Use</span> <span class="n">a</span> <span class="n">production</span> <span class="n">WSGI</span> <span class="n">server</span> <span class="n">instead</span><span class="o">.</span>
 <span class="o">*</span> <span class="n">Debug</span> <span class="n">mode</span><span class="p">:</span> <span class="n">off</span>
-<span class="o">*</span> <span class="n">Running</span> <span class="n">on</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span> <span class="p">(</span><span class="n">Press</span> <span class="n">CTRL</span><span class="o">+</span><span class="n">C</span> <span class="n">to</span> <span class="n">quit</span><span class="p">)</span>
+<span class="o">*</span> <span class="n">Running</span> <span class="n">on</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span> <span class="p">(</span><span class="n">Press</span> <span class="n">CTRL</span><span class="o">+</span><span class="n">C</span> <span class="n">to</span> <span class="n">quit</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>То значи да је наша апликација покренута на локалном рачунару и да јој се може приступити из прегледача веба,
@@ -594,7 +592,7 @@
         <div class="note-icon-holder"> </div>
         <img src="../_static/img/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
         <div class="course-content">
-            
+            <p>
 <p><strong>Ко жели да зна више…</strong></p>
 <p>IP адреса <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> је специјална и
 означава локални рачунар. Ту IP адресу користимо када се веб-сервер
@@ -612,7 +610,7 @@
 80 и исто тако постоји подразумеван порт за друге протоколе. Веб сервери који су јавно доступни
 обично користе подразумеване портове да би URL био једноставнији.</p>
 
-    </div></div>
+    </p></div></div>
 <div class="section" id="id2">
 <h2>Објашњење првог програма, путање и рутирање<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Анализирајмо сада програмски кôд ове једноставне апликације. Напоменимо да је назив <code class="docutils literal notranslate"><span class="pre">app.py</span></code> подразумеван назив
@@ -711,11 +709,7 @@ Flask апликација ће почињати кодом следећег о�
 <p>На следећој слици можемо да видимо како ово изгледа у прегледачу.</p>
 <a class="reference internal image-reference" href="../_images/flask_10g.png"><img alt="../_images/flask_10g.png" class="align-center" src="../_images/flask_10g.png" style="width: 780px;" /></a>
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="01_flask_rutiranje">
             <p>Q-117: Којом декорацијом треба декорисати функцију која ће се позвати када
 се унесе URL <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/about</span></code>?</p>
@@ -732,11 +726,7 @@ Flask апликација ће почињати кодом следећег о�
             </ul>
             </div>
             
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="01_flask_funkcije">
             <p>Q-118: Функције које одговарају на HTTP захтеве враћају:</p>
 

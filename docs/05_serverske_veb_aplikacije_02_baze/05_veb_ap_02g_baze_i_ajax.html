@@ -6,7 +6,6 @@
     <title>AJAX</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -565,9 +563,9 @@
     <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Artists&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">      </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+      <span class="p">});</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
@@ -611,35 +609,35 @@
 <p>Рад овог скрипта можемо једноставно испробати, посетом URL-у облика
 <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1/artists?name=Me</span></code>. Као резултат, добијамо следећи
 садржај.</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="s2">&quot;Metallica&quot;</span><span class="p">],[</span><span class="s2">&quot;Men At Work&quot;</span><span class="p">],[</span><span class="s2">&quot;Mela Tenenbaum, Pro Musica Prague &amp; Richard Kapp&quot;</span><span class="p">]]</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="s2">&quot;Metallica&quot;</span><span class="p">],[</span><span class="s2">&quot;Men At Work&quot;</span><span class="p">],[</span><span class="s2">&quot;Mela Tenenbaum, Pro Musica Prague &amp; Richard Kapp&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>На крају, прикажимо и JavaScript скрипт који шаље AJAX захтев,
 прихвата га и резултат тј. називе извођача приказује у листи.</p>
-<div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">inputName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="nx">inputName</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keyup&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">inputName</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">              </span><span class="kd">var</span><span class="w"> </span><span class="nx">xhttp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLHttpRequest</span><span class="p">();</span><span class="w"></span>
-<span class="w">              </span><span class="nx">xhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                      </span><span class="kd">var</span><span class="w"> </span><span class="nx">artists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xhttp</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span><span class="w"></span>
-<span class="w">                      </span><span class="kd">var</span><span class="w"> </span><span class="nx">ul</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;Artists&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">                      </span><span class="nx">ul</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
-<span class="w">                      </span><span class="nx">artists</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">artist</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                          </span><span class="kd">var</span><span class="w"> </span><span class="nx">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">                          </span><span class="nx">li</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">artist</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span><span class="w"></span>
-<span class="w">                          </span><span class="nx">ul</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span><span class="w"></span>
-<span class="w">                      </span><span class="p">});</span><span class="w"></span>
-<span class="w">                  </span><span class="p">}</span><span class="w"></span>
-<span class="w">              </span><span class="p">}</span><span class="w"></span>
-<span class="w">              </span><span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">URLSearchParams</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">inputName</span><span class="p">.</span><span class="nx">value</span><span class="p">});</span><span class="w"></span>
-<span class="w">              </span><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="cp">{{</span> <span class="nv">url_for</span><span class="o">(</span><span class="s1">&#39;artists&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;?&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">params</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span><span class="w"></span>
-<span class="w">              </span><span class="nx">xhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">);</span><span class="w"></span>
-<span class="w">              </span><span class="nx">xhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span><span class="w"></span>
-<span class="w">          </span><span class="p">}</span><span class="w"></span>
-<span class="w">      </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+      <span class="kd">var</span> <span class="nx">inputName</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">);</span>
+      <span class="nx">inputName</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keyup&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">inputName</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;=</span> <span class="mf">2</span><span class="p">)</span> <span class="p">{</span>
+              <span class="kd">var</span> <span class="nx">xhttp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+              <span class="nx">xhttp</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mf">4</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mf">200</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="kd">var</span> <span class="nx">artists</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xhttp</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+                      <span class="kd">var</span> <span class="nx">ul</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;Artists&quot;</span><span class="p">);</span>
+                      <span class="nx">ul</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+                      <span class="nx">artists</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">artist</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                          <span class="kd">var</span> <span class="nx">li</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">);</span>
+                          <span class="nx">li</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">artist</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+                          <span class="nx">ul</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">li</span><span class="p">);</span>
+                      <span class="p">});</span>
+                  <span class="p">}</span>
+              <span class="p">}</span>
+              <span class="kd">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="nx">inputName</span><span class="p">.</span><span class="nx">value</span><span class="p">});</span>
+              <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="cp">{{</span> <span class="nv">url_for</span><span class="o">(</span><span class="s1">&#39;artists&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;?&quot;</span> <span class="o">+</span> <span class="nx">params</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
+              <span class="nx">xhttp</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+              <span class="nx">xhttp</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+          <span class="p">}</span>
+      <span class="p">});</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>У првом реду само прихватамо DOM објекат који одговара пољу за унос

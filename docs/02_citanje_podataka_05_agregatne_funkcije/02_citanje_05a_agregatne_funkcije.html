@@ -6,7 +6,6 @@
     <title>Агрегатне функције (SUM, AVG, MIN, MAX, COUNT)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -548,8 +546,8 @@
 <p>Приказати укупан фонд часова свих предмета.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">fond</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">fond</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">predmet</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -574,8 +572,8 @@
 <p>Примећујемо да је назив колоне резултата исти као израз употребљен
 након речи <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, овде <code class="docutils literal notranslate"><span class="pre">SUM(fond)</span></code>. То можемо да променимо
 навођењем тзв. <strong>алијаса</strong> након кључне речи <code class="docutils literal notranslate"><span class="pre">AS</span></code>.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">fond</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ukupan_fond</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">fond</span><span class="p">)</span> <span class="k">AS</span> <span class="n">ukupan_fond</span>
+<span class="k">FROM</span> <span class="n">predmet</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -604,9 +602,9 @@
 <p>Приказати укупан фонд часова предмета из првог разреда.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">fond</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ukupan_fond</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">fond</span><span class="p">)</span> <span class="k">AS</span> <span class="n">ukupan_fond</span>
+<span class="k">FROM</span> <span class="n">predmet</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -642,9 +640,9 @@
 годишњи фонд часова свих предмета у другом разреду.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="mi">37</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fond</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ukupan_godisnji_fond</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="mi">37</span> <span class="o">*</span> <span class="n">fond</span><span class="p">)</span> <span class="k">AS</span> <span class="n">ukupan_godisnji_fond</span>
+<span class="k">FROM</span> <span class="n">predmet</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -676,9 +674,9 @@
 <p>Приказати просечну оцену из предмета са идентификатором 1</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">prosecna_ocena</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id_predmet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="k">AS</span> <span class="n">prosecna_ocena</span>
+<span class="k">FROM</span> <span class="n">ocena</span>
+<span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -700,9 +698,9 @@
 функције <code class="docutils literal notranslate"><span class="pre">round</span></code>. Приметимо да се у том случају гради израз у коме
 учествује резултат агрегатне функције (на резултат агрегатне функције
 се могу примењивати уобичајени оператори и функције).</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">prosecna_ocena</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id_predmet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">round</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">prosecna_ocena</span>
+<span class="k">FROM</span> <span class="n">ocena</span>
+<span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -737,9 +735,9 @@
 одржаном 15. октобра 2020. године (математика у првом разреду има идентификатор 1).</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">najniza_ocena</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id_predmet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">datum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-10-15&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">vrsta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;писмени задатак&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">MIN</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="k">AS</span> <span class="n">najniza_ocena</span>
+<span class="k">FROM</span> <span class="n">ocena</span>
+<span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">datum</span> <span class="o">=</span> <span class="s1">&#39;2020-10-15&#39;</span> <span class="k">AND</span> <span class="n">vrsta</span> <span class="o">=</span> <span class="s1">&#39;писмени задатак&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -766,9 +764,9 @@
 <p>Приказати датум када је у дневник уписана последња оцена из српског језика за први разред.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">poslednji_datum</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id_predmet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span> <span class="k">AS</span> <span class="n">poslednji_datum</span>
+<span class="k">FROM</span> <span class="n">ocena</span>
+<span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -801,9 +799,9 @@
 надовезати ниске које чине презиме и име. Пошто се тражи поређење
 ниски по азбучном редоследу, а ова изведена колона нема подешену
 колациону секвенцу, то морамо урадити у оквиру самог упита.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">((</span><span class="n">prezime</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">ime</span><span class="p">)</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">UNICODE</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">prvi_u_dnevniku</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">odeljenje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">MIN</span><span class="p">((</span><span class="n">prezime</span> <span class="o">||</span> <span class="s1">&#39; &#39;</span> <span class="o">||</span> <span class="n">ime</span><span class="p">)</span> <span class="k">COLLATE</span> <span class="n">UNICODE</span><span class="p">)</span> <span class="k">AS</span> <span class="n">prvi_u_dnevniku</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">4</span> <span class="k">AND</span> <span class="n">odeljenje</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -839,8 +837,8 @@
 <p>Приказати број ученика у табели ученика.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_ucenika</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_ucenika</span>
+<span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -864,8 +862,8 @@
 </div>
 <p>Исти резултат би се добио ако би се тражило пребројавање елемената било
 које конкретне колоне. На пример.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">ime</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_ucenika</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">ime</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_ucenika</span>
+<span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -894,9 +892,9 @@
 <p>Приказати укупан број предмета у првом разреду</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_predmeta</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_predmeta</span>
+<span class="k">FROM</span> <span class="n">predmet</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -924,8 +922,8 @@
 <p>Приказати укупан број различитих презимена ученика.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_ucenika</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">prezime</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_prezimena</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_ucenika</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">prezime</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_prezimena</span>
+<span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>

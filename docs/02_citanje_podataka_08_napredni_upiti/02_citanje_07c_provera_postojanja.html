@@ -6,7 +6,6 @@
     <title>Провера постојања (EXISTS)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -543,11 +541,11 @@
 <p>Приказати имена ученика који имају неоправдане изостанке.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">prezime</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="w">              </span><span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"></span>
-<span class="w">              </span><span class="k">WHERE</span><span class="w"> </span><span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;неоправдан&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="k">EXISTS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span>
+              <span class="k">FROM</span> <span class="n">izostanak</span>
+              <span class="k">WHERE</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;неоправдан&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -595,11 +593,11 @@
 по свим ученицима, и прикажемо имена и презимена за сваку групу
 (приметимо да овде не примењујемо ни једну агрегатну функцију на
 формиране групе).</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">prezime</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="k">JOIN</span><span class="w"></span>
-<span class="w">     </span><span class="n">izostanak</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;неоправдан&#39;</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span>
+<span class="k">FROM</span> <span class="n">ucenik</span> <span class="k">JOIN</span>
+     <span class="n">izostanak</span> <span class="k">on</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;неоправдан&#39;</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -657,11 +655,11 @@
 <p>Приказати имена ученика који немају нерегулисаних изостанака.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">prezime</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="w">                  </span><span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"></span>
-<span class="w">                  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;нерегулисан&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span>
+                  <span class="k">FROM</span> <span class="n">izostanak</span>
+                  <span class="k">WHERE</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;нерегулисан&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -750,10 +748,10 @@ WHERE EXISTS (SELECT *
     </div>
 <p>Нагласимо да је задатак могуће решити и без угнежђених подупита и
 услова <code class="docutils literal notranslate"><span class="pre">EXISTS</span></code>, обичним спајањем.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">naziv</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">JOIN</span><span class="w"></span>
-<span class="w">     </span><span class="n">ocena</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">vrsta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;писмени задатак&#39;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">p</span><span class="p">.</span><span class="n">naziv</span>
+<span class="k">FROM</span> <span class="n">predmet</span> <span class="n">p</span> <span class="k">JOIN</span>
+     <span class="n">ocena</span> <span class="n">o</span> <span class="k">ON</span> <span class="n">p</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span>
+<span class="k">WHERE</span> <span class="n">vrsta</span> <span class="o">=</span> <span class="s1">&#39;писмени задатак&#39;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>

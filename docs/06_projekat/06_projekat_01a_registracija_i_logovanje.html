@@ -6,7 +6,6 @@
     <title>Регистрација и логовање</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -535,7 +533,7 @@
 <div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Registracija novog korisnika<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;registration&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;needs-validation&quot;</span> <span class="na">novalidate</span><span class="p">&gt;</span>
 
-  <span class="cm">&lt;!-- username --&gt;</span>
+  <span class="c">&lt;!-- username --&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>Korisničko ime:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
@@ -547,7 +545,7 @@
      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   
-  <span class="cm">&lt;!-- password --&gt;</span>
+  <span class="c">&lt;!-- password --&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>Lozinka:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
@@ -559,7 +557,7 @@
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-  <span class="cm">&lt;!-- confirm password --&gt;</span>
+  <span class="c">&lt;!-- confirm password --&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;confirmPassword&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>Ponovi lozinku:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
@@ -571,7 +569,7 @@
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-  <span class="cm">&lt;!-- name --&gt;</span>
+  <span class="c">&lt;!-- name --&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>Ime i prezime:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
@@ -583,7 +581,7 @@
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-  <span class="cm">&lt;!-- email --&gt;</span>
+  <span class="c">&lt;!-- email --&gt;</span>
   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>E-mail:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
@@ -596,7 +594,7 @@
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
 
-  <span class="cm">&lt;!-- submit --&gt;</span>
+  <span class="c">&lt;!-- submit --&gt;</span>
   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;register&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;register&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Registruj me&quot;</span>
          <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="p">/&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
@@ -774,48 +772,48 @@ Bootstrap класу <code class="docutils literal notranslate"><span class="pre
 преузимају ту улогу).</p>
 <p>На основу свега реченог долазимо до следећег JavaScript скрипта за
 клијентску валидацију.</p>
-<div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// DOM objekti koji odgovaraju formularu i poljima za unos lozinke</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">form</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">registration</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">passwordInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">password</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">confirmPasswordInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">form</span><span class="p">.</span><span class="nx">confirmPassword</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+  <span class="c1">// DOM objekti koji odgovaraju formularu i poljima za unos lozinke</span>
+  <span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">registration</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">passwordInput</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">password</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">confirmPasswordInput</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">confirmPassword</span><span class="p">;</span>
 
-<span class="w">  </span><span class="c1">// lozinka se proverava prilikom svake promene</span><span class="w"></span>
-<span class="w">  </span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keyup&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">checkPassword</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="nx">passwordInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keyup&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">checkPassword</span><span class="p">)</span><span class="w"></span>
+  <span class="c1">// lozinka se proverava prilikom svake promene</span>
+  <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keyup&quot;</span><span class="p">,</span> <span class="nx">checkPassword</span><span class="p">)</span>
+  <span class="nx">passwordInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keyup&quot;</span><span class="p">,</span> <span class="nx">checkPassword</span><span class="p">)</span>
 
-<span class="w">  </span><span class="c1">// funkcija za proveru poklapanja lozinki</span><span class="w"></span>
-<span class="w">  </span><span class="kd">function</span><span class="w"> </span><span class="nx">checkPassword</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="kd">var</span><span class="w"> </span><span class="nx">OK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">passwordInput</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s2">&quot;Lozinke se ne poklapaju&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">          </span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;is-invalid&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">          </span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;is-valid&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">          </span><span class="nx">OK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">          </span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;is-valid&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">          </span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;is-invalid&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
+  <span class="c1">// funkcija za proveru poklapanja lozinki</span>
+  <span class="kd">function</span> <span class="nx">checkPassword</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">OK</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">value</span> <span class="o">!=</span> <span class="nx">passwordInput</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s2">&quot;Lozinke se ne poklapaju&quot;</span><span class="p">);</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;is-invalid&quot;</span><span class="p">);</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;is-valid&quot;</span><span class="p">);</span>
+          <span class="nx">OK</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;is-valid&quot;</span><span class="p">);</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;is-invalid&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
 
-<span class="w">      </span><span class="c1">// TODO: proširiti ovu funkciju zahtevom da lozinka sadrži i slova</span><span class="w"></span>
-<span class="w">      </span><span class="c1">// i cifre i specijalne karaktere</span><span class="w"></span>
-<span class="w">      </span>
-<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">OK</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
+      <span class="c1">// TODO: proširiti ovu funkciju zahtevom da lozinka sadrži i slova</span>
+      <span class="c1">// i cifre i specijalne karaktere</span>
+      
+      <span class="k">return</span> <span class="nx">OK</span><span class="p">;</span>
+  <span class="p">}</span>
 
-<span class="w">  </span><span class="c1">// provera prilikom slanja podataka iz formulara</span><span class="w"></span>
-<span class="w">  </span><span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="c1">// vršimo ugrađene HTML5 provere i dodatnu proveru lozinki</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">form</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">()</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">checkPassword</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="c1">// sprečavamo slanje</span><span class="w"></span>
-<span class="w">          </span><span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span><span class="w"></span>
-<span class="w">          </span><span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span><span class="w"></span>
-<span class="w">      </span><span class="p">}</span><span class="w"></span>
+  <span class="c1">// provera prilikom slanja podataka iz formulara</span>
+  <span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// vršimo ugrađene HTML5 provere i dodatnu proveru lozinki</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">form</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">()</span> <span class="o">||</span> <span class="o">!</span><span class="nx">checkPassword</span><span class="p">())</span> <span class="p">{</span>
+          <span class="c1">// sprečavamo slanje</span>
+          <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+          <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+      <span class="p">}</span>
 
-<span class="w">      </span><span class="c1">// označavamo da je formular proveren</span><span class="w"></span>
-<span class="w">      </span><span class="nx">form</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;was-validated&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">});</span><span class="w"></span>
+      <span class="c1">// označavamo da je formular proveren</span>
+      <span class="nx">form</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;was-validated&quot;</span><span class="p">);</span>
+  <span class="p">});</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -824,12 +822,12 @@ Bootstrap класу <code class="docutils literal notranslate"><span class="pre
 <h2>Табела о корисницима<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>Податке о свим регистрованим корисницима ћемо чувати у склопу базе
 података у табели <code class="docutils literal notranslate"><span class="pre">user</span></code>, која је дефинисана на следећи начин.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">32</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">name</span><span class="w">     </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">50</span><span class="p">),</span><span class="w"></span>
-<span class="w">    </span><span class="n">email</span><span class="w">    </span><span class="nb">VARCHAR</span><span class="w"> </span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">user</span> <span class="p">(</span>
+    <span class="n">username</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">60</span><span class="p">)</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">password</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">32</span><span class="p">),</span>
+    <span class="n">name</span>     <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">email</span>    <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1075,25 +1073,25 @@ tables</em>) које садрже огромне листе хеш-вредно
      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">url_for</span><span class="o">(</span><span class="s1">&#39;login&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-content&quot;</span><span class="p">&gt;</span>
 
-         <span class="cm">&lt;!-- zaglavlje modalnog prozora --&gt;</span>
+         <span class="c">&lt;!-- zaglavlje modalnog prozora --&gt;</span>
          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-header&quot;</span><span class="p">&gt;</span>
            <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-title&quot;</span><span class="p">&gt;</span>Logovanje<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
-           <span class="cm">&lt;!-- dugme × za isključivanje prozora --&gt;</span>
+           <span class="c">&lt;!-- dugme × za isključivanje prozora --&gt;</span>
            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;close&quot;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&quot;modal&quot;</span><span class="p">&gt;</span>
              <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="ni">&amp;times;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
            <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-         <span class="cm">&lt;!-- telo modalnog prozora --&gt;</span>
+         <span class="c">&lt;!-- telo modalnog prozora --&gt;</span>
          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-body&quot;</span><span class="p">&gt;</span>
-           <span class="cm">&lt;!-- polje za unos korisničkog imena --&gt;</span>
+           <span class="c">&lt;!-- polje za unos korisničkog imena --&gt;</span>
            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
              <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4 col-form-label&quot;</span><span class="p">&gt;</span>Korisničko ime:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
              <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;signinUsername&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span>
                     <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control col-md-6&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="p">/&gt;</span>
            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
              
-           <span class="cm">&lt;!-- polje za unos lozinke --&gt;</span>
+           <span class="c">&lt;!-- polje za unos lozinke --&gt;</span>
            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
              <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4 col-form-label&quot;</span><span class="p">&gt;</span>Lozinka:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
              <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;signinPassword&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span>
@@ -1101,7 +1099,7 @@ tables</em>) које садрже огромне листе хеш-вредно
            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-         <span class="cm">&lt;!-- podnožje modalnog prozora --&gt;</span>
+         <span class="c">&lt;!-- podnožje modalnog prozora --&gt;</span>
          <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-footer&quot;</span><span class="p">&gt;</span>
            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Uloguj me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
            <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-secondary&quot;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&quot;modal&quot;</span><span class="p">&gt;</span>Zatvori<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>

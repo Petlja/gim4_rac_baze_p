@@ -6,7 +6,6 @@
     <title>Дизајн веб-стране – CSS</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -553,13 +551,13 @@
 <p>Могуће је за исти елемент дефинисати и више својства. Тако, на пример, имамо за
 тело веб-странице, тј. елемент <code class="docutils literal notranslate"><span class="pre">body</span></code>, дефинисану и боју позадине и боју
 слова:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#D1EDE6</span><span class="p">;</span><span class="w"> </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#4E0135</span><span class="p">}</span><span class="w"></span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">body</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="mh">#D1EDE6</span><span class="p">;</span> <span class="k">color</span><span class="p">:</span> <span class="mh">#4E0135</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Исто својство, или скуп својства, можемо применити истовремено и на више
 елемената. Тако, на пример, и за наслове нивоа 1 и за наслове нивоа 2 имамо
 дефинисано да треба да се позиционирају централно:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="o">,</span><span class="w"> </span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span> <span class="p">{</span> <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span> <span class="p">}</span>
 </pre></div>
 </div>
 <p>Више о начину писања правила се може наћи у материјалима за трећи разред, као
@@ -596,8 +594,8 @@
 <p>Направити фолдер за веб-сајт и у њега ставити <em>HTML</em> документ на којем смо
 почели да радимо: <code class="docutils literal notranslate"><span class="pre">strana1_mrezni_slojevi_protokoli.html</span></code>.</p>
 <p>У исти фолдер ставити и слике које можеш да преузмеш овде:</p>
-<p><a class="reference external" href="strana1_slika1.jpg">strana1_slika1.jpg</a></p>
-<p><a class="reference external" href="strana1_slika2.jpg">strana1_slika2.jpg</a></p>
+<p><a class="reference external" href="https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/strana1_slika1.jpg">strana1_slika1.jpg</a></p>
+<p><a class="reference external" href="https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/strana1_slika2.jpg">strana1_slika2.jpg</a></p>
 <p>Креирати у истом фолдеру и документ <code class="docutils literal notranslate"><span class="pre">dizajn.css</span></code> како је управо описано.</p>
 <p>У документ <code class="docutils literal notranslate"><span class="pre">strana1_mrezni_slojevi_protokoli.html</span></code> додати ознаке, тј. тагове,
 за све наслове, пасусе, набрајања, слике, речи које треба да буду приказане

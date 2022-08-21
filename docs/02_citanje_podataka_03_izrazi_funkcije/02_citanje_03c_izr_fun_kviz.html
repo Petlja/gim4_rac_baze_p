@@ -6,7 +6,6 @@
     <title>Изрази и функције - квиз</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -529,11 +527,7 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izrazi_fje_spajanje_niski">
             <p>Q-56: Који оператор користимо када желимо да две или више ниски спојимо у једну?</p>
 
@@ -555,21 +549,17 @@
 
     <div class="quiz-question">
 <p>Дат је следећи упит:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">naziv</span><span class="p">,</span><span class="w"> </span><span class="k">CASE</span><span class="w"></span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;I&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;II&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;III&#39;</span><span class="w"></span>
-<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;IV&#39;</span><span class="w"></span>
-<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">godina</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">naziv</span><span class="p">,</span> <span class="k">CASE</span>
+        <span class="k">WHEN</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span> <span class="s1">&#39;I&#39;</span>
+        <span class="k">WHEN</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">THEN</span> <span class="s1">&#39;II&#39;</span>
+        <span class="k">WHEN</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">3</span> <span class="k">THEN</span> <span class="s1">&#39;III&#39;</span>
+        <span class="k">WHEN</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">4</span> <span class="k">THEN</span> <span class="s1">&#39;IV&#39;</span>
+    <span class="k">END</span> <span class="k">AS</span> <span class="n">godina</span>
+<span class="k">FROM</span> <span class="n">predmet</span><span class="p">;</span>
 </pre></div>
 </div>
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izrazi_fje_alias">
             <p>Q-57: Који наслов ће имати друга колона резултата добијеног датим упитом?</p>
 
@@ -591,11 +581,7 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izrazi_fje_substr">
             <p>Q-58: Која је вредност функције substr(„abcdefgh”, 2, 4)</p>
 
@@ -617,11 +603,7 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izrazi_fje_cast">
             <p>Q-59: Који од понуђених упита даје редни број дана у месецу (као нумерички податак) за сваки уписан изостанак?</p>
 
@@ -641,11 +623,7 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izrazi_fje_poslednje_slovo">
             <p>Q-60: Који од понуђених упита даје податке о ученицима чије презиме се завршава на слово „в”?</p>
 

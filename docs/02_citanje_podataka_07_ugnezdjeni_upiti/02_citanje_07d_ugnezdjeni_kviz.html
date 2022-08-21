@@ -6,7 +6,6 @@
     <title>Угнежђени упити - квиз</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -529,11 +527,7 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="ugnezdeni_1">
             <p>Q-77: Шта је угнежђени упит?</p>
 
@@ -553,20 +547,16 @@
 
     <div class="quiz-question">
 <p>Дат је упит:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_predmet</span><span class="p">,</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">prosek</span><span class="w"></span>
-<span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id_predmet</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"></span>
-<span class="w">                             </span><span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="w">                             </span><span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id_predmet</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id_predmet</span><span class="p">,</span> <span class="n">round</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">prosek</span>
+        <span class="k">FROM</span> <span class="n">ocena</span>
+        <span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">id</span>
+                             <span class="k">FROM</span> <span class="n">predmet</span>
+                             <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">id_predmet</span><span class="p">;</span>
 </pre></div>
 </div>
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="ugnezdeni_2">
             <p>Q-78:         Које све колоне или колону враћа као резултат угњеждени упит у следећем примеру?</p>
 
@@ -586,20 +576,16 @@
 
     <div class="quiz-question">
 <p>Дат је упит:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_predmet</span><span class="p">,</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">prosek</span><span class="w"></span>
-<span class="w">        </span><span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="w">        </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id_predmet</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"></span>
-<span class="w">                             </span><span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="w">                             </span><span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id_predmet</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id_predmet</span><span class="p">,</span> <span class="n">round</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">prosek</span>
+        <span class="k">FROM</span> <span class="n">ocena</span>
+        <span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">id</span>
+                             <span class="k">FROM</span> <span class="n">predmet</span>
+                             <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">id_predmet</span><span class="p">;</span>
 </pre></div>
 </div>
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="ugnezdeni_3">
             <p>Q-79:         Које све колоне или колону враћа као резултат цео упит у следећем примеру?</p>
 
@@ -617,20 +603,16 @@
 
     <div class="quiz-question">
 <p>Дат је упит:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj</span><span class="w"></span>
-<span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"></span>
-<span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id_ucenik</span><span class="p">)</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">broj</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="p">(</span>
+    <span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj</span>
+    <span class="k">FROM</span> <span class="n">izostanak</span>
+    <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">id_ucenik</span><span class="p">)</span>
+<span class="k">WHERE</span> <span class="n">broj</span> <span class="o">&gt;</span> <span class="mi">10</span>
 </pre></div>
 </div>
 
-            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
-                <div class="image-background"></div>
-                <div class="petlja-problem-box-icon-holder"> </div>
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
-                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+            <div class="course-box course-box-question course-content">
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="ugnezdeni_4">
             <p>Q-80:         Шта се добија извршавањем овог упита?</p>
 

@@ -6,7 +6,6 @@
     <title>Погледи</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -534,10 +532,10 @@
 спајања вршиле даље анализе. На пример, резултат спајања нам је
 потребан да бисмо израчунали укупан број изостанака сваког ученика,
 али и да бисмо пронашли број неоправданих изостанака у сваком одељењу.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_izostanaka</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"> </span><span class="k">JOIN</span><span class="w"></span>
-<span class="w">     </span><span class="n">ucenik</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_izostanaka</span>
+<span class="k">FROM</span> <span class="n">izostanak</span> <span class="k">JOIN</span>
+     <span class="n">ucenik</span> <span class="k">ON</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -588,11 +586,11 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_neopravdanih</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"> </span><span class="k">JOIN</span><span class="w"></span>
-<span class="w">     </span><span class="n">ucenik</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">izostanak</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;неоправдан&#39;</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_neopravdanih</span>
+<span class="k">FROM</span> <span class="n">izostanak</span> <span class="k">JOIN</span>
+     <span class="n">ucenik</span> <span class="k">ON</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;неоправдан&#39;</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -647,28 +645,28 @@
 упит се оптимизује и извршава. Погледи се могу користити само за
 читање података и упис података у поглед није могућ (јер погледи нису
 праве табеле). Креирање погледа врши се упитом наредног облика:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">naziv_pogleda</span><span class="w"> </span><span class="k">AS</span><span class="w"></span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">upit</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">naziv_pogleda</span> <span class="k">AS</span>
+  <span class="k">SELECT</span> <span class="n">upit</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>На пример, можемо креирати поглед <code class="docutils literal notranslate"><span class="pre">izostanci_detaljno</span></code> на следећи начин:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">izostanci_detaljno</span><span class="w"> </span><span class="k">AS</span><span class="w"></span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">izostanak</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"></span>
-<span class="w">         </span><span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span><span class="p">,</span><span class="w"></span>
-<span class="w">         </span><span class="n">ucenik</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span><span class="w"></span>
-<span class="w">         </span><span class="n">ucenik</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span><span class="w"></span>
-<span class="w">         </span><span class="n">ucenik</span><span class="p">.</span><span class="n">razred</span><span class="p">,</span><span class="w"></span>
-<span class="w">         </span><span class="n">ucenik</span><span class="p">.</span><span class="n">odeljenje</span><span class="p">,</span><span class="w"></span>
-<span class="w">         </span><span class="n">izostanak</span><span class="p">.</span><span class="n">datum</span><span class="p">,</span><span class="w"></span>
-<span class="w">         </span><span class="n">izostanak</span><span class="p">.</span><span class="n">status</span><span class="w"></span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"> </span><span class="k">JOIN</span><span class="w"></span>
-<span class="w">       </span><span class="n">ucenik</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">izostanci_detaljno</span> <span class="k">AS</span>
+  <span class="k">SELECT</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+         <span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span><span class="p">,</span>
+         <span class="n">ucenik</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span>
+         <span class="n">ucenik</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span>
+         <span class="n">ucenik</span><span class="p">.</span><span class="n">razred</span><span class="p">,</span>
+         <span class="n">ucenik</span><span class="p">.</span><span class="n">odeljenje</span><span class="p">,</span>
+         <span class="n">izostanak</span><span class="p">.</span><span class="n">datum</span><span class="p">,</span>
+         <span class="n">izostanak</span><span class="p">.</span><span class="n">status</span>
+  <span class="k">FROM</span> <span class="n">izostanak</span> <span class="k">JOIN</span>
+       <span class="n">ucenik</span> <span class="k">ON</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Након тога, претходна два упита се могу извршити на следећи начин:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_izostanaka</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanci_detaljno</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id_ucenik</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_izostanaka</span>
+<span class="k">FROM</span> <span class="n">izostanci_detaljno</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">id_ucenik</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -719,10 +717,10 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_neopravdanih</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanci_detaljno</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;неоправдан&#39;</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_neopravdanih</span>
+<span class="k">FROM</span> <span class="n">izostanci_detaljno</span>
+<span class="k">WHERE</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;неоправдан&#39;</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -772,18 +770,18 @@
 установили смо да је прво пожељно креирати табелу која за сваког
 ученика садржи идентификатор, разред и одељење и број оправданих
 изостанака. Њу можемо креирати као посебан поглед.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">broj_opravdanih_izostanaka</span><span class="w"> </span><span class="k">AS</span><span class="w"></span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_ucenik</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">broj_opravdanih</span><span class="w"></span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">izostanci_detaljno</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;оправдан&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id_ucenik</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">broj_opravdanih_izostanaka</span> <span class="k">AS</span>
+  <span class="k">SELECT</span> <span class="n">id_ucenik</span> <span class="k">AS</span> <span class="n">id</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">broj_opravdanih</span>
+  <span class="k">FROM</span> <span class="n">izostanci_detaljno</span>
+  <span class="k">WHERE</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;оправдан&#39;</span>
+  <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">id_ucenik</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>На основу овог погледа је веома једноставно одредити највећи број
 оправданих изостанака за свако одељење.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">broj_opravdanih</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">broj_opravdanih_izostanaka</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="k">MAX</span><span class="p">(</span><span class="n">broj_opravdanih</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">broj_opravdanih_izostanaka</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>

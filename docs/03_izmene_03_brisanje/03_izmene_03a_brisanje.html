@@ -6,7 +6,6 @@
     <title>Брисање података</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -527,8 +525,8 @@
   <div class="section" id="id1">
 <h1>Брисање података<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Редови из табеле се могу обрисати упитима <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>. Њихов општи облик је</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">naziv_tabele</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">uslov</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">naziv_tabele</span>
+<span class="k">WHERE</span> <span class="n">uslov</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Обрати пажњу на то да се не наводи које колоне се бришу, јер се увек
@@ -546,8 +544,8 @@
 идентификатором 123.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">ocena</span>
+<span class="k">WHERE</span> <span class="n">id_ucenik</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
 </pre></div>
 </div>
 
@@ -562,11 +560,11 @@
     </p></div></div>
 <p>За разлику од претходног, у овом упиту морамо да прочитамо
 идентификатор ученика из базе.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"></span>
-<span class="w">                   </span><span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="w">                   </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Лав&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">prezime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Грујић&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"></span>
-<span class="w">                         </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">odeljenje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">izostanak</span>
+<span class="k">WHERE</span> <span class="n">id_ucenik</span> <span class="o">=</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">id</span>
+                   <span class="k">FROM</span> <span class="n">ucenik</span>
+                   <span class="k">WHERE</span> <span class="n">ime</span> <span class="o">=</span> <span class="s1">&#39;Лав&#39;</span> <span class="k">AND</span> <span class="n">prezime</span> <span class="o">=</span> <span class="s1">&#39;Грујић&#39;</span> <span class="k">AND</span>
+                         <span class="n">razred</span> <span class="o">=</span> <span class="mi">4</span> <span class="k">AND</span> <span class="n">odeljenje</span> <span class="o">=</span> <span class="mi">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="section" id="id2">

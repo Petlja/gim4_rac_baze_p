@@ -6,7 +6,6 @@
     <title>Угнежђени упити – задаци (дневник)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -583,9 +581,9 @@ ORDER BY razred, odeljenje;"    >
 <p>У наставку је описано и решење.</p>
 <p>У првој фази решавања задатка ћемо за сваки датум, разред и одељење
 израчунати број ученика тог одељења који су рођени на тај датум.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">,</span><span class="w"> </span><span class="n">datum_rodjenja</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">datum_rodjenja</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">datum_rodjenja</span><span class="p">,</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="n">datum_rodjenja</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">datum_rodjenja</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">datum_rodjenja</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -639,13 +637,13 @@ ORDER BY razred, odeljenje;"    >
 <p>У другој фази из те табеле одређујемо максимални број за свако
 одељење, издвајајући само она одељења код којих је тај максимални број
 већи од 1.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">,</span><span class="w"> </span><span class="k">MAX</span><span class="p">(</span><span class="n">broj</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">max_broj</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">,</span><span class="w"> </span><span class="n">datum_rodjenja</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">datum_rodjenja</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj</span><span class="w"></span>
-<span class="w">      </span><span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="w">      </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">datum_rodjenja</span><span class="p">,</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">)</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="w"></span>
-<span class="k">HAVING</span><span class="w"> </span><span class="n">max_broj</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="k">MAX</span><span class="p">(</span><span class="n">broj</span><span class="p">)</span> <span class="k">AS</span> <span class="n">max_broj</span>
+<span class="k">FROM</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="n">datum_rodjenja</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">datum_rodjenja</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj</span>
+      <span class="k">FROM</span> <span class="n">ucenik</span>
+      <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">datum_rodjenja</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">)</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span>
+<span class="k">HAVING</span> <span class="n">max_broj</span> <span class="o">&gt;</span> <span class="mi">1</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -734,9 +732,9 @@ GROUP BY u.id;"    >
 упиту, издвојимо идентификаторе свих предмета који имају назив
 <code class="docutils literal notranslate"><span class="pre">Математика</span></code> (јер се математика у сваком разреду бележи као посебан
 предмет).</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">naziv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Математика&#39;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span>
+<span class="k">FROM</span> <span class="n">predmet</span>
+<span class="k">WHERE</span> <span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Математика&#39;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -764,11 +762,11 @@ GROUP BY u.id;"    >
 само оцене из математике, задатак се решава рутински, коришћењем
 груписања (по идентификатору ученика) и пребројавањем елемената у
 свакој групи.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_ocena_iz_matematike</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="n">u</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ocena</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">naziv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Математика&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_ocena_iz_matematike</span>
+<span class="k">FROM</span> <span class="n">ucenik</span> <span class="n">u</span>
+     <span class="k">JOIN</span> <span class="n">ocena</span> <span class="n">o</span> <span class="k">ON</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">o</span><span class="p">.</span><span class="n">id_ucenik</span>
+<span class="k">WHERE</span> <span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">id</span> <span class="k">FROM</span> <span class="n">predmet</span> <span class="k">WHERE</span> <span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Математика&#39;</span><span class="p">)</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -874,15 +872,15 @@ ORDER BY razred, odeljenje, prezime, ime;"    >
 српског језика. То можемо поново урадити тако што у засебном подупиту
 издвојимо идентификаторе свих предмета који одговарају настави српског
 језика.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">odeljenje</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="k">JOIN</span><span class="w"></span>
-<span class="w">     </span><span class="n">ucenik</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id_predmet</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"></span>
-<span class="w">                     </span><span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="w">                     </span><span class="k">WHERE</span><span class="w"> </span><span class="n">naziv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Српски језик&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">HAVING</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="mi">5</span><span class="w"></span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="p">,</span><span class="w"> </span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="n">ime</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">razred</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">odeljenje</span>
+<span class="k">FROM</span> <span class="n">ocena</span> <span class="n">o</span> <span class="k">JOIN</span>
+     <span class="n">ucenik</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">id</span>
+                     <span class="k">FROM</span> <span class="n">predmet</span>
+                     <span class="k">WHERE</span> <span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Српски језик&#39;</span><span class="p">)</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">HAVING</span> <span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">.</span><span class="mi">5</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">ime</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -993,13 +991,13 @@ GROUP BY u.id;"    >
 оценама имали закључену оцену 5 из математике. Интересантно, тај
 угнежђени подупит има свој угнежђени подупит у ком издвајамо све
 идентификаторе предмета математике.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_ucenik</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">id_predmet</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"></span>
-<span class="w">                     </span><span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="w">                     </span><span class="k">WHERE</span><span class="w"> </span><span class="n">naziv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Математика&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id_ucenik</span><span class="w"></span>
-<span class="k">HAVING</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="mi">5</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id_ucenik</span>
+<span class="k">FROM</span> <span class="n">ocena</span>
+<span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">id</span>
+                     <span class="k">FROM</span> <span class="n">predmet</span>
+                     <span class="k">WHERE</span> <span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Математика&#39;</span><span class="p">)</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">id_ucenik</span>
+<span class="k">HAVING</span> <span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">.</span><span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1030,17 +1028,17 @@ GROUP BY u.id;"    >
 табеле изостанака и да добијемо само изостанке тих ученика. Након
 тога, изостанке једноставно можемо пребројати коришћењем груписања
 свих на основу изостанака на основу идентификатора ученика.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">broj_izostanaka</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">JOIN</span><span class="w"></span>
-<span class="w">     </span><span class="n">ucenik</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_ucenik</span><span class="w"></span>
-<span class="w">               </span><span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="w">               </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id_predmet</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"></span>
-<span class="w">                                    </span><span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="w">                                    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">naziv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Математика&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">               </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id_ucenik</span><span class="w"></span>
-<span class="w">               </span><span class="k">HAVING</span><span class="w"> </span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">4</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_izostanaka</span>
+<span class="k">FROM</span> <span class="n">izostanak</span> <span class="n">i</span> <span class="k">JOIN</span>
+     <span class="n">ucenik</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">id_ucenik</span>
+               <span class="k">FROM</span> <span class="n">ocena</span>
+               <span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">id</span>
+                                    <span class="k">FROM</span> <span class="n">predmet</span>
+                                    <span class="k">WHERE</span> <span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Математика&#39;</span><span class="p">)</span>
+               <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">id_ucenik</span>
+               <span class="k">HAVING</span> <span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>

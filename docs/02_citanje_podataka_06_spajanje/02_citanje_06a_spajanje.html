@@ -6,7 +6,6 @@
     <title>Спајање табела</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -545,9 +543,9 @@
 
     </p></div></div>
 <p>Први покушај може да буде просто читање свих података из табеле изостанака.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">datum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2021-05-14&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">izostanak</span>
+<span class="k">WHERE</span> <span class="n">datum</span> <span class="o">=</span> <span class="s1">&#39;2021-05-14&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -614,8 +612,8 @@
 ученику са тим идентификатором (пре свега његово име и презиме).</p>
 <p>Један начин да то урадимо је да употребимо оператор спајања
 <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">JOIN</span> <span class="pre">...</span> <span class="pre">ON</span> <span class="pre">...</span></code>.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">izostanak</span> <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="k">ON</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -757,16 +755,16 @@
 навођењем имена табеле упит постаје јаснији и прегледнији.</p>
 <p>Текст упита може мало да се скрати ако се табелама у оквиру
 упита дају нова, краћа имена, навођењем <strong>алијаса</strong>.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">izostanak</span> <span class="k">AS</span> <span class="n">i</span>
+     <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="k">AS</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се исти резултат како малопре.</p>
 <p>Кључна реч <code class="docutils literal notranslate"><span class="pre">AS</span></code> може да се изостави и у том случају би исти упит изгледао овако:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">izostanak</span> <span class="n">i</span>
+     <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>У систему SQLite Studio се упити се пишу након што се кликне на креирану базу <em>dnevnik</em> у прозору
@@ -796,10 +794,10 @@
 име и презиме ученика, редни број часа и статус изостанка.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="n">cas</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">datum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2021-05-14&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">cas</span><span class="p">,</span> <span class="n">status</span>
+<span class="k">FROM</span> <span class="n">izostanak</span> <span class="n">i</span>
+     <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span> <span class="n">datum</span> <span class="o">=</span> <span class="s1">&#39;2021-05-14&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -874,10 +872,10 @@
 за јединствено идентификовање сваког реда у табели <code class="docutils literal notranslate"><span class="pre">predmet</span></code>. У
 противном (ако постоји више предмета са називом математика у првом
 разреду) ће бити приказане све оцене из свих таквих предмета.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_ucenik</span><span class="p">,</span><span class="w"> </span><span class="n">ocena</span><span class="p">,</span><span class="w"> </span><span class="n">datum</span><span class="p">,</span><span class="w"> </span><span class="n">vrsta</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">predmet</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">ocena</span><span class="p">.</span><span class="n">id_predmet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">predmet</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">predmet</span><span class="p">.</span><span class="n">naziv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Математика&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">predmet</span><span class="p">.</span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id_ucenik</span><span class="p">,</span> <span class="n">ocena</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">vrsta</span>
+<span class="k">FROM</span> <span class="n">ocena</span>
+     <span class="k">JOIN</span> <span class="n">predmet</span> <span class="k">ON</span> <span class="n">ocena</span><span class="p">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">predmet</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span> <span class="n">predmet</span><span class="p">.</span><span class="n">naziv</span> <span class="o">=</span> <span class="s1">&#39;Математика&#39;</span> <span class="k">AND</span> <span class="n">predmet</span><span class="p">.</span><span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -940,10 +938,10 @@
 презиме ученика и назив предмета)</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">naziv</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">ocena</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">datum</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vrsta</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"> </span><span class="n">o</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">predmet</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">p</span><span class="p">.</span><span class="n">naziv</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">ocena</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">datum</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">vrsta</span>
+<span class="k">FROM</span> <span class="n">ocena</span> <span class="n">o</span>
+     <span class="k">JOIN</span> <span class="n">predmet</span> <span class="n">p</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">id</span>
+     <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1027,11 +1025,11 @@
 у читљивом формату.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">naziv</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">ocena</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">datum</span><span class="p">,</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">vrsta</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"> </span><span class="n">o</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">predmet</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">o</span><span class="p">.</span><span class="n">id_ucenik</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">vrsta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;писмени задатак&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">p</span><span class="p">.</span><span class="n">naziv</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">ocena</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">datum</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">vrsta</span>
+<span class="k">FROM</span> <span class="n">ocena</span> <span class="n">o</span>
+     <span class="k">JOIN</span> <span class="n">predmet</span> <span class="n">p</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">id</span>
+     <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
+<span class="k">WHERE</span> <span class="n">p</span><span class="p">.</span><span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">vrsta</span> <span class="o">=</span> <span class="s1">&#39;писмени задатак&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1114,9 +1112,9 @@
     </p></div></div>
 <p>Први покушај подразумева само да се табела <code class="docutils literal notranslate"><span class="pre">ucenik</span></code> споји сама са
 собом, уз услов да презиме и датум рођења буду једнаки.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">ime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ime1</span><span class="p">,</span><span class="w"> </span><span class="n">u2</span><span class="p">.</span><span class="n">ime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ime2</span><span class="p">,</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">prezime</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">u1</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">u2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">datum_rodjenja</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u2</span><span class="p">.</span><span class="n">datum_rodjenja</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">prezime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u2</span><span class="p">.</span><span class="n">prezime</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">u1</span><span class="p">.</span><span class="n">ime</span> <span class="k">as</span> <span class="n">ime1</span><span class="p">,</span> <span class="n">u2</span><span class="p">.</span><span class="n">ime</span> <span class="k">as</span> <span class="n">ime2</span><span class="p">,</span> <span class="n">u1</span><span class="p">.</span><span class="n">prezime</span>
+<span class="k">FROM</span> <span class="n">ucenik</span> <span class="k">as</span> <span class="n">u1</span>
+     <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="k">as</span> <span class="n">u2</span> <span class="k">ON</span> <span class="n">u1</span><span class="p">.</span><span class="n">datum_rodjenja</span> <span class="o">=</span> <span class="n">u2</span><span class="p">.</span><span class="n">datum_rodjenja</span> <span class="k">AND</span> <span class="n">u1</span><span class="p">.</span><span class="n">prezime</span> <span class="o">=</span> <span class="n">u2</span><span class="p">.</span><span class="n">prezime</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1168,10 +1166,10 @@
 близанаца различити (тиме се елиминише могућност да је неко сам себи
 близанац) и уређени у неком редоследу (тиме се елиминише двоструко
 пријављивање истих парова близанаца).</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">ime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ime1</span><span class="p">,</span><span class="w"> </span><span class="n">u2</span><span class="p">.</span><span class="n">ime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">ime2</span><span class="p">,</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">prezime</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">u1</span><span class="w"></span>
-<span class="w">     </span><span class="k">JOIN</span><span class="w"> </span><span class="n">ucenik</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">u2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">datum_rodjenja</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u2</span><span class="p">.</span><span class="n">datum_rodjenja</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">prezime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u2</span><span class="p">.</span><span class="n">prezime</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">u1</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">u2</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">u1</span><span class="p">.</span><span class="n">ime</span> <span class="k">as</span> <span class="n">ime1</span><span class="p">,</span> <span class="n">u2</span><span class="p">.</span><span class="n">ime</span> <span class="k">as</span> <span class="n">ime2</span><span class="p">,</span> <span class="n">u1</span><span class="p">.</span><span class="n">prezime</span>
+<span class="k">FROM</span> <span class="n">ucenik</span> <span class="k">as</span> <span class="n">u1</span>
+     <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="k">as</span> <span class="n">u2</span> <span class="k">ON</span> <span class="n">u1</span><span class="p">.</span><span class="n">datum_rodjenja</span> <span class="o">=</span> <span class="n">u2</span><span class="p">.</span><span class="n">datum_rodjenja</span> <span class="k">AND</span> <span class="n">u1</span><span class="p">.</span><span class="n">prezime</span> <span class="o">=</span> <span class="n">u2</span><span class="p">.</span><span class="n">prezime</span>
+<span class="k">WHERE</span> <span class="n">u1</span><span class="p">.</span><span class="n">id</span> <span class="o">&lt;</span> <span class="n">u2</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>

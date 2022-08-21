@@ -6,7 +6,6 @@
     <title>SQL: Читање података из базе</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -545,7 +543,7 @@ SQL упиту одређује врсту акције коју корисни�
         <div class="note-icon-holder"> </div>
         <img src="../_static/img/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
         <div class="course-content">
-            
+            <p>
 <p><strong>Други типови SQL упита:</strong></p>
 <p>Постоје и други типови упита, који се ређе користе. Ми смо, на пример,
 у претходном делу креирали две базе и неколико табела у њима користећи
@@ -565,7 +563,7 @@ SQL упита (упит <code class="docutils literal notranslate"><span class=
 преглед података може да буде потребан знатно ширем кругу корисника
 различитих занимања.</p>
 
-    </div></div>
+    </p></div></div>
 <p>Од свих поменутих типова упита, за нас је најзначајнији упит <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>,
 помоћу којег веома брзо можемо да дођемо до података који су нам потребни.
 Зато ћемо у овом поглављу детаљније да упознамо могућности упита <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, а
@@ -575,8 +573,8 @@ SQL упита (упит <code class="docutils literal notranslate"><span class=
 <h2>Упит SELECT<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
 <p>Сваки, па и најједноставнији упит <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> мора да садржи следеће
 елементе:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">kolone</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">tabele</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">kolone</span>
+<span class="k">FROM</span> <span class="n">tabele</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Овим се систему налаже да нам из наведене табеле (или више табела)
@@ -600,8 +598,8 @@ SQL упита (упит <code class="docutils literal notranslate"><span class=
 <p>Приказати све податке о ученицима који су уписани у бази.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -682,8 +680,8 @@ SQL упита (упит <code class="docutils literal notranslate"><span class=
 <div class="line"><strong>ИЗ РЕДОВА</strong> табеле ученика</div>
 </div>
 <p>Он је функционално еквивалентан следећем упиту, али је од њега једноставнији за писање:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">prezime</span><span class="p">,</span><span class="w"> </span><span class="n">pol</span><span class="p">,</span><span class="w"> </span><span class="n">datum_rodjenja</span><span class="p">,</span><span class="w"> </span><span class="n">razred</span><span class="p">,</span><span class="w"> </span><span class="n">odeljenje</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">pol</span><span class="p">,</span> <span class="n">datum_rodjenja</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span>
+<span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>

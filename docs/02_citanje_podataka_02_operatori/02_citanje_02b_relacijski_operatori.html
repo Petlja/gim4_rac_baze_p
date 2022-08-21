@@ -6,7 +6,6 @@
     <title>Релацијски оператори (&lt;, &lt;=, &gt;, &gt;=, BETWEEN, IN)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -542,9 +540,9 @@
 
     </p></div></div>
 <p>Приказујемо све ученике код којих је разред већи или једнак од 3.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -630,9 +628,9 @@
 постављен услов.</p>
 <a class="reference internal image-reference" href="../_images/veciod2_razred.png"><img alt="../_images/veciod2_razred.png" class="align-center" src="../_images/veciod2_razred.png" style="width: 780px;" /></a>
 <p>Алтернативно, приказујемо све ученике код којих је разред строго већи од два.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -717,9 +715,9 @@
 <p>Приказати све податке о предметима у прва два разреда</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">predmet</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -782,9 +780,9 @@
 <p>Приказати све податке о учениицма који су рођени после првог јуна 2006.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">datum_rodjenja</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s1">&#39;2006-06-01&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">datum_rodjenja</span> <span class="o">&gt;</span> <span class="s1">&#39;2006-06-01&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -873,9 +871,9 @@
 2007. године, не укључујући последњи датум).</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="s1">&#39;2006-03-01&#39;</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">datum_rodjenja</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">datum_rodjenja</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s1">&#39;2007-03-01&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="s1">&#39;2006-03-01&#39;</span> <span class="o">&lt;=</span> <span class="n">datum_rodjenja</span> <span class="k">AND</span> <span class="n">datum_rodjenja</span> <span class="o">&lt;</span> <span class="s1">&#39;2007-03-01&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -954,9 +952,9 @@
 <code class="docutils literal notranslate"><span class="pre">BETWEEN</span> <span class="pre">...</span> <span class="pre">AND</span> <span class="pre">...</span></code>. Обе границе које се наведу се укључују. На
 пример, услов <code class="docutils literal notranslate"><span class="pre">ocena</span> <span class="pre">BETWEEN</span> <span class="pre">2</span> <span class="pre">AND</span> <span class="pre">4</span></code> допушта вредности 2, 3, и 4.
 Овај оператор може да се примени и на датуме.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">datum_rodjenja</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="s1">&#39;2006-03-01&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;2007-02-28&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">datum_rodjenja</span> <span class="k">BETWEEN</span> <span class="s1">&#39;2006-03-01&#39;</span> <span class="k">AND</span> <span class="s1">&#39;2007-02-28&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1043,10 +1041,10 @@
 добијеним у 2021. години.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">datum</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="s1">&#39;2021-01-01&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="s1">&#39;2021-12-01&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"></span>
-<span class="w">      </span><span class="n">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;нерегулисан&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">cas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">izostanak</span>
+<span class="k">WHERE</span> <span class="n">datum</span> <span class="k">BETWEEN</span> <span class="s1">&#39;2021-01-01&#39;</span> <span class="k">AND</span> <span class="s1">&#39;2021-12-01&#39;</span> <span class="k">AND</span>
+      <span class="n">status</span> <span class="o">!=</span> <span class="s1">&#39;нерегулисан&#39;</span> <span class="k">AND</span> <span class="n">cas</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1115,9 +1113,9 @@
 <p>Приказати све ученике који су у дневнику одељења I1 пре Петровића</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">odeljenje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">prezime</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s1">&#39;Петровић&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">odeljenje</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">prezime</span> <span class="o">&lt;</span> <span class="s1">&#39;Петровић&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1211,9 +1209,9 @@
 <p>Приказати све ученике чије презиме почиње на слово <code class="docutils literal notranslate"><span class="pre">П</span></code>.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">prezime</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;П%&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">prezime</span> <span class="k">LIKE</span> <span class="s1">&#39;П%&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1302,9 +1300,9 @@
 <p>Приказати све ученике чији су иницијали <code class="docutils literal notranslate"><span class="pre">ПП</span></code>.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;П%&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">prezime</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;П%&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">ime</span> <span class="k">LIKE</span> <span class="s1">&#39;П%&#39;</span> <span class="k">AND</span> <span class="n">prezime</span> <span class="k">LIKE</span> <span class="s1">&#39;П%&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1360,9 +1358,9 @@
 <p>Приказати све ученице чије се име не завршава на <cite>а</cite>.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">pol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ж&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="p">(</span><span class="n">ime</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%а&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">pol</span> <span class="o">=</span> <span class="s1">&#39;ж&#39;</span> <span class="k">AND</span> <span class="k">NOT</span> <span class="p">(</span><span class="n">ime</span> <span class="k">LIKE</span> <span class="s1">&#39;%а&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1414,9 +1412,9 @@
 <code class="docutils literal notranslate"><span class="pre">ић</span></code>, али не и на <code class="docutils literal notranslate"><span class="pre">вић</span></code>.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">ime</span><span class="p">,</span><span class="w"> </span><span class="n">prezime</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">prezime</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%ић&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="p">(</span><span class="n">prezime</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%вић&#39;</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="p">(</span><span class="n">prezime</span> <span class="k">LIKE</span> <span class="s1">&#39;%ић&#39;</span><span class="p">)</span> <span class="k">AND</span> <span class="k">NOT</span> <span class="p">(</span><span class="n">prezime</span> <span class="k">LIKE</span> <span class="s1">&#39;%вић&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1468,9 +1466,9 @@
 <code class="docutils literal notranslate"><span class="pre">Физика</span></code> или <code class="docutils literal notranslate"><span class="pre">Рачунарство</span> <span class="pre">и</span> <span class="pre">информатика</span></code>.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">naziv</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Математика&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Физика&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Рачунарство и информатика&#39;</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">predmet</span>
+<span class="k">WHERE</span> <span class="n">naziv</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Математика&#39;</span><span class="p">,</span> <span class="s1">&#39;Физика&#39;</span><span class="p">,</span> <span class="s1">&#39;Рачунарство и информатика&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>

@@ -6,7 +6,6 @@
     <title>Селекција (WHERE)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -110,7 +109,6 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -530,9 +528,9 @@
 можемо да одаберемо и само податке из неких врста, тј. да извршимо
 филтрирање података на основу неког задатог услова. Тада је потребно
 да користимо следећи облик упита <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">kolone</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">tabele</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">uslov</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">kolone</span>
+<span class="k">FROM</span> <span class="n">tabele</span>
+<span class="k">WHERE</span> <span class="n">uslov</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Када наведемо клаузулу <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>, кажемо да је извршена <strong>селекција</strong>
@@ -553,9 +551,9 @@
 <p>Приказати све податке о ученицима првог разреда.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -661,9 +659,9 @@
 <p>Приказати све податке о предметима у другом разреду</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">predmet</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">razred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">predmet</span>
+<span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -724,9 +722,9 @@
 <p>Приказати све податке о ученицима који се зову <code class="docutils literal notranslate"><span class="pre">Петар</span></code>.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Петар&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">ime</span> <span class="o">=</span> <span class="s1">&#39;Петар&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -860,9 +858,9 @@
 <p>Приказати све оцене добијене на писменим задацима.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ocena</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">vrsta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;писмени задатак&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ocena</span>
+<span class="k">WHERE</span> <span class="n">vrsta</span> <span class="o">=</span> <span class="s1">&#39;писмени задатак&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Када је потребно да се уради претрага текстуалних података, добро је да се прво покрене
@@ -944,9 +942,9 @@
 се и презива (приказати све такве ученике).</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">ucenik</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">ime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prezime</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">ucenik</span>
+<span class="k">WHERE</span> <span class="n">ime</span> <span class="o">=</span> <span class="n">prezime</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1000,9 +998,9 @@
 
     </p></div></div>
 <p>У истом упиту се могу комбиновати пројекција и селекција, и ово је управо пример таквог упита.</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;неоправдан&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span>
+<span class="k">FROM</span> <span class="n">izostanak</span>
+<span class="k">WHERE</span> <span class="n">status</span> <span class="o">=</span> <span class="s1">&#39;неоправдан&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Извршавањем упита добија се следећи резултат:</p>
@@ -1039,9 +1037,9 @@
 <p>Приказати све идентификаторе ученика и статусе изостанака направљених 14. маја 2021. године.</p>
 
     </p></div></div>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id_ucenik</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">izostanak</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">datum</span><span class="o">=</span><span class="s1">&#39;2021-05-14&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id_ucenik</span><span class="p">,</span> <span class="n">status</span>
+<span class="k">FROM</span> <span class="n">izostanak</span>
+<span class="k">WHERE</span> <span class="n">datum</span><span class="o">=</span><span class="s1">&#39;2021-05-14&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>У овом упиту услов је <code class="docutils literal notranslate"><span class="pre">datum='2021-05-14'</span></code>. Приметимо да је овај пут константна
@@ -1122,7 +1120,7 @@ WHERE datum_rodjenja = '2006-07-01'"    db-show-result>
         <div class="note-icon-holder"> </div>
         <img src="../_static/img/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
         <div class="course-content">
-            
+            <p>
 <p><strong>Зашто се ова операција зове селекција, односно рестрикција?</strong></p>
 <p>И термини <em>селекција врста табеле</em> и <em>рестрикција табеле</em>
 долазе из формализма релационе алгебре.</p>
@@ -1131,7 +1129,7 @@ WHERE datum_rodjenja = '2006-07-01'"    db-show-result>
 <p>Реч рестрикција значи ограничење, а у овом контексту говори да дату
 табелу ограничавамо само на оне врсте које задовољавају дати услов.</p>
 
-    </div></div>
+    </p></div></div>
 </div>
 </div>
 
