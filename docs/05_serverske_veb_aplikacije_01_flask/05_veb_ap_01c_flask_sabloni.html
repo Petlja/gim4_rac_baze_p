@@ -6,6 +6,7 @@
     <title>Шаблони</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -525,13 +530,13 @@
   <div class="section" id="id1">
 <h1>Шаблони<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Веб-апликације као одговор најчешће шаљу HTML стране. Навођење иоле
-дужег HTML-а у оквиру ниски директно у изворном коду програмског
+дужег HTML-а у оквиру ниски директно у изворном кôду програмског
 језика је непрегледно и тешко за одржавање.  Стога већина програмских
 библиотека за писање веб-апликација омогућава да делови HTML кôда
 смештају у посебне датотеке (тзв. <strong>шаблоне</strong>).</p>
 <p>Неки од примера који следе су јако обимни. Имајте у виду да, када правите овакве веб-апликације,
-не морате да пишете комплетан програмски код од почетка. Препоручена пракса је да узмете већ
-припремљене примере програмског кода и да га прилагодите на начин на који вам је потребно.</p>
+не морате да пишете комплетан програмски кôд од почетка. Препоручена пракса је да узмете већ
+припремљене примере програмског кôда и да га прилагодите на начин на који вам је потребно.</p>
 <p>Приметимо да у претходним примерима одговор који је наша веб
 апликација послала клијенту не представља исправан HTML запис, већ
 обичан текст. Стога функцију <code class="docutils literal notranslate"><span class="pre">index</span></code> можемо проширити тако да врати
@@ -554,40 +559,40 @@
 <span class="s2">&quot;&quot;&quot;</span>
 </pre></div>
 </div>
-<p>Можемо да изменимо програмски код већ креиране апликације.
+<p>Можемо да изменимо програмски кôд већ креиране апликације.
 Фајл који смо креирали у претходној лекцији, морамо поново да отворимо у едитору текста:
 - отворимо едитор <code class="docutils literal notranslate"><span class="pre">Notepad</span></code>,
-- изаберемо са менија <code class="docutils literal notranslate"><span class="pre">File/Open</span></code>,
+- изаберемо са менија <code class="docutils literal notranslate"><span class="pre">File/Open</span></code> и,
 - пронађемо фајл (обавезно изабрати <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">Files</span></code> и <code class="docutils literal notranslate"><span class="pre">Encoding/UTF-8</span></code>).</p>
 <p>Изменимо садржај фајла и сачувамо измене.</p>
-<a class="reference internal image-reference" href="../_images/flask_20a.png"><img alt="../_images/flask_20a.png" class="align-center" src="../_images/flask_20a.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_20a.png"><img alt="../_images/flask_20a.png" class="align-center" src="../_images/flask_20a.png" style="width: 780px;" /></a>
 <p>Као што смо већ рекли, да бисмо имали тачну путању до фајла која нам је неопходна да покренемо програм,
 можемо да употребимо опцију Copy <code class="docutils literal notranslate"><span class="pre">adress</span></code> када урадимо десни клик мишем у прозору <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">Explorer</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/flask_20b.png"><img alt="../_images/flask_20b.png" class="align-center" src="../_images/flask_20b.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_20b.png"><img alt="../_images/flask_20b.png" class="align-center" src="../_images/flask_20b.png" style="width: 500px;" /></a>
 <p>Након тога, у командној линији се постављамо у директоријум у коме смо креирали датотеку <code class="docutils literal notranslate"><span class="pre">app.py</span></code> тако што напишемо
 следеће:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">naziv_fajla_sa_putanjom</span>
 </pre></div>
 </div>
 <p>На пример:</p>
-<a class="reference internal image-reference" href="../_images/flask_20c.png"><img alt="../_images/flask_20c.png" class="align-center" src="../_images/flask_20c.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_20c.png"><img alt="../_images/flask_20c.png" class="align-center" src="../_images/flask_20c.png" style="width: 780px;" /></a>
 <p>Покрећемо Flask апликацију командом <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/flask_20d.png"><img alt="../_images/flask_20d.png" class="align-center" src="../_images/flask_20d.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_20d.png"><img alt="../_images/flask_20d.png" class="align-center" src="../_images/flask_20d.png" style="width: 780px;" /></a>
 <p>Ако је све у реду, добићемо одговарајућу поруку и можемо да у адресну линију прегледача унесемо
-управо адресу <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/</span></code>. (довољно је само бројеве који чине адресу).</p>
-<a class="reference internal image-reference" href="../_images/flask_20e.png"><img alt="../_images/flask_20e.png" class="align-center" src="../_images/flask_20e.png" style="width: 400px;" /></a>
+управо адресу <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/</span></code>. (довољно је само унети бројеве који чине адресу).</p>
+<a class="reference internal image-reference" href="../_images/flask_20e.png"><img alt="../_images/flask_20e.png" class="align-center" src="../_images/flask_20e.png" style="width: 500px;" /></a>
 <p>Када се оде на ту адресу, види се страна која садржи наслов првог нивоа <code class="docutils literal notranslate"><span class="pre">Zdravo</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/flask_20f.png"><img alt="../_images/flask_20f.png" class="align-center" src="../_images/flask_20f.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_20f.png"><img alt="../_images/flask_20f.png" class="align-center" src="../_images/flask_20f.png" style="width: 500px;" /></a>
 <p>У командној линији можемо прекинути веб-апликацију комбинацијом тастера <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code>.
-Можемо да се вратимо на програмски код и, на пример, додамо и један пасус у HTML део тако што ћемо испод елемента
+Можемо да се вратимо на програмски кôд и, на пример, додамо и један пасус у HTML део тако што ћемо испод елемента
 за наслов додати следеће:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Ovo</span> <span class="n">je</span> <span class="n">primer</span> <span class="n">jedne</span> <span class="n">veb</span><span class="o">-</span><span class="n">aplikacije</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Измењен програмски код може да се види на следећој слици.</p>
-<a class="reference internal image-reference" href="../_images/flask_20g.png"><img alt="../_images/flask_20g.png" class="align-center" src="../_images/flask_20g.png" style="width: 400px;" /></a>
+<p>Измењен програмски кôд може да се види на следећој слици:</p>
+<a class="reference internal image-reference" href="../_images/flask_20g.png"><img alt="../_images/flask_20g.png" class="align-center" src="../_images/flask_20g.png" style="width: 780px;" /></a>
 <p>Након што сачувамо измене, вратимо се у командну линију и поново покренемо Flask апликацију командом <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/flask_20h.png"><img alt="../_images/flask_20h.png" class="align-center" src="../_images/flask_20h.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_20h.png"><img alt="../_images/flask_20h.png" class="align-center" src="../_images/flask_20h.png" style="width: 780px;" /></a>
 <p>Приметимо да смо ниску која садржи HTML кôд навели између наводника
 облика <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;...&quot;&quot;&quot;</span></code> уместо између наводника облика <code class="docutils literal notranslate"><span class="pre">&quot;...&quot;</span></code> или
 <code class="docutils literal notranslate"><span class="pre">'...'</span></code>, чиме је омогућено да се ниска простире кроз више редова.</p>
@@ -633,7 +638,7 @@
 <p>Фајл <code class="docutils literal notranslate"><span class="pre">templates/index.html</span></code> се креира у едитору текста Notepad, као што смо креирали и статичке веб-стране.</p>
 <a class="reference internal image-reference" href="../_images/flask_20i.png"><img alt="../_images/flask_20i.png" class="align-center" src="../_images/flask_20i.png" style="width: 780px;" /></a>
 <p>У самом фолдеру ће се можда аутоматски појавити још неки поддиректоријум након покретања апликације.</p>
-<p>Анализирајмо сада програмски код.</p>
+<p>Анализирајмо сада програмски кôд.</p>
 <p>У функцији <code class="docutils literal notranslate"><span class="pre">index</span></code> која ће одговарати на HTTP захтев, позивамо
 функцију <code class="docutils literal notranslate"><span class="pre">render_template</span></code> библиотеке <code class="docutils literal notranslate"><span class="pre">Flask</span></code> (да би могла да буде
 позвана, потребно је да буде претходно увезена, тј. наведена у склопу
@@ -741,9 +746,9 @@ HTML стране. Прикажимо ово на једном једноста�
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>На слици је приказан изглед стране унутар прегледача веба.</p>
-<a class="reference internal image-reference" href="../_images/flask_02_sabloni.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_02_sabloni.png" style="width: 400px;" /></a>
-<p>Наравно, у реалним апликацијима подаци који се прослеђују функцији
+<p>На слици је приказан изглед стране унутар прегледача веба:</p>
+<a class="reference internal image-reference" href="../_images/flask_02_sabloni.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_02_sabloni.png" style="width: 500px;" /></a>
+<p>Наравно, у реалним апликацијама подаци који се прослеђују функцији
 <code class="docutils literal notranslate"><span class="pre">render_template</span></code> се обично читају из база података (иако је могуће
 навести конкретне податке, попут листе предмета у претходном примеру,
 то се не ради често).</p>
@@ -842,7 +847,7 @@ HTML стране. Прикажимо ово на једном једноста�
 </pre></div>
 </div>
 <p>На слици је приказан изглед стране унутар прегледача веба.</p>
-<a class="reference internal image-reference" href="../_images/flask_03_spisak_ucenika.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_03_spisak_ucenika.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_03_spisak_ucenika.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_03_spisak_ucenika.png" style="width: 500px;" /></a>
 </div>
 <div class="section" id="id4">
 <h3>Вежба – таблица множења<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
@@ -886,7 +891,7 @@ HTML стране. Прикажимо ово на једном једноста�
 ћелија табеле (елемент <code class="docutils literal notranslate"><span class="pre">td</span></code>) и у њу се уписује вредност израза
 <code class="docutils literal notranslate"><span class="pre">i*j</span></code>.</p>
 <p>На слици је приказан изглед стране унутар прегледача веба.</p>
-<a class="reference internal image-reference" href="../_images/flask_04_tablica_mnozenja.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_04_tablica_mnozenja.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_04_tablica_mnozenja.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_04_tablica_mnozenja.png" style="width: 500px;" /></a>
 <p>Наравно, исту функционалност је било могуће постићи и без коришћења
 шаблона, у чистом Python-у, међутим, такав програм је доста мање
 елегантан, па овакав приступ нећемо убудуће користити.</p>
@@ -922,7 +927,7 @@ HTML стране. Прикажимо ово на једном једноста�
 <div class="section" id="id5">
 <h2>Наслеђивање шаблона<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>Веб-апликације се често састоје од више страна (свака се налази на
-посебној путањи тј. приступа јој се на основу посебног URL-а). Пошто
+посебној путањи, тј. приступа јој се на основу посебног URL-а). Пошто
 стране настају на основу шаблона, природно је да свака таква страна
 има свој шаблон. На пример, можемо дефинисати стране <code class="docutils literal notranslate"><span class="pre">home</span></code> и
 <code class="docutils literal notranslate"><span class="pre">about</span></code>.</p>
@@ -940,7 +945,7 @@ HTML стране. Прикажимо ово на једном једноста�
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;about.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Шаблон <code class="docutils literal notranslate"><span class="pre">templates/home.html</span></code> има следећи садржај.</p>
+<p>Шаблон <code class="docutils literal notranslate"><span class="pre">templates/home.html</span></code> има следећи садржај:</p>
 <div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -969,7 +974,7 @@ HTML стране. Прикажимо ово на једном једноста�
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Шаблон <code class="docutils literal notranslate"><span class="pre">templates/about.html</span></code> има следећи садржај.</p>
+<p>Шаблон <code class="docutils literal notranslate"><span class="pre">templates/about.html</span></code> има следећи садржај:</p>
 <div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1038,20 +1043,20 @@ HTML стране. Прикажимо ово на једном једноста�
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>На месту који се разликује дефинишемо <strong>блок</strong>, коришћењем директиве
+<p>На месту које се разликује дефинишемо <strong>блок</strong>, коришћењем директиве
 <code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">block</span> <span class="pre">...</span> <span class="pre">%}</span></code>. Блоку можемо дати назив какав желимо (у овом
 примеру смо му дали назив <code class="docutils literal notranslate"><span class="pre">content</span></code>). У датотеци која садржи
 заједнички кôд блок ће бити празан и у свакој датотеци која дели тај
 заједнички кôд, садржај тог блока ће бити дефинисан засебно, на начин
 специфичан за ту датотеку.</p>
-<p>Шаблон <code class="docutils literal notranslate"><span class="pre">templates/home.html</span></code> сада може да има само следећи садржај.</p>
+<p>Шаблон <code class="docutils literal notranslate"><span class="pre">templates/home.html</span></code> сада може да има само следећи садржај:</p>
 <div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;index.html&quot;</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
     <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 <span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span>
 </pre></div>
 </div>
-<p>Шаблон <code class="docutils literal notranslate"><span class="pre">templates/about.html</span></code> сада може да има следећи садржај.</p>
+<p>Шаблон <code class="docutils literal notranslate"><span class="pre">templates/about.html</span></code> сада може да има следећи садржај:</p>
 <div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;index.html&quot;</span> <span class="cp">%}</span>
 <span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span>
     <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
@@ -1073,24 +1078,20 @@ HTML стране. Прикажимо ово на једном једноста�
 <div class="section" id="id6">
 <h2>Питања и задаци за вежбу<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Допуни шаблон који генерише таблицу множења тако да се генеришу и
 врста и колона заглавља у којима се приказују бројеви који се
 множе.</p>
 
-    </p></div></div>
+    </div></div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Дефинисати веб-апликацију у којој се у табели приказују квадрати
 свих природних бројева од 1 до 20. Користити шаблон у ком се у
 петљи набрајају сви бројеви и њихови квадрати се аутоматски
@@ -1099,11 +1100,15 @@ HTML стране. Прикажимо ово на једном једноста�
 шаблонима користиш математичке функције попут <code class="docutils literal notranslate"><span class="pre">math.sqrt</span></code>
 (погледај Flask документацију за <code class="docutils literal notranslate"><span class="pre">&#64;app.context_processor</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="02_flask_sabloni_1">
-            <p>Q-119: У склопу Flask апликације шаблони се чувају и директоријуму:</p>
+            <p>Q-119: У склопу Flask апликације шаблони се чувају у директоријуму:</p>
 
             <li data-component="answer" data-correct id="02_flask_sabloni_1_opt_a">templates</li><li data-component="feedback" id="02_flask_sabloni_1_opt_a"></li>
             
@@ -1117,7 +1122,11 @@ HTML стране. Прикажимо ово на једном једноста�
             </ul>
             </div>
             
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="02_flask_sabloni_2">
             <p>Q-120: Веб-страна треба да приказује корисничко име тренутно улогованог
 корисника. Како то постићи коришћењем шаблона?</p>
@@ -1142,7 +1151,11 @@ HTML стране. Прикажимо ово на једном једноста�
             </ul>
             </div>
             
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="02_flask_sabloni_3">
             <p>Q-121: Које се заграде у Jinja шаблонима користе за навођење наредби
 (<code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, …) ?</p>
@@ -1159,7 +1172,11 @@ HTML стране. Прикажимо ово на једном једноста�
             </ul>
             </div>
             
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="02_flask_sabloni_4">
             <p>Q-122: Које се заграде у Jinja шаблонима користе за навођење променљивих
 које се приликом обраде шаблона мењају својим вредностима?</p>

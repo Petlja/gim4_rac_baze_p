@@ -6,6 +6,7 @@
     <title>Колачићи</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -525,49 +530,49 @@
   <div class="section" id="id1">
 <h1>Колачићи<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>HTTP протокол је дизајниран тако да се заснива на захтевима клијента и
-одговорима сервера. Сам протокол не предвиђа никакво одржавање стања
-између различитих захтева и одговора (сваки пар захтев-одговор се
-сматра независним од осталих). С обзиром на то да се у
+одговорима сервера. Сâм протокол не предвиђа никакво одржавање стања
+између различитих захтева и одговора (сваки пар захтев-одговор
+сматра се независним од осталих). С обзиром на то да се у
 савременим веб-апликацијама јавља потреба за одржавањем стања током
 комуникације клијента и сервера, појавили су се различити механизми да
-се то оствари. Један такав механизам чине <strong>колачићи</strong> (енгл. cookies)
+се то оствари. Један такав механизам чине <strong>колачићи</strong> (енгл. cookies),
 где се стање чува на клијенту, а други чине <strong>сесије</strong>
-(енгл. sessions) где се стање чува на серверу.</p>
+(енгл. sessions), где се стање чува на серверу.</p>
 <p>Подаци који се чувају у колачићима и сесијама треба схватити као
 одређени облик привремених података који се чувају док не истекну
 после неког времена или док их корисник експлицитно не обрише или
-поништи. Са друге стране трајне податке треба чувати на серверу
+поништи. Са друге стране, трајне податке треба чувати на серверу
 (обично у бази података). У наставку наводимо примере података који се
 обично чувају у колачићима и сесијама:</p>
 <ul class="simple">
-<li><p>Корисничко име тренутно улогованог корисника</p></li>
-<li><p>Производи које је корисник убацио у корпу током посете електронској
-продавници</p></li>
-<li><p>Разна подешавања и прилагођавања сајта кориснику (на пример, валута
+<li><p>корисничко име тренутно улогованог корисника;</p></li>
+<li><p>производи које је корисник убацио у корпу током посете електронској
+продавници;</p></li>
+<li><p>разна подешавања и прилагођавања сајта кориснику (на пример, валута
 у којој ће се приказивати цене, језик на ком ће се приказивати
 садржај сајта, податак о томе да ли се користи тамна или светла тема
-и слично)</p></li>
+и слично).</p></li>
 </ul>
-<p>Ови подаци су такви да у случају да нестану неће се десити ништа
+<p>Ови подаци су такви да, у случају да нестану, неће се десити ништа
 катастрофално (корисник увек може да се улогује поново, попуни
 производе у корпу, прилагоди сајт свом укусу и слично).</p>
 <p>Са друге стране, у бази података се памте информације за које желимо
-да обезбедимо да су заиста трајни (на пример, објаве на блогу које је
+да обезбедимо да су заиста трајне (на пример, објаве на блогу које је
 корисник унео, корисничка имена и лозинке регистрованих корисника,
 податке о свим производима који се користе у електронској продавници и
 слично).</p>
 <p>Колачићи функционишу тако што сервер у склопу неког одговора уз сам
-одговор пошаље и тзв. колачић тј. додатну малу количину података које
+одговор пошаље и тзв. колачић, тј. додатну малу количину података коју
 затим клијент прима и трајно памти (колачићу се може задати и време
 истека, али оно може бити и бесконачно, што значи да ће колачић бити
 складиштен на клијенту све док се експлицитно не обрише). У сваком
 наредном захтеву клијента ка том серверу клијент уз захтев шаље и тај
 колачић, тако да сервер добија податке који су сачувани на клијенту.</p>
 <p>Прикажимо на једном једноставном примеру како се колачићи користе
-заједно са библиотеком Flask. Када приступи апликацији корисник уноси
+заједно са библиотеком Flask. Када приступи апликацији, корисник уноси
 своје име у формулар који му се приказује. У сваком наредном приступу
 истој апликацији кориснику се не приказује више тај формулар, него
-поздравна порука испод које му се нуди могућност да се „излогује”,
+поздравна порука испод које му се нуди могућност да се „излогује“,
 након чега му се поново нуди формулар за унос имена.</p>
 <p>Кренимо од шаблона <code class="docutils literal notranslate"><span class="pre">templates/index.html</span></code>. У зависности од тога да
 ли му је прослеђена променљива <code class="docutils literal notranslate"><span class="pre">name</span></code>, у њему се приказује или
@@ -605,7 +610,7 @@
 колачића, што значи да ће се тада приказати поздравна порука и линк за
 излогивање. Ако није, позивамо функцију <code class="docutils literal notranslate"><span class="pre">render_template</span></code> без
 прослеђене променљиве <code class="docutils literal notranslate"><span class="pre">name</span></code>, што значи да ће се приказати формулар
-за унос имена. Сви колачићи који су пристигли у склопу захтева се могу
+за унос имена. Сви колачићи који су пристигли у склопу захтева могу се
 прочитати коришћењем речника <code class="docutils literal notranslate"><span class="pre">request.cookies</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
@@ -643,7 +648,7 @@
 формулар читајући POST параметар <code class="docutils literal notranslate"><span class="pre">request.form[&quot;name&quot;]</span></code>. Након
 постављања колачића желимо одмах да се вратимо на главну страну
 апликације. Зато позивамо функцију <code class="docutils literal notranslate"><span class="pre">redirect</span></code>, прослеђујући јој URL
-који одговара путањи на којој се позива функција <code class="docutils literal notranslate"><span class="pre">index</span></code> (њега лако
+који одговара путањи којом се позива функција <code class="docutils literal notranslate"><span class="pre">index</span></code> (њега лако
 одређујемо помоћу функције <code class="docutils literal notranslate"><span class="pre">url_for</span></code>). Око тако формираног одговора
 (који није HTML страна, већ само инструкција да се прегледач
 аутоматски пребаци на неку другу адресу тј. URL) се методом
@@ -673,7 +678,7 @@
 историју посета сајтовима тог корисника, чак иако се он никада није
 логовао и уносио своја корисничка имена и лозинке. Компаније онда
 користе те податке да прилагоде огласе и рекламе које ће приказати
-кориснику и ускладе их са његовим интересовањима (приметили сте
+кориснику и ускладе их са његовим интересовањима (приметили сте,
 вероватно, да када посетите неколико сајтова на којима се продаје неки
 производ, да вам у наредних неколико дана на свим другим сајтовима и
 друштвеним мрежама искачу огласи и рекламе баш за ту врсту производа).

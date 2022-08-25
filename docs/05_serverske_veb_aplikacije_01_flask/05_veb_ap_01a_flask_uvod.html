@@ -6,6 +6,7 @@
     <title>Библиотека Flask</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -526,8 +531,8 @@
 <h1>Библиотека Flask<a class="headerlink" href="#flask" title="Permalink to this headline">¶</a></h1>
 <p><strong>Flask</strong> (<a class="reference external" href="https://flask.palletsprojects.com/">https://flask.palletsprojects.com/</a>) је библиотека
 програмског језика Python намењена креирању веб-апликација. Постоје и
-друге библиотеке овог језика (нпр. веома популарна је библиотека
-<strong>Django</strong>, (<a class="reference external" href="https://www.djangoproject.com/">https://www.djangoproject.com/</a>)), међутим, Flask је
+друге библиотеке овог језика, нпр. веома популарна је библиотека
+<strong>Django</strong> - <a class="reference external" href="https://www.djangoproject.com/">https://www.djangoproject.com/</a>. Међутим, Flask је
 библиотека која је писана тако да је веома једноставна за коришћење и
 самим тим погодна за почетнике.</p>
 <p>У овом поглављу ћемо приказати неке основне функционалности које нам
@@ -535,19 +540,19 @@
 неколико комплетних веб-апликација.</p>
 <div class="section" id="id1">
 <h2>Инсталација<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Инсталација бибилотеке Flask је веома једноставна и врши се помоћу подразумеваног механизма
-за инсталацију пакета у програмском језику Python (користи се алатка која се назива <code class="docutils literal notranslate"><span class="pre">pip</span></code> (PyPI - Python Package Installer).
+<p>Инсталација библиотеке Flask је веома једноставна и врши се помоћу подразумеваног механизма
+за инсталацију пакета у програмском језику Python (користи се алатка која се назива <code class="docutils literal notranslate"><span class="pre">pip</span></code> (PyPI - Python Package Installer)).
 Покренути командну линију. Најлакше је унети <code class="docutils literal notranslate"><span class="pre">cmd</span></code> у претрагу рачунара.</p>
-<a class="reference internal image-reference" href="../_images/flask1.png"><img alt="../_images/flask1.png" class="align-center" src="../_images/flask1.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask1.png"><img alt="../_images/flask1.png" class="align-center" src="../_images/flask1.png" style="width: 500px;" /></a>
 <p>Отвориће се командни прозор.</p>
-<a class="reference internal image-reference" href="../_images/flask2.png"><img alt="../_images/flask2.png" class="align-center" src="../_images/flask2.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask2.png"><img alt="../_images/flask2.png" class="align-center" src="../_images/flask2.png" style="width: 500px;" /></a>
 <p>Под претпоставком да је на рачунару инсталирана подршка за програмски језик Python 3,
 довољно је у командној линији унети следећу команду и сачекати да се Flask инсталира.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">Flask</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/flask3.png"><img alt="../_images/flask3.png" class="align-center" src="../_images/flask3.png" style="width: 400px;" /></a>
-<p>На следећој слици може да се види како изгледа покренут и успешно спроведен</p>
+<a class="reference internal image-reference" href="../_images/flask3.png"><img alt="../_images/flask3.png" class="align-center" src="../_images/flask3.png" style="width: 500px;" /></a>
+<p>На следећој слици може да се види како изгледа покренут и успешно спроведен:</p>
 <a class="reference internal image-reference" href="../_images/flask4.png"><img alt="../_images/flask4.png" class="align-center" src="../_images/flask4.png" style="width: 780px;" /></a>
 <p>Уколико на рачунару није инсталиран програмски језик Python, прво њега инсталирати према упутству које следи,
 па се вратити на инсталацију библиотеке Flask.</p>
@@ -557,7 +562,7 @@
 <p>Текст који следи је део упутства које је доступно у материјалима за други разред:
 <a class="reference external" href="https://petljamediastorage.blob.core.windows.net/root/Media/Default/Help/Uputstvo%20Python%20pygame.pdf">https://petljamediastorage.blob.core.windows.net/root/Media/Default/Help/Uputstvo%20Python%20pygame.pdf</a></p>
 <p>Да бисте инсталирали Python прво је потребно да одете на сајт <a class="reference external" href="https://www.python.org/">https://www.python.org/</a> на коме ћете наћи
-актуелну верзију језика Python. Идите на секцију Downloads и ту кликните на дугме на коме ће бити актулена
+актуелну верзију језика Python. Идите на секцију Downloads и ту кликните на дугме на коме ће бити актуелена
 верзија језика Python (у овом случају верзија „Python 3.7.0“) да бисте започели са преузимањем инсталационог
 програма за Windows, као на слици испод.</p>
 <a class="reference internal image-reference" href="../_images/python1.jpg"><img alt="../_images/python1.jpg" class="align-center" src="../_images/python1.jpg" style="width: 780px;" /></a>
@@ -573,11 +578,11 @@ Python већ инсталиран и тада можете да прекине�
 верзију језика Python. Потребно је да кликнете на дугме <code class="docutils literal notranslate"><span class="pre">Upgrade</span> <span class="pre">Now</span></code> као на слици испод.</p>
 <a class="reference internal image-reference" href="../_images/python3.jpg"><img alt="../_images/python3.jpg" class="align-center" src="../_images/python3.jpg" style="width: 780px;" /></a>
 <p>Уколико немате већ инсталирану актуелну верзију језика Python, онда ће вам се појавити прозор у коме пише <code class="docutils literal notranslate"><span class="pre">Setup</span> <span class="pre">Python…</span></code>.
-У том прозору штиклирајте опцију <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Python</span> <span class="pre">3.7</span> <span class="pre">to</span> <span class="pre">PATH</span></code> и затим кликните на <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Now</span></code> као на слици испод.</p>
+У том прозору штриклирајте опцију <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Python</span> <span class="pre">3.7</span> <span class="pre">to</span> <span class="pre">PATH</span></code> и затим кликните на <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">Now</span></code> као на слици испод.</p>
 <a class="reference internal image-reference" href="../_images/python5.jpg"><img alt="../_images/python5.jpg" class="align-center" src="../_images/python5.jpg" style="width: 780px;" /></a>
 <p>Након тога треба да сачекате да се заврши инсталација (тај процес изгледаће као на слици испод).</p>
 <a class="reference internal image-reference" href="../_images/python4.jpg"><img alt="../_images/python4.jpg" class="align-center" src="../_images/python4.jpg" style="width: 780px;" /></a>
-<p>Ако је све у реду, на крају инсталације ће појавити порука да је инсталација успешно обављена.
+<p>Ако је све у реду, на крају инсталације ће се појавити порука да је инсталација успешно обављена.
 Тада можете слободно затворити инсталацију кликом на дугме <code class="docutils literal notranslate"><span class="pre">Close</span></code>.</p>
 </div>
 </div>

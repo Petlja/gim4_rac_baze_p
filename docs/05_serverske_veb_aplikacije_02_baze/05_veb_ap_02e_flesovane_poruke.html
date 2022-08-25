@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>„Флешоване” поруке</title>
+    <title>„Флешоване“ поруке</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -523,19 +528,19 @@
     <div id="main-content">
     
   <div class="section" id="id1">
-<h1>„Флешоване” поруке<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>„Флешоване“ поруке<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Поруку о томе да ли је упис у базу успео смо у претходној апликацији
 вршили тако што смо увели посебан параметар <code class="docutils literal notranslate"><span class="pre">msg</span></code> који смо
 прослеђивали шаблону. Пошто је ситуација у којој кориснику треба да
 буду приказане неке једнократне поруке прилично честа, библиотека
 Flask нуди посебан механизам за то. У питању су такозване
-<strong>„флешоване” поруке</strong> (енгл. <em>flashed messages</em> – флеш означава
+<strong>„флешоване“ поруке</strong> (енгл. <em>flashed messages</em> - „флеш“ означава
 бљесак који се на тренутак појави и брзо нестане). Python функција
 која одговара на HTTP захтев може да постави нову поруку позивом
-функције <code class="docutils literal notranslate"><span class="pre">flash</span></code>. Са друге стране, унтар шаблона се листа свих
+функције <code class="docutils literal notranslate"><span class="pre">flash</span></code>. Са друге стране, унутар шаблона се листа свих
 порука може добити помоћу <code class="docutils literal notranslate"><span class="pre">get_flashed_messages()</span></code>. Свака порука је
 обична ниска карактера, при чему се порукама могу додатно придружити и
-категорије које корисник дефнише (попут <code class="docutils literal notranslate"><span class="pre">&quot;error&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;OK&quot;</span></code> и
+категорије које корисник дефинише (попут <code class="docutils literal notranslate"><span class="pre">&quot;error&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;OK&quot;</span></code> и
 слично), тако што се функцији <code class="docutils literal notranslate"><span class="pre">flash</span></code> проследе две ниске (прва је
 текст поруке, а друга је категорија).  Тада је поруке унутар шаблона
 потребно прихватити позивом функције
@@ -576,7 +581,7 @@ Flask нуди посебан механизам за то. У питању су
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>Приметимо да смо употребили наредбу</p>
+<p>Приметимо да смо употребили наредбу:</p>
 <div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">{%</span> <span class="k">with</span> <span class="nv">promenljiva</span> <span class="o">=</span> <span class="nv">funkcija</span><span class="o">(</span><span class="p">...</span><span class="o">)</span> <span class="cp">%}</span>
    ...
 <span class="cp">{%</span> <span class="k">endwith</span> <span class="cp">%}</span>
@@ -642,8 +647,8 @@ Flask нуди посебан механизам за то. У питању су
 </pre></div>
 </div>
 <p>На слици је приказан изглед флешоване поруке након успешног уписа
-новог корисника у базу.</p>
-<a class="reference internal image-reference" href="../_images/flask_14_add_customer_flash.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_14_add_customer_flash.png" style="width: 250px;" /></a>
+новог корисника у базу:</p>
+<a class="reference internal image-reference" href="../_images/flask_14_add_customer_flash.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_14_add_customer_flash.png" style="width: 500px;" /></a>
 </div>
 
 

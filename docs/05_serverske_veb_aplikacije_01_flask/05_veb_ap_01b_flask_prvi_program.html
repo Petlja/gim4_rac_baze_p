@@ -6,6 +6,7 @@
     <title>Први програм</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -524,7 +529,7 @@
     
   <div class="section" id="id1">
 <h1>Први програм<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Кренимо приказ библиотеке Flask тако што ћемо приказати најједноставнију могућу апликацију,
+<p>Покренимо приказ библиотеке Flask тако што ћемо приказати најједноставнију могућу апликацију,
 која само у прегледачу приказује текст <code class="docutils literal notranslate"><span class="pre">Zdravo</span></code> (приликом учења програмских језика обично се крене
 од ове апликације, која се на енглеском назива Hello world).</p>
 <p>Свака иоле сложенија веб-апликација укључује неколико различитих фајлова (датотека, докумената),
@@ -541,7 +546,7 @@
 </pre></div>
 </div>
 <p>Фајлове са програмским кодом, као што је овај, можете да креирате у било ком едитору текста као што је <em>Notepad</em>.</p>
-<a class="reference internal image-reference" href="../_images/flask_10a.png"><img alt="../_images/flask_10a.png" class="align-center" src="../_images/flask_10a.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_10a.png"><img alt="../_images/flask_10a.png" class="align-center" src="../_images/flask_10a.png" style="width: 500px;" /></a>
 <p>Када чувате фајл, потребно је да:</p>
 <ul class="simple">
 <li><p>изаберете <code class="docutils literal notranslate"><span class="pre">All</span> <span class="pre">Files</span></code> под <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">as</span> <span class="pre">type</span></code>,</p></li>
@@ -552,16 +557,16 @@
 одговарајућом наредбом.</p>
 <p>Да бисмо имали тачну путању до фајла која нам је неопходна да покренемо програм, можемо да употребимо
 опцију <code class="docutils literal notranslate"><span class="pre">Copy</span> <span class="pre">adress</span></code> када урадимо десни клик мишем у прозору <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">Explorer</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/flask_10c.png"><img alt="../_images/flask_10c.png" class="align-center" src="../_images/flask_10c.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_10c.png"><img alt="../_images/flask_10c.png" class="align-center" src="../_images/flask_10c.png" style="width: 500px;" /></a>
 <p>Након тога, у командној линији се постављамо у директоријум у коме смо креирали датотеку <code class="docutils literal notranslate"><span class="pre">app.py</span></code> тако што напишемо
 следеће:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">naziv_fajla_sa_putanjom</span>
 </pre></div>
 </div>
 <p>На пример:</p>
-<a class="reference internal image-reference" href="../_images/flask_10d.png"><img alt="../_images/flask_10d.png" class="align-center" src="../_images/flask_10d.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_10d.png"><img alt="../_images/flask_10d.png" class="align-center" src="../_images/flask_10d.png" style="width: 500px;" /></a>
 <p>Покрећемо <code class="docutils literal notranslate"><span class="pre">Flask</span></code> апликацију командом <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/flask_10e.png"><img alt="../_images/flask_10e.png" class="align-center" src="../_images/flask_10e.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_10e.png"><img alt="../_images/flask_10e.png" class="align-center" src="../_images/flask_10e.png" style="width: 500px;" /></a>
 <p>Ако је све у реду, добићемо поруку</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Environment</span><span class="p">:</span> <span class="n">production</span>
   <span class="n">WARNING</span><span class="p">:</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">development</span> <span class="n">server</span><span class="o">.</span> <span class="n">Do</span> <span class="ow">not</span> <span class="n">use</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">production</span> <span class="n">deployment</span><span class="o">.</span>
@@ -574,15 +579,15 @@
 на пример прегледача Chrome преко адресе <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/</span></code>.
 У адресну линију прегледача унети управо ову адресу (довољно је само бројеве који чине адресу),
 како је приказано на следећој слици.</p>
-<a class="reference internal image-reference" href="../_images/flask_10f.png"><img alt="../_images/flask_10f.png" class="align-center" src="../_images/flask_10f.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_10f.png"><img alt="../_images/flask_10f.png" class="align-center" src="../_images/flask_10f.png" style="width: 500px;" /></a>
 <p>Када се оде на ту адресу, види се страна која садржи само текст Zdravo. Наш веб-сервер све време ради у позадини,
 а можемо га прекинути комбинацијом тастера <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code> у командој линији у којој је покренут.
 На слици је приказан изглед стране унутар прегледача Chrome.</p>
-<a class="reference internal image-reference" href="../_images/flask_01_hello.png"><img alt="../_images/flask_01_hello.png" class="align-center" src="../_images/flask_01_hello.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_01_hello.png"><img alt="../_images/flask_01_hello.png" class="align-center" src="../_images/flask_01_hello.png" style="width: 500px;" /></a>
 <p>Уколико је потребно да нешто изменимо у нашој апликацији и да видимо измене, потребно је да урадимо следеће:</p>
 <ul class="simple">
-<li><p>у командој линији у којој смо покренули веб-апликацију помоћу  Flask Run  прекинути је комбинацијом тастера Ctrl + C;</p></li>
-<li><p>поново отворити програмски код у едитору текста Notepad тако што отворимо едитор Notepad, изаберемо са менија File/Open, и пронађемо фајл (обавезно изабрати All Files и Encoding/UTF-8);</p></li>
+<li><p>у командној линији у којој смо покренули веб-апликацију помоћу  Flask Run  прекинути је комбинацијом тастера Ctrl + C;</p></li>
+<li><p>поново отворити програмски кôд у едитору текста Notepad тако што отворимо едитор Notepad, изаберемо са менија File/Open, и пронађемо фајл (обавезно изабрати All Files и Encoding/UTF-8);</p></li>
 <li><p>унети измене у фајл и сачувати фајл (на пример, уместо текста „Zdravo”, написати „Hello World”);</p></li>
 <li><p>вратити се у командну линију на исту локацију где се налази app.py и поново покренути веб-апликацију помоћу  Flask Run;</p></li>
 <li><p>отворити адресу <a class="reference external" href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a> у прегледачу Chrome (или освежити страницу ако је већ била отворена и нисмо је затворили).</p></li>
@@ -592,56 +597,56 @@
         <div class="note-icon-holder"> </div>
         <img src="../_static/img/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
         <div class="course-content">
-            <p>
+            
 <p><strong>Ко жели да зна више…</strong></p>
 <p>IP адреса <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> је специјална и
 означава локални рачунар. Ту IP адресу користимо када се веб-сервер
 и прегледач извршавају на истом рачунару. Уместо IP адресе,
 можемо користити и назив <code class="docutils literal notranslate"><span class="pre">localhost</span></code> који замењује име локалног рачунара.
 Број <code class="docutils literal notranslate"><span class="pre">5000</span></code> означава тзв. порт који ближе одређује да желимо да приступимо баш Flask
-серверу тј. Flask веб-апликацији коју смо покренули. Наиме, могуће је
+серверу, тј. Flask веб-апликацији коју смо покренули. Наиме, могуће је
 да на локалном рачунару ради више веб-сервера (као и других сервера) истовремено, па онда
-сваки сервер бира порт на коме „слуша”,
+сваки сервер бира порт на коме „слуша“,
 а навођењем порта се одређује којем се серверу приступа.</p>
 <p>Број <code class="docutils literal notranslate"><span class="pre">5000</span></code> је одређен прилично произвољно и у оквиру подешавања Flask апликације је
 могуће променити га (ако се, на пример, покаже да је на порту 5000 већ
 покренута нека друга веб-апликација). Ако се питате шта се дешава када се у URL-у не
-наведе порт, одговор је једноставан: ако на почетку URL-а стоји „http:” подразумева се порт
+наведе порт, одговор је једноставан: ако на почетку URL-а стоји „http:“ подразумева се порт
 80 и исто тако постоји подразумеван порт за друге протоколе. Веб сервери који су јавно доступни
 обично користе подразумеване портове да би URL био једноставнији.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="section" id="id2">
 <h2>Објашњење првог програма, путање и рутирање<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Анализирајмо сада програмски кôд ове једноставне апликације. Напоменимо да је назив <code class="docutils literal notranslate"><span class="pre">app.py</span></code> подразумеван назив
 за главну програмску датотеку Flask апликације (то може и да се промени, али у првим примерима то нећемо радити).
-Свака Flask апликација је у програму представљена објектом klase <code class="docutils literal notranslate"><span class="pre">Flask</span></code>. Уобичајено је да тај објекат доделимо
+Свака Flask апликација је у програму представљена објектом класе <code class="docutils literal notranslate"><span class="pre">Flask</span></code>. Уобичајено је да тај објекат доделимо
 променљивој <code class="docutils literal notranslate"><span class="pre">app</span></code> након што га конструишемо позивом конструктора <code class="docutils literal notranslate"><span class="pre">Flask(...)</span></code>, коме ћемо увек проследити вредност
 специјалне променљиве <code class="docutils literal notranslate"><span class="pre">__name__</span></code> (значење овог параметра нема потребе да објашњавамо детаљно). Дакле, свака
-Flask апликација ће почињати кодом следећег облика</p>
+Flask апликација ће почињати кодом следећег облика:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Веб-апликације обично имају више веб-страна и која страна ће бити приказана зависи од путање у URL-y.
-На пример, погледајмо следеће два URL-а:</p>
+На пример, погледајмо следећа два URL-а:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">http://www.moja-prodavnica.com</span></code>, ако се веб-апликација налази на основној URL адреси, посетом овој адреси се отвара долазна страна апликације (енгл. landing page),</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">http://www.moja-prodavnica.com/proizvodi</span></code> - ако се приступи овој адреси, приступа се, на пример, страни са приказом свих производа.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http://www.moja-prodavnica.com/proizvodi</span></code>, а ако се приступи овој адреси, приступа се, на пример, страни са приказом свих производа.</p></li>
 </ul>
 <p>Када се кроз прегледач приступа некој URL адреси, прегледач шаље HTTP захтев ка веб серверу у оквиру кога се извршава
-веб апликација. Веб апликација добија да обради све HTTP захтеве који почињу са основном URL адресом за ту апликацију
-и даље се унутар веб апликације решава који садржај ће бити враћен.</p>
-<p>Када користимо Flask за израду веб апликације, обрада HTTP захтева се дешава у функцијама које смо дефинисали за
+веб апликација. Веб-апликација добија да обради све HTTP захтеве који почињу са основном URL адресом за ту апликацију
+и даље се унутар веб-апликације решава који садржај ће бити враћен.</p>
+<p>Када користимо Flask за израду веб-апликације, обрада HTTP захтева се дешава у функцијама које смо дефинисали за
 ту намену, па оно што врати функција као резултат постаје садржај HTTP одговора и приказује се у прегледачу
 (у сценарију када захтев долази од прегледача).</p>
 <p>Избор функције која ће бити позвана да обради пристигли HTTP захтев у Flask-у се назива <strong>рутирање</strong>. Да бисмо означили
-шта желимо да се рутира према одређеној функцији потребно је да у линији изнад дефиниције функције наведемо тзв.
+шта желимо да се рутира према одређеној функцији, потребно је да у линији изнад дефиниције функције наведемо тзв.
 декоратер за рутирање који има облик <code class="docutils literal notranslate"><span class="pre">&#64;app.route(...)</span></code>.</p>
 <p>Дакле, функције које су намењене за обраду HTTP захтева препознајемо по томе што изнад дефиниције функције стоји један
 или више декоратера за рутирање, као што видимо у почетном примеру ове лекције.</p>
-<p>Погледајмо опет наш први пример,тачније његов део који се односи на рутирање.</p>
+<p>Погледајмо опет наш први пример,тачније његов део који се односи на рутирање:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
     <span class="k">return</span> <span class="s2">&quot;Zdravo&quot;</span>
@@ -650,13 +655,13 @@ Flask апликација ће почињати кодом следећег о�
 <p>У приказаном примеру, декоратером <code class="docutils literal notranslate"><span class="pre">&#64;app.route(&quot;/&quot;)</span></code>, функција
 <code class="docutils literal notranslate"><span class="pre">index</span></code> је повезана са захтевом облика <code class="docutils literal notranslate"><span class="pre">&quot;/&quot;</span></code>, што значи да ће та
 функција бити позвана када се наведе адреса нашег веб-сајта, без
-икавких додатних путања унутар URL-a (кажемо да је ово адреса корена
+икаквих додатних путања унутар URL-a (кажемо да је ово адреса корена
 нашег веб-сајта). То значи да ће функција <code class="docutils literal notranslate"><span class="pre">index</span></code> бити позвана ако
 се Flask апликација покрене на локалном рачунару помоћу <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code>
 (без постављања на неки сервер на интернету), и ако се у прегледачу
 откуца URL адреса <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/</span></code>.</p>
 <p>Да је испред функције наведено <code class="docutils literal notranslate"><span class="pre">&#64;app.route(&quot;/index.html&quot;)</span></code>, функција <code class="docutils literal notranslate"><span class="pre">index</span></code> би била повезана
-са <a class="reference external" href="http://127.0.0.1:5000/index.html">http://127.0.0.1:5000/index.html</a></p>
+са <a class="reference external" href="http://127.0.0.1:5000/index.html">http://127.0.0.1:5000/index.html</a>.</p>
 <p>Пошто функција <code class="docutils literal notranslate"><span class="pre">index</span></code> враћа ниску <code class="docutils literal notranslate"><span class="pre">Zdravo</span></code>, то је одговор који се шаље назад прегледачу и који се приказује.</p>
 <p>Исто би се десило и ако би се наша апликација поставила на интернет, на пример на домен
 <code class="docutils literal notranslate"><span class="pre">www.moja-prodavnica.com</span></code> и ако се би се у прегледачу навела адреса
@@ -709,7 +714,11 @@ Flask апликација ће почињати кодом следећег о�
 <p>На следећој слици можемо да видимо како ово изгледа у прегледачу.</p>
 <a class="reference internal image-reference" href="../_images/flask_10g.png"><img alt="../_images/flask_10g.png" class="align-center" src="../_images/flask_10g.png" style="width: 780px;" /></a>
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="01_flask_rutiranje">
             <p>Q-117: Којом декорацијом треба декорисати функцију која ће се позвати када
 се унесе URL <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/about</span></code>?</p>
@@ -726,7 +735,11 @@ Flask апликација ће почињати кодом следећег о�
             </ul>
             </div>
             
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="01_flask_funkcije">
             <p>Q-118: Функције које одговарају на HTTP захтеве враћају:</p>
 

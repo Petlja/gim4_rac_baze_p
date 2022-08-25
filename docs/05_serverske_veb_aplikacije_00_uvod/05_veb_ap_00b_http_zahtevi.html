@@ -6,6 +6,7 @@
     <title>Протокол HTTP</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -530,21 +535,21 @@
 <p>Када се у прегледач веба унесе веб-адреса, односно URL, или се просто кликне на неку везу, прегледач најпре
 рашчлањује адресу на њене саставне делове. На пример, ако је URL адреса <a class="reference external" href="http://www.moja-prodavnica.com/site/products?page=3">http://www.moja-prodavnica.com/site/products?page=3</a>,
 њени делови су:</p>
-<p>-<code class="docutils literal notranslate"><span class="pre">http</span></code> – ознака протокола који се користи за комуникацију
-- <code class="docutils literal notranslate"><span class="pre">www.moja-prodavnica.com</span></code> – назив веб-сервера
-- <code class="docutils literal notranslate"><span class="pre">/site/products</span></code> – путања до веб-стране на серверу
-- <code class="docutils literal notranslate"><span class="pre">page=3</span></code> – додатни параметри</p>
-<p>На основу овога, веб прегледач зна да помоћу протокола HTTP треба да успостави комуникацију са веб сервером <code class="docutils literal notranslate"><span class="pre">www.moja-prodavnica.com</span></code>.
-Први корак је прибављање IP адресе тог веб сервера слањем упита серверу имена домена (DNS). Након тога, веб серверу се шаље такозвани
+<p>-<code class="docutils literal notranslate"><span class="pre">http</span></code> – ознака протокола који се користи за комуникацију,
+- <code class="docutils literal notranslate"><span class="pre">www.moja-prodavnica.com</span></code> – назив веб-сервера,
+- <code class="docutils literal notranslate"><span class="pre">/site/products</span></code> – путања до веб-стране на серверу и
+- <code class="docutils literal notranslate"><span class="pre">page=3</span></code> – додатни параметри.</p>
+<p>На основу овога, веб-прегледач зна да помоћу протокола HTTP треба да успостави комуникацију са веб-сервером <code class="docutils literal notranslate"><span class="pre">www.moja-prodavnica.com</span></code>.
+Први корак је прибављање IP адресе тог веб-сервера слањем упита серверу имена домена (DNS). Након тога, веб-серверу се шаље такозвани
 HTTP захтев с путањом до стране која се захтева (у овом примеру то је /site/products) и евентуално са неким додатним параметрима,
-ако су наведени. У нашем примеру, додатни параметар је page=3, коју ће веб сервер очигледно да протумачи као захтев да пошаље
+ако су наведени. У нашем примеру, додатни параметар је page=3, коју ће веб-сервер очигледно да протумачи као захтев да пошаље
 трећу страну списка производа.</p>
-<a class="reference internal image-reference" href="../_images/http1.png"><img alt="../_images/http1.png" class="align-center" src="../_images/http1.png" style="width: 780px;" /></a>
+<a class="reference internal image-reference" href="../_images/http_1.png"><img alt="../_images/http_1.png" class="align-center" src="../_images/http_1.png" style="width: 780px;" /></a>
 <p>Сервер проверава да ли постоји тражена веб-страна тј. да ли постоји скрипт који може да је генерише и, ако постоји, шаље је клијенту у
 склопу HTTP одговора. Клијент (тј. веб-прегледач) затим анализира HTML опис стране коју је добио, приказује је и, ако се у опису спомиње
 слика, аудио-запис или видео-снимак, шаљу се нови HTTP захтеви за тим ресурсима. Зато на споријим везама можете приметити да се прво
 учитава и приказује текст веб-стране, а тек касније стижу слике.</p>
-<a class="reference internal image-reference" href="../_images/http2.png"><img alt="../_images/http2.png" class="align-center" src="../_images/http2.png" style="width: 780px;" /></a>
+<a class="reference internal image-reference" href="../_images/http_2.png"><img alt="../_images/http_2.png" class="align-center" src="../_images/http_2.png" style="width: 780px;" /></a>
 <p>Ако веб-сервер не може да пружи захтевану страну, HTTP одговор садржи информацију о томе. Наиме, сваки HTTP одговор садржи статус,
 који клијента информише о исходу његовог захтева.</p>
 <div class="section" id="id1">
@@ -552,21 +557,21 @@ HTTP захтев с путањом до стране која се захтев
 <p>Савремени прегледачи, као што је Chrome, пружају програмерима могућност да детаљно испрате све HTTP захтеве и HTTP одговоре које
 прегледач шаље и прима. То се ради у склопу конзоле за веб-програмере (енгл. <em>web developer console</em>). Она се обично може укључити
 пречицом F12 или пречицом <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">j</span></code> на тастатури. HTTP комуникација се може испратити на картици <code class="docutils literal notranslate"><span class="pre">Network</span></code>.</p>
-<p>Може у прегледачу и да се изабере <code class="docutils literal notranslate"><span class="pre">Developer</span> <span class="pre">tools</span></code> са менија.</p>
+<p>У прегледачу може и да се изабере <code class="docutils literal notranslate"><span class="pre">Developer</span> <span class="pre">tools</span></code> са менија.</p>
 <a class="reference internal image-reference" href="../_images/http3.png"><img alt="../_images/http3.png" class="align-center" src="../_images/http3.png" style="width: 780px;" /></a>
 <p>Прикажимо како HTTP комуникација функционише на примеру дохватања првог веб-сајта који је икад направљен.
-Веб је настао у истраживачком центру CERN у Швајцарској (његов творац је Тим Бернерс Ли) и први веб-сајт је и
+веб-је настао у истраживачком центру CERN у Швајцарској (његов творац је Тим Бернерс Ли) и први веб-сајт је и
 даље доступан на сајту CERN-а, на адреси <a class="reference external" href="http://info.cern.ch/hypertext/WWW/TheProject.html">http://info.cern.ch/hypertext/WWW/TheProject.html</a>.</p>
 <a class="reference internal image-reference" href="../_images/http4.png"><img alt="../_images/http4.png" class="align-center" src="../_images/http4.png" style="width: 780px;" /></a>
 <p>На слици која следи је приказана комуникација приликом захтева за страном <a class="reference external" href="http://info.cern.ch/hypertext/WWW/TheProject.html">http://info.cern.ch/hypertext/WWW/TheProject.html</a>.
-Обатите пажњу да се види захтевани URL и метода:</p>
+Обратите пажњу да се види захтевани URL и метода:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Request</span> <span class="n">URL</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">info</span><span class="o">.</span><span class="n">cern</span><span class="o">.</span><span class="n">ch</span><span class="o">/</span><span class="n">hypertext</span><span class="o">/</span><span class="n">WWW</span><span class="o">/</span><span class="n">TheProject</span><span class="o">.</span><span class="n">html</span>
 <span class="n">Request</span> <span class="n">Method</span><span class="p">:</span> <span class="n">GET</span>
 </pre></div>
 </div>
 <p>Приказан је и статус одговора <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">OK</span></code>, који је један од могућих статуса када је захтев успешно обрађен.</p>
 <a class="reference internal image-reference" href="../_images/http5.png"><img alt="../_images/http5.png" class="align-center" src="../_images/http5.png" style="width: 780px;" /></a>
-<p>Од како прегледачи нуде могућност детаљног прегледа HTTP комуникације, командна линија се све мање користи у ову сврху.
+<p>Откако прегледачи нуде могућност детаљног прегледа HTTP комуникације, командна линија се све мање користи у ову сврху.
 Ми ћемо је, међутим, у наставку текста употребити да мало детаљније објаснимо HTTP комуникацију.</p>
 </div>
 <div class="section" id="id2">
@@ -594,7 +599,7 @@ HTTP захтев с путањом до стране која се захтев
 </pre></div>
 </div>
 <p>Захтев почиње ознаком методе која ће се користити. У овом случају то
-је метода GET, која се користи када желимо да дохватимо неку страну са
+је метода GET, која се користи када желимо да „дохватимо“ неку страну са
 сервера (касније ће бити више речи о различитим методама). Након
 тога се наводи путања до те стране. Њу можемо прочитати из
 URL-а. Након тога се наводи ознака верзије HTTP протокола која ће се
@@ -640,12 +645,12 @@ Connection closed by foreign host.
 Ова порука није део одговора, већ нас њоме наш telnet клијент
 обавештава да је сервер након слања одговора прекинуо везу.</p>
 <p>У случају да пошаљемо захтев за страном која не постоји, добијамо чувени
-одговор 404 (страна није пронађена). На пример, ако откуцамо:</p>
+одговор 404 (страна није пронађена). На пример, ако откуцамо захтев…:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/TheProject.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">info.cern.ch</span>
 </pre></div>
 </div>
-<p>на овај захтев, добијамо следећи одговор.</p>
+<p>… на овај захтев, добијамо следећи одговор:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">404</span> <span class="ne">Not Found</span>
 <span class="na">Date</span><span class="o">:</span> <span class="l">Fri, 13 Aug 2021 13:18:31 GMT</span>
 <span class="na">Server</span><span class="o">:</span> <span class="l">Apache</span>
@@ -712,7 +717,7 @@ Connection closed by foreign host.
 <p>И захтев може да садржи нека додатна поља. На пример, наш прегледач
 веба приликом отварања стране
 <code class="docutils literal notranslate"><span class="pre">http://info.cern.ch/hypertext/WWW/TheProject.html</span></code> шаље следећи
-захтев.</p>
+захтев:</p>
 <div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/hypertext/WWW/TheProject.html</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">info.cern.ch</span>
 <span class="na">Connection</span><span class="o">:</span> <span class="l">keep-alive</span>
@@ -726,7 +731,7 @@ Connection closed by foreign host.
 <span class="na">If-Modified-Since</span><span class="o">:</span> <span class="l">Thu, 03 Dec 1992 08:37:20 GMT</span>
 </pre></div>
 </div>
-<p>Основа је иста као минимални захтев који смо „пешке” формирали, међутим,
+<p>Основа је иста као минимални захтев који смо „пешке“ формирали, међутим,
 овај садржи и многа додатна поља. На пример, <code class="docutils literal notranslate"><span class="pre">Connection:</span>
 <span class="pre">keep-alive</span></code> говори серверу да не треба да прекине везу када пошаље
 одговор, јер ће вероватно уследити нови захтеви за додатним ресурсима
@@ -756,7 +761,7 @@ Connection closed by foreign host.
 и убрзава приказ веб-страна.</p>
 <p>Многи веб-сајтови данас користе протокол <strong>HTTPS</strong> (<em>Hypertext
 Transfer Protocol Secure</em>). Он подразумева да је пренос података
-криптован тј. да се подаци шифрују пре него што се пошаљу и дешифрују
+криптован, тј. да се подаци шифрују пре него што се пошаљу и дешифрују
 када се приме, тако да злонамерни корисник који пресретне податке
 током њиховог преноса не може да разуме шта ти подаци значе. Пошто
 програм telnet не користи шифровање, не можемо да га искористимо за
@@ -779,7 +784,7 @@ Transfer Protocol Secure</em>). Он подразумева да је прено
 <span class="na">Location</span><span class="o">:</span> <span class="l">https://en.wikipedia.org/wiki/Main_Page</span>
 </pre></div>
 </div>
-<p>Из заглавља се види да је у питању редирекција тј. да нам сервер
+<p>Из заглавља се види да је у питању редирекција, тј. да нам сервер
 указује да је почетна страна на URL-у
 <code class="docutils literal notranslate"><span class="pre">https://en.wikipedia.org/wiki/Main_Page</span></code> и да до ње можемо доћи
 слањем новог захтева (прегледач веба то уради не обавештавајући

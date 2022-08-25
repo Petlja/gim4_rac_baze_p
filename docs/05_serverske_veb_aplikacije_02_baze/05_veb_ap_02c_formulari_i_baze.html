@@ -6,6 +6,7 @@
     <title>Формулари и упити ка бази података</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -526,9 +531,9 @@
 <h1>Формулари и упити ка бази података<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Јако често се параметри упита добијају на основу вредности које је
 корисник унео у формулар. На пример, у текућем задатку уместо листе
-линкова, одабир жанра можемо урадити коришћњем HTML формулара. Жанрове
+линкова, одабир жанра можемо урадити коришћењем HTML формулара. Жанрове
 је могуће бирати из падајуће листе. Подсетимо се, падајућу листу у
-језику HTML можемо дефинисати на следећи начин.</p>
+језику HTML можемо дефинисати на следећи начин:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;genre_id&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">&gt;</span>Rock<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span>Jazz<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
@@ -551,7 +556,7 @@ GET и POST параметри су увек комбинације <code class=
 навести атрибут <code class="docutils literal notranslate"><span class="pre">action</span></code>.</p>
 <p>Имајући све ово у виду, шаблон <code class="docutils literal notranslate"><span class="pre">genres.html</span></code> можемо дефинисати на
 следећи начин. Уместо да као вредност атрибута <code class="docutils literal notranslate"><span class="pre">action</span></code> напишемо
-апсолутну путању <code class="docutils literal notranslate"><span class="pre">/traks</span></code>, употребићемо функцију <code class="docutils literal notranslate"><span class="pre">url_for</span></code> и
+апсолутну путању <code class="docutils literal notranslate"><span class="pre">/tracks</span></code>, употребићемо функцију <code class="docutils literal notranslate"><span class="pre">url_for</span></code> и
 навести функцију <code class="docutils literal notranslate"><span class="pre">tracks_for_genre</span></code>, чиме постижемо мало већу
 флексибилност (иако се путање промене, наша апликација ће и даље
 коректно радити).</p>
@@ -570,7 +575,7 @@ GET и POST параметри су увек комбинације <code class=
 </div>
 <p>На слици је приказан изглед формулара који садржи падајућу листу за
 избор жанра и дугме <code class="docutils literal notranslate"><span class="pre">submit</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/flask_12_genres_select.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_12_genres_select.png" style="width: 250px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_12_genres_select.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_12_genres_select.png" style="width: 500px;" /></a>
 <div class="section" id="id2">
 <h2>Апликација са само једном страном<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Наравно, апликацију можемо организовати и тако да постоји само једна
@@ -578,7 +583,7 @@ GET и POST параметри су увек комбинације <code class=
 жанра. Таква апликација може да има само једну путању (нека то буде
 <code class="docutils literal notranslate"><span class="pre">/tracks</span></code>).  Када стигне захтев на ту путању, из базе се читају сви
 подаци о жанровима, јер су нам они потребни за приказ формулара који
-садржи падајућу листу за одабир жанрова. Ако је у захтеву није стигао
+садржи падајућу листу за одабир жанрова. Ако у захтев није стигао
 идентификатор жанра, тада приказујемо само формулар за одабир жанра. У
 супротном се из базе читају и композиције тог жанра и функцији
 <code class="docutils literal notranslate"><span class="pre">render_template</span></code> се шаљу и информације о свим жанровима, али и
@@ -613,7 +618,7 @@ GET и POST параметри су увек комбинације <code class=
 </pre></div>
 </div>
 <p>Шаблон је дефинисан тако да се на почетку прикаже формулар, а затим,
-ако је дат идентификатор жанра онда и списак песама тог одабраног
+ако је дат идентификатор жанра, онда и списак песама тог одабраног
 жанра (или евентуално порука о грешци).</p>
 <div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -649,8 +654,8 @@ GET и POST параметри су увек комбинације <code class=
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-<p>На слици је приказан изглед апликације када се покрене у прегледачу веба</p>
-<a class="reference internal image-reference" href="../_images/flask_12_tracks_by_genre_spa.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_12_tracks_by_genre_spa.png" style="width: 250px;" /></a>
+<p>На слици је приказан изглед апликације када се покрене у прегледачу веба:</p>
+<a class="reference internal image-reference" href="../_images/flask_12_tracks_by_genre_spa.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_12_tracks_by_genre_spa.png" style="width: 500px;" /></a>
 <p>Скренимо пажњу на један важан детаљ. Када се одабере жанр и притисне
 дугме <code class="docutils literal notranslate"><span class="pre">submit</span></code>, шаље се нови захтев и страна се поново учитава. У
 њеном доњем делу се приказује списак композиција одабраног жанра,

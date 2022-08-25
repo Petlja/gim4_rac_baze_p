@@ -6,6 +6,7 @@
     <title>Прослеђивање података серверској апликацији</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -534,7 +539,7 @@
 распон цена и те податке шаље на сервер). Дакле, у различитим
 ситуацијама корисник уноси одређене податке у формулар који се налази
 на веб-страни и након попуњавања формулара на веб-страни, ти подаци се
-преносе веб-апликацији која их онда обрађује (на пример, складишти у
+преносе веб-апликацији која их онда обрађује (на пример - складишти у
 базу података).</p>
 <p>Постоји више различитих начина да се серверској апликацији доставе
 подаци и сви се, заправо, заснивају на томе да се на неки начин ти
@@ -554,9 +559,9 @@ HTTP и самим тим нису ни по чему специфичне за 
 <div class="section" id="get">
 <h2>Метода GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
 <p>Метода <strong>GET</strong> подразумева да су подаци које клијент прослеђује
-серверу саставни део URL-a. На пример, URL може бити облика</p>
+серверу саставни део URL-a. На пример, URL може бити следећег облика…:</p>
 <p><code class="docutils literal notranslate"><span class="pre">http://www.moja-prodavnica.com?vrsta=TV&amp;max_cena=30000</span></code></p>
-<p>и тада се у склопу HTTP захтева клијенту прослеђују два податка
+<p>….и тада се у склопу HTTP захтева клијенту прослеђују два податка
 (такозвана <strong>URL параметра</strong> или <strong>GET параметра</strong>):</p>
 <ul class="simple">
 <li><p>први се назива <code class="docutils literal notranslate"><span class="pre">vrsta</span></code> и има вредност <code class="docutils literal notranslate"><span class="pre">TV</span></code> (претражују се
@@ -567,7 +572,7 @@ HTTP и самим тим нису ни по чему специфичне за 
 <p>Дакле, метода GET подразумева да се подаци наводе на крају URL-а иза
 упитника (карактера <code class="docutils literal notranslate"><span class="pre">?</span></code>), облика су <code class="docutils literal notranslate"><span class="pre">naziv=vrednost</span></code> и раздвајају
 се амперсандима (карактерима <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>). Подаци су задати у форми речника
-(назив податка тј. кључ се пресликава у сам податак тј. у вредност). И
+(назив податка, тј. кључ се пресликава у сам податак, тј. у вредност). И
 кључеви и вредности у таквом речнику се тумаче као текст тј. као ниске
 карактера. Ако кључ или вредност садржи неки специјални карактер, он
 се кодира и записује нумерички. На пример, пошто URL-ови не могу
@@ -614,10 +619,10 @@ ASCII тј. Unicode кôд размака је 32, што се хексадек�
 </ul>
 <p>Пошто је могуће да се скрипт позове и без навођења параметара, у
 скрипту се претпостављају њихове подразумеване вредности. Наиме,
-метода <code class="docutils literal notranslate"><span class="pre">request.args.get</span></code> се најчешће позива два аргумента.</p>
+метода <code class="docutils literal notranslate"><span class="pre">request.args.get</span></code> најчешће се позива помоћу два аргумента:</p>
 <ul class="simple">
-<li><p>Први представља назив GET параметра</p></li>
-<li><p>Други представља подразумевану вредност за случај да GET параметар
+<li><p>први представља назив GET параметра и</p></li>
+<li><p>други представља подразумевану вредност за случај да GET параметар
 није наведен. Ако се други аргумент изостави, а податак није
 прослеђен, функција ће вратити вредност <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
@@ -649,7 +654,7 @@ ASCII тј. Unicode кôд размака је 32, што се хексадек�
 </pre></div>
 </div>
 <p>Неколико речи о сигурности. Не постоји гаранција да су сви подаци које
-нека веб-апликација прими (у склопу HTTP захтева) подаци поуздани и
+нека веб-апликација прими (у склопу HTTP захтева) поуздани и
 безбедни за употребу.  На пример, злонамерни корисник као вредност
 променљиве <code class="docutils literal notranslate"><span class="pre">vrsta</span></code> може да проследи ниску облика
 <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;...&lt;/script&gt;</span></code>, где је уместо <code class="docutils literal notranslate"><span class="pre">...</span></code> наведен неки
@@ -660,7 +665,7 @@ ASCII тј. Unicode кôд размака је 32, што се хексадек�
 осигурати да се садржај исправно прикаже, а да се не изврши као
 JavaScript скрипт). Ако се подаци пристигли у склопу захтева не
 прослеђују функцији <code class="docutils literal notranslate"><span class="pre">render_template</span></code>, тада је пожељно да се пре
-коршћења трансформишу функцијом <code class="docutils literal notranslate"><span class="pre">escape</span></code>, која је део пакета
+коришћења трансформишу функцијом <code class="docutils literal notranslate"><span class="pre">escape</span></code>, која је део пакета
 <code class="docutils literal notranslate"><span class="pre">markupsafe</span></code>.</p>
 </div>
 <div class="section" id="id2">
@@ -683,7 +688,7 @@ URL-у <code class="docutils literal notranslate"><span class="pre">http://127.0
 </pre></div>
 </div>
 <p>Подсетимо се, шаблон који креира таблицу је дефинисан на следећи
-начин.</p>
+начин:</p>
 <div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -714,22 +719,22 @@ URL-у <code class="docutils literal notranslate"><span class="pre">http://127.0
 наводити у облику именованог аргумента <code class="docutils literal notranslate"><span class="pre">type</span></code>, а не позиционог
 аргумента (нпр. позив би могао бити <code class="docutils literal notranslate"><span class="pre">request.args.get(&quot;n&quot;,</span>
 <span class="pre">type=int)</span></code>).</p>
-<p>На слици је приказан изглед стране унутар прегледача веба.</p>
-<a class="reference internal image-reference" href="../_images/flask_06_tablica_mnozenja_get.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_06_tablica_mnozenja_get.png" style="width: 450px;" /></a>
+<p>На слици је приказан изглед стране унутар прегледача веба:</p>
+<a class="reference internal image-reference" href="../_images/flask_06_tablica_mnozenja_get.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_06_tablica_mnozenja_get.png" style="width: 780px;" /></a>
 </div>
 <div class="section" id="id3">
 <h2>Пренос података из формулара<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Пренос података са клијента на сервер је често у веома тесној вези са
 формуларима унутар веб-стране. Подсетимо се, формулари се дефинишу
-коришћњем језика HTML. Формулар може да садржи разне врсте контрола
+коришћeњем језика HTML. Формулар може да садржи разне врсте контрола
 графичког корисничког интерфејса (поља за унос текста, радио-дугмад,
 поља за штриклирање, падајуће листе и слично). Формулари често садрже
 и дугме специјалног типа <code class="docutils literal notranslate"><span class="pre">submit</span></code>. Када се кликне на такво дугме,
 сви подаци који су унети у формулар се прикупљају, пакују у GET или
 POST захтев и тај захтев се шаље серверу. Врста захтева која ће бити
-употребљена зависи од тога како је формулар подешен тј. да ли је и на
+употребљена зависи од тога како је формулар подешен, тј. да ли је и на
 коју је вредност постављена вредност атрибута <code class="docutils literal notranslate"><span class="pre">method</span></code> елемента
-<code class="docutils literal notranslate"><span class="pre">form</span></code>. Помоћу атрибута <code class="docutils literal notranslate"><span class="pre">action</span></code> се може подесити и веб-страна
+<code class="docutils literal notranslate"><span class="pre">form</span></code>. Помоћу атрибута <code class="docutils literal notranslate"><span class="pre">action</span></code> се може подесити и веб-страна,
 тј. URL адреса на коју се захтев шаље (ако се овај атрибут не наведе,
 захтев се шаље ка страни која је тренутно отворена).</p>
 <p>У следећем једноставном примеру користимо формулар у који корисник у
@@ -738,7 +743,7 @@ POST захтев и тај захтев се шаље серверу. Врст�
 на којој се приказује збир, али и формулар у који може да унесе нова
 два броја. Наравно, овако једноставну апликацију је много боље
 реализовати као чисто клијентску апликацију (у језику JavaScript),
-међутим, технике програмирања које сада упознајемо ћемо користити
+међутим, технике програмирања које сада упознајемо користићемо
 касније, у напреднијим серверским веб-апликацијама.</p>
 <p>Датотека <code class="docutils literal notranslate"><span class="pre">app.py</span></code> има следећи садржај:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span>
@@ -808,7 +813,7 @@ POST захтев и тај захтев се шаље серверу. Врст�
 вредности 3 и 5, тада ће након клика на дугме <code class="docutils literal notranslate"><span class="pre">submit</span></code> бити послат
 захтев са URL-ом <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1/calculator?sab1=3&amp;sab2=5</span></code>.</p>
 <p>На слици је приказан изглед стране унутар прегледача веба.</p>
-<a class="reference internal image-reference" href="../_images/flask_07_calculator.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_07_calculator.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_07_calculator.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_07_calculator.png" style="width: 500px;" /></a>
 <p>Генерално, након клика на дугме <code class="docutils literal notranslate"><span class="pre">submit</span></code>, прави се речник који
 садржи податке облика <code class="docutils literal notranslate"><span class="pre">name=value</span></code>, за све контроле на формулару
 које имају постављене вредности атрибута <code class="docutils literal notranslate"><span class="pre">name</span></code> (а <code class="docutils literal notranslate"><span class="pre">value</span></code> је
@@ -897,7 +902,7 @@ POST захтев и тај захтев се шаље серверу. Врст�
 </pre></div>
 </div>
 <p>На слици је приказан изглед попуњеног формулара унутар прегледача веба.</p>
-<a class="reference internal image-reference" href="../_images/flask_08a_pica_formular.png"><img alt="Попуњен формулар у прегледачу веба" class="align-center" src="../_images/flask_08a_pica_formular.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_08a_pica_formular.png"><img alt="Попуњен формулар у прегледачу веба" class="align-center" src="../_images/flask_08a_pica_formular.png" style="width: 500px;" /></a>
 <p>Скренимо пажњу на употребу различитих врста контрола у овом формулару.</p>
 <ul class="simple">
 <li><p>Основна контрола је поље за унос текста (<code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">type=&quot;text&quot;</span></code>).</p></li>
@@ -905,7 +910,7 @@ POST захтев и тај захтев се шаље серверу. Врст�
 количине текста.</p></li>
 <li><p>Контрола (HTML елемент) <code class="docutils literal notranslate"><span class="pre">select</span></code> се користи као падајућа
 листа. Појединачне ставке се наводе унутар HTML елемената
-<code class="docutils literal notranslate"><span class="pre">option</span></code>. Прликом слања података комбинује се атрибут <code class="docutils literal notranslate"><span class="pre">name</span></code>
+<code class="docutils literal notranslate"><span class="pre">option</span></code>. Приликом слања података комбинује се атрибут <code class="docutils literal notranslate"><span class="pre">name</span></code>
 елемента <code class="docutils literal notranslate"><span class="pre">select</span></code> и атрибут <code class="docutils literal notranslate"><span class="pre">value</span></code> одабраног елемента
 <code class="docutils literal notranslate"><span class="pre">option</span></code>.</p></li>
 <li><p>Радио-дугмад се реализују помоћу контрола <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">type=&quot;radio&quot;</span></code>.
@@ -925,10 +930,10 @@ HTML формулара, али ми их нећемо користити.</p>
 формулара који јој се шаљу преко GET захтева и затим их шаље функцији
 <code class="docutils literal notranslate"><span class="pre">render_template</span></code> која их на основу шаблона <code class="docutils literal notranslate"><span class="pre">narudzbenica.html</span></code>
 табеларно приказује. Пошто се и иницијални GET захтев за формуларом
-који треба попунити и GET захтев који садржи поља наруджбенице шаљу ка
+који треба попунити и GET захтев који садржи поља наруџбенице шаљу ка
 кореној путањи веб-сајта, унутар функције <code class="docutils literal notranslate"><span class="pre">index</span></code> проверавамо да ли
 се унутар параметара захтева налази кључ <code class="docutils literal notranslate"><span class="pre">naruci</span></code> (то је име
-дугмента <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">type=&quot;submit&quot;</span></code>, па ће бити прослеђен као GET
+дугмета <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">type=&quot;submit&quot;</span></code>, па ће бити прослеђен као GET
 параметар кад год се то дугме притисне). Очитавамо један по један
 податак помоћу <code class="docutils literal notranslate"><span class="pre">request.args.get</span></code>. Додатке (кечап, оригано итд.)
 смештамо у листу.</p>
@@ -996,12 +1001,12 @@ HTML формулара, али ми их нећемо користити.</p>
 </div>
 <p>Сваки прослеђени податак се приказује у одговарајућој ћелији табеле.
 Пошто су додаци смештени у листу, приказују се помоћу петље <code class="docutils literal notranslate"><span class="pre">for</span></code>.
-Изразом <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">&quot;,</span> <span class="pre">&quot;</span> <span class="pre">if</span> <span class="pre">not</span> <span class="pre">loop.last</span> <span class="pre">else</span> <span class="pre">&quot;&quot;</span> <span class="pre">}}</span></code> се постиже да се зарез
+Изразом <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">&quot;,</span> <span class="pre">&quot;</span> <span class="pre">if</span> <span class="pre">not</span> <span class="pre">loop.last</span> <span class="pre">else</span> <span class="pre">&quot;&quot;</span> <span class="pre">}}</span></code> постиже се да се зарез
 дода иза сваке ставке, осим последње (израз <code class="docutils literal notranslate"><span class="pre">loop.last</span></code> има вредност
 тачно само у последњој итерацији петље).</p>
 <p>На слици је приказан изглед наруџбенице (извештаја о наруџбини) унутар
-прегледача веба.</p>
-<a class="reference internal image-reference" href="../_images/flask_08b_pica_narudzbenica.png"><img alt="Наруџбеница прикзана у прегледачу веба" class="align-center" src="../_images/flask_08b_pica_narudzbenica.png" style="width: 350px;" /></a>
+прегледача веба:</p>
+<a class="reference internal image-reference" href="../_images/flask_08b_pica_narudzbenica.png"><img alt="Наруџбеница прикзана у прегледачу веба" class="align-center" src="../_images/flask_08b_pica_narudzbenica.png" style="width: 500px;" /></a>
 </div>
 </div>
 

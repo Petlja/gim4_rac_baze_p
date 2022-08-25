@@ -6,6 +6,7 @@
     <title>Упис података у базу</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -538,11 +543,11 @@
 креирати формулар у који ће корисник навести све податке о себи (осим
 јединственог идентификатора, који се аутоматски додељује). Када се
 попуни формулар притиска се дугме <code class="docutils literal notranslate"><span class="pre">submit</span></code> и шаље се POST захтев за
-упис података. Захтев се прихвата, покушава се упис података у базу и
+упис података. Захтев се прихвата, покушава се упис података у базу,
 након тога се приказује страна која садржи информацију о томе да ли је
 упис у базу био успешан или не и након тога формулар који омогућава
 упис новог корисника.</p>
-<p>Имајући ово у виду, можемо написати следећи шаблон стране.</p>
+<p>Имајући ово у виду, можемо написати следећи шаблон стране:</p>
 <div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -587,14 +592,14 @@
 </pre></div>
 </div>
 <p>На слици је приказан изглед овог формулара када се отвори у прегледачу
-веба.</p>
-<a class="reference internal image-reference" href="../_images/flask_13_add_customer.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_13_add_customer.png" style="width: 250px;" /></a>
+веба:</p>
+<a class="reference internal image-reference" href="../_images/flask_13_add_customer.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_13_add_customer.png" style="width: 500px;" /></a>
 <p>Подразумеваћемо да се порука о томе да ли је упис успео или не
 прослеђује преко променљиве <code class="docutils literal notranslate"><span class="pre">msg</span></code>. У првом делу стране се проверава
 да ли је та променљива дефинисана и ако јесте, приказује се њена
 вредност. На слици је приказан изглед стране након успешног уписа
 корисника у базу.</p>
-<a class="reference internal image-reference" href="../_images/flask_13_add_customer_info.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_13_add_customer_info.png" style="width: 250px;" /></a>
+<a class="reference internal image-reference" href="../_images/flask_13_add_customer_info.png"><img alt="Апликација покренута у прегледачу веба" class="align-center" src="../_images/flask_13_add_customer_info.png" style="width: 500px;" /></a>
 <p>Наредни део стране садржи формулар. Приметимо да је метода којом се
 преносе вредности тог формулара <code class="docutils literal notranslate"><span class="pre">POST</span></code> (то се постиже атрибутом
 <code class="docutils literal notranslate"><span class="pre">method=&quot;POST&quot;</span></code> који је наведен уз елемент <code class="docutils literal notranslate"><span class="pre">form</span></code>).</p>
@@ -636,7 +641,7 @@ POST захтев. Ако је стигао GET захтев, само се, к�
 захтева (подсетимо се, подацима из POST захтева се може приступити
 кроз <code class="docutils literal notranslate"><span class="pre">request.form</span></code>). Након тога се креира курсор, формира се и
 извршава одговарајући упит <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> (наравно, параметризовани, да би
-се спречили напади уметања SQL-а) и врши се потврда трасакције
+се спречили напади уметања SQL-а) и врши се потврда трансакције
 (позивом <code class="docutils literal notranslate"><span class="pre">commit()</span></code>). У зависности од тога да ли је упит успео (што
 утврђујемо механизмом изузетака <code class="docutils literal notranslate"><span class="pre">try-except</span></code>) одређујемо поруку коју
 је потребно приказати и позивамо <code class="docutils literal notranslate"><span class="pre">render_template</span></code> да прикаже ту

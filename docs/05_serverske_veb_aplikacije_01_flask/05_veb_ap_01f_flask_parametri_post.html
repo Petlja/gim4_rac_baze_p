@@ -6,6 +6,7 @@
     <title>Метода POST</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -532,7 +537,7 @@
 клијент према серверу у HTTP захтеву иза заглавља може слати тело
 захтева са произвољном количином додатних података. Код методе GET се
 претпоставља да се не користи тело захтева.</p>
-<p>На тај начин је методом POST могуће проследити много више података јер
+<p>На тај начин је методом POST могуће проследити много више података, јер
 URL има ограничену дужину (око 2000 карактера). При томе се подаци не
 виде у URL-y, што може бити предност када поверљиви подаци (као на
 пример лозинка) треба да буду што мање видљиви.</p>
@@ -542,13 +547,13 @@ URL има ограничену дужину (око 2000 карактера). �
 пошаљемо податке са могућношћу да се тиме промени стање на страни
 сервера. Када на страни сервера користимо базу података, упрошћено би
 се могло рећи да обрада GET захтева чита из базе и приказује прочитане
-податке у HTML страни, док обрада POST захтева уписује податке у бази.</p>
+податке у HTML страни, док обрада POST захтева уписује податке у базу.</p>
 <p>Метода GET се дешава и када кликнемо на обичну везу (при чему у URL-у
-могу бити „спаковани” GET параметри) а може се десити и као резултат
+могу бити „спаковани“ GET параметри), а може се десити и као резултат
 попуњавања формулара (када се поља из формулара аутоматски смештају у
-GET параметре). Са друге стране метода POST се првенствено користи у
+GET параметре). Са друге стране, метода POST се првенствено користи у
 комбинацији са формуларима. У том случају је у формулару потребно
-навести атрибут <code class="docutils literal notranslate"><span class="pre">method=&quot;POST&quot;</span></code>. На пример,</p>
+навести атрибут <code class="docutils literal notranslate"><span class="pre">method=&quot;POST&quot;</span></code>. На пример:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
   ...
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
@@ -561,7 +566,7 @@ GET параметре). Са друге стране метода POST се п�
 када командом <code class="docutils literal notranslate"><span class="pre">Back</span></code> ili <code class="docutils literal notranslate"><span class="pre">Reload</span></code> дођу у ситуацију да треба
 поновити POST захтев који је раније већ био послат. На слици је пример
 таквог упозорења:</p>
-<a class="reference internal image-reference" href="../_images/form_resubmisson.png"><img alt="Упозорење прегледача приликом поновног слања POST захтева" class="align-center" src="../_images/form_resubmisson.png" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="../_images/form_resubmisson.png"><img alt="Упозорење прегледача приликом поновног слања POST захтева" class="align-center" src="../_images/form_resubmisson.png" style="width: 500px;" /></a>
 <p>Када форма предвиђа слање датотека као што су слике или документи,
 онда обавезно користимо POST због величине података који се шаљу.</p>
 <p>Резимирајмо основне разлике између GET и POST метода.</p>
@@ -615,12 +620,12 @@ GET параметре). Са друге стране метода POST се п�
 <p>Када захтев стигне на сервер, Flask апликација која обрађује захтев
 зна да ли је у питању GET или POST метода (променљива
 <code class="docutils literal notranslate"><span class="pre">request.method</span></code> одређује која је метода употребљена). За сваку
-функцију која обрађује HTTP захтев који доспе на неку путању је могуће
-подесити на које методе ће одговарати и то се ради приликом навођења
+функцију која обрађује HTTP захтев који доспе на неку путању могуће је
+подесити на које методе ће одговарати, и то се ради приликом навођења
 декоратора рутирања <code class="docutils literal notranslate"><span class="pre">&#64;app.route(...)</span></code>. Flask подразумева методу GET
 код навођења декоратора рутирања. Ако желимо да функција прима POST
 захтеве, онда је потребно да у аргументима декоратора то нагласимо. На
-пример, наредним кодом се постиже да се функција <code class="docutils literal notranslate"><span class="pre">login</span></code> позива само
+пример, наредним кôдом се постиже да се функција <code class="docutils literal notranslate"><span class="pre">login</span></code> позива само
 када се проследи HTTP POST захтев на путању <code class="docutils literal notranslate"><span class="pre">/login</span></code> (на пример, на
 адресу <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1/login</span></code>).</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;POST&quot;</span><span class="p">])</span>
@@ -630,7 +635,7 @@ GET параметре). Са друге стране метода POST се п�
 </div>
 <p>Могуће је подесити и да се на некој путањи прихватају и GET и POST
 захтеви (и по правилу функције које одговарају на POST захтеве
-одговарају и на GET захтеве). На пример, наредним кодом се постиже да
+одговарају и на GET захтеве). На пример, наредним кôдом се постиже да
 се функција <code class="docutils literal notranslate"><span class="pre">index</span></code> позива када год се проследи било GET, било POST
 захтев:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">])</span>
@@ -640,7 +645,7 @@ GET параметре). Са друге стране метода POST се п�
 </div>
 <p>Код оваквих функција је често потребно проверити о којој се врсти
 захтева ради (да ли је пристигли захтев GET или POST), што је могуће
-урадити испитивањем вредности <code class="docutils literal notranslate"><span class="pre">request.method</span></code>. На пример,</p>
+урадити испитивањем вредности <code class="docutils literal notranslate"><span class="pre">request.method</span></code>. На пример:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;POST&quot;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">logovanje</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
@@ -653,7 +658,7 @@ GET параметре). Са друге стране метода POST се п�
 захтева, могу посматрати као скуп параметара који имају називе и
 вредности. Свако поље форме постаје један параметар. У функцијама за
 обраду захтева тим параметрима приступамо помоћу
-<code class="docutils literal notranslate"><span class="pre">request.form.get(...)</span></code> слично као што користимо
+<code class="docutils literal notranslate"><span class="pre">request.form.get(...)</span></code>, слично као што користимо
 <code class="docutils literal notranslate"><span class="pre">request.args.get(...)</span></code> за параметре уписане у URL.</p>
 </div>
 

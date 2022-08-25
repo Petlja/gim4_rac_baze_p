@@ -6,6 +6,7 @@
     <title>Сесије</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -526,7 +531,7 @@
 <h1>Сесије<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Колачићи омогућавају чување података на клијенту, унутар прегледача
 веба. То значи да ће приликом посете сајту са другог уређаја, па чак и
-из другог прегледача веба сви колачићи бити непознати. Са друге
+из другог прегледача веба, сви колачићи бити непознати. Са друге
 стране, приликом употребе сесија подаци се чувају на серверу. Сесије
 су обично ограниченог трајања и можемо их схватити као период у коме
 корисник приступа сајту у континуитету током неког краћег временског
@@ -543,8 +548,8 @@
 истекне, кориснику се забрањује приступ деловима сајта резервисаним
 само за улоговане кориснике и тражи се да се он поново улогује. У
 позадини механизма сесија користе се и колачићи. Наиме, када се креира
-сесија и када се први пут у њу нешто упише кориснику се шаље посебан
-колачић (тзв. колачић сесије, енгл. session cookie). Он је обично нека
+сесија и када се први пут у њу нешто упише, кориснику се шаље посебан
+колачић (тзв. колачић сесије, енгл. <em>session cookie</em>). Он је обично нека
 дугачка ниска симбола и јединствена је за сваку сесију сваког
 корисника. Наредни пут када корисник приступа сајту он шаље назад тај
 колачић и на основу тога сервер препознаје о којој се сесији ради и у
@@ -619,7 +624,7 @@
     <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>Када год се користе сесије неопходно је да се постави вредност
+<p>Када год се користе сесије, неопходно је да се постави вредност
 <code class="docutils literal notranslate"><span class="pre">app.secret_key</span></code>. Та вредност треба да буде тајна и користи се за
 криптовање (шифровање) података који се чувају у сесији и колачића
 који се шаљу на клијент. Добар савет да се генерише тајни кључ је да
