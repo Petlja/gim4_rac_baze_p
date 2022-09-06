@@ -16,7 +16,7 @@
 
 Изглед формулара за регистрацију је приказан на следећој слици:
        
-.. image:: ../../_images/projekat_02_formular_za_registraciju.png
+.. figure:: ../../_images/projekat_02_formular_za_registraciju.png
    :width: 800
    :align: center
    :alt: Изглед формулара за регистрацију
@@ -87,7 +87,7 @@ type="text"``. Уз свако поље за унос текста налази 
 језика JavaScript. На наредној слици приказан је изглед формулара
 након валидације:
   
-.. image:: ../../_images/projekat_04_validacija_formulara.png
+.. figure:: ../../_images/projekat_04_validacija_formulara.png
    :width: 450
    :align: center
    :alt: Изглед формулара након валидације
@@ -150,7 +150,7 @@ type="text"``. Уз свако поље за унос текста налази 
 адресе и дужине лозинке, желимо да осигурамо да се лозинка и поновљена
 лозинка поклапају.
 
-.. image:: ../../_images/projekat_03_validacija_lozinke.png
+.. figure:: ../../_images/projekat_03_validacija_lozinke.png
    :width: 800
    :align: center
    :alt: Изглед валидације поклапања две лозинке
@@ -431,8 +431,8 @@ tables*) које садрже огромне листе хеш-вредност
              
 Дугме за логовање је приказано на наредној слици.
              
-.. image:: ../../_images/projekat_05_login_button.png
-   :width: 500
+.. figure:: ../../_images/projekat_05_login_button.png
+   :width: 400
    :align: center
    :alt: Изглед дугмета за логовање
                  
@@ -445,11 +445,12 @@ tables*) које садрже огромне листе хеш-вредност
 
 Изглед формулара у модалном прозору је приказан на следећој слици.
              
-.. image:: ../../_images/projekat_01_formular_za_logovanje.png
+.. figure:: ../../_images/projekat_01_formular_za_logovanje.png
    :width: 500
    :align: center
    :alt: Изглед формулара за логовање
-         
+   :class: screenshot-shadow
+
 Модални прозор се реализује као елемент ``div`` који има класу
 ``modal``. Унутар њега се налази елемент ``div`` који има класу
 ``modal-dialog``, а унутар њега три елемента ``div``: заглавље које

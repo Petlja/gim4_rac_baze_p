@@ -78,7 +78,7 @@
 .. image:: ../../_images/1_razred.png
    :width: 780
    :align: center
-
+   :class: screenshot-shadow
 
 .. questionnote::
 

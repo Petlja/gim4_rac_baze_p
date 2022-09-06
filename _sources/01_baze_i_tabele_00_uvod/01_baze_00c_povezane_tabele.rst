@@ -100,8 +100,7 @@
 .. figure:: ../../_images/spojene_tabele.jpg
    :width: 780
    :align: center
-   :alt: Спајање података из две табеле
-   :figclass: screenshot-shadow
+   :alt: Спајање података из две табелe
 
    Спајање података из две табеле
 

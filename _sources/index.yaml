@@ -424,7 +424,7 @@ lessons:
         file: 05_veb_ap_01a_flask_uvod.rst
         guid: 21f6ee0a-b66f-48ee-99af-812d64ef4940
       - type: reading
-        title: Библиотека Flask - први програм, путање
+        title: Библиотека Flask - прва веб-апликација, путање
         file: 05_veb_ap_01b_flask_prvi_program.rst
         guid: b830e48e-f486-44b7-86f0-d2704eb2857e
       - type: reading
