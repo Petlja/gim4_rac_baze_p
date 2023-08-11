@@ -2,8 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="sr-Cyrl">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Коришћење база података из Flask апликација</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
     <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
@@ -39,117 +42,118 @@
     <link rel="stylesheet" href="../_static/petlja-course.css" type="text/css" />
     <link rel="stylesheet" href="../_static/nbstyle.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/runestonebase.js"></script>
-    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
-    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
-    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
-    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
-    <script type="text/javascript" src="../_static/codemirror.js"></script>
-    <script type="text/javascript" src="../_static/xml.js"></script>
-    <script type="text/javascript" src="../_static/css.js"></script>
-    <script type="text/javascript" src="../_static/python.js"></script>
-    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
-    <script type="text/javascript" src="../_static/javascript.js"></script>
-    <script type="text/javascript" src="../_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
-    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.js"></script>
-    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
-    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
-    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.language.js"></script>
-    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.parser.js"></script>
-    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.js"></script>
-    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
-    <script type="text/javascript" src="../_static/activecode-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/activecode-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/activecode.js"></script>
-    <script type="text/javascript" src="../_static/clike.js"></script>
-    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
-    <script type="text/javascript" src="../_static/animationbase.js"></script>
-    <script type="text/javascript" src="../_static/mchoice.js"></script>
-    <script type="text/javascript" src="../_static/timedmc.js"></script>
-    <script type="text/javascript" src="../_static/timed.js"></script>
-    <script type="text/javascript" src="../_static/mchoice-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/mchoice-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/clickable.js"></script>
-    <script type="text/javascript" src="../_static/timedclickable.js"></script>
-    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
-    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
-    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
-    <script type="text/javascript" src="../_static/pytutor.js"></script>
-    <script type="text/javascript" src="../_static/codelens.js"></script>
-    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
-    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
-    <script type="text/javascript" src="../_static/datafile.js"></script>
-    <script type="text/javascript" src="../_static/dragndrop.js"></script>
-    <script type="text/javascript" src="../_static/timeddnd.js"></script>
-    <script type="text/javascript" src="../_static/dragndrop-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/dragndrop-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/fitb.js"></script>
-    <script type="text/javascript" src="../_static/timedfitb.js"></script>
-    <script type="text/javascript" src="../_static/fitb-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/fitb-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/matrixeq.js"></script>
-    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
-    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
-    <script type="text/javascript" src="../_static/parsons.js"></script>
-    <script type="text/javascript" src="../_static/parsons-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/parsons-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/timedparsons.js"></script>
-    <script type="text/javascript" src="../_static/poll.js"></script>
-    <script type="text/javascript" src="../_static/reveal.js"></script>
-    <script type="text/javascript" src="../_static/shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
-    <script type="text/javascript" src="../_static/showEval.js"></script>
-    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
-    <script type="text/javascript" src="../_static/runestonevideo.js"></script>
-    <script type="text/javascript" src="../_static/webglinteractive.js"></script>
-    <script type="text/javascript" src="../_static/FileSaver.min.js"></script>
-    <script type="text/javascript" src="../_static/Blob.js"></script>
-    <script type="text/javascript" src="../_static/karelCorner.js"></script>
-    <script type="text/javascript" src="../_static/karelRobot.js"></script>
-    <script type="text/javascript" src="../_static/karelWorld.js"></script>
-    <script type="text/javascript" src="../_static/karelChat.js"></script>
-    <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
-    <script type="text/javascript" src="../_static/karelUI.js"></script>
-    <script type="text/javascript" src="../_static/karel.js"></script>
-    <script type="text/javascript" src="../_static/karel-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/notes.js"></script>
-    <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
-    <script type="text/javascript" src="../_static/gallery.js"></script>
-    <script type="text/javascript" src="../_static/associations.js"></script>
-    <script type="text/javascript" src="../_static/associations-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/associations-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/editor.js"></script>
-    <script type="text/javascript" src="../_static/jszip.js"></script>
-    <script type="text/javascript" src="../_static/editor-i18n.en.js"></script>
-    <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
-    <script type="text/javascript" src="../_static/dbDirective.js"></script>
-    <script type="text/javascript" src="../_static/sql.js"></script>
-    <script type="text/javascript" src="../_static/simanim.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
-    <script type="text/javascript" src="../_static/translations.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
-    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
-    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
-    <script type="text/javascript" src="../_static/rangy-core.js"></script>
-    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
-    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
-    <script type="text/javascript" src="../_static/user-highlights.js"></script>
-    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
-    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
-    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
-    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="../_static/course-errors.js"></script>
-    <script type="text/javascript" src="../_static/petlja.js"></script>
-    <script type="text/javascript" src="../_static/require.js"></script>
+    <script src="../_static/runestonebase.js"></script>
+    <script src="../_static/skulpt.min.js"></script>
+    <script src="../_static/skulpt-stdlib.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/jquery.highlight.js"></script>
+    <script src="../_static/bookfuncs.js"></script>
+    <script src="../_static/codemirror.js"></script>
+    <script src="../_static/xml.js"></script>
+    <script src="../_static/css.js"></script>
+    <script src="../_static/python.js"></script>
+    <script src="../_static/htmlmixed.js"></script>
+    <script src="../_static/javascript.js"></script>
+    <script src="../_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script src="../_static/jquery_i18n/jquery.i18n.js"></script>
+    <script src="../_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script src="../_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script src="../_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script src="../_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script src="../_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script src="../_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script src="../_static/activecode-i18n.en.js"></script>
+    <script src="../_static/activecode-i18n.sr-Cyrl.js"></script>
+    <script src="../_static/activecode.js"></script>
+    <script src="../_static/clike.js"></script>
+    <script src="../_static/timed_activecode.js"></script>
+    <script src="../_static/animationbase.js"></script>
+    <script src="../_static/mchoice.js"></script>
+    <script src="../_static/timedmc.js"></script>
+    <script src="../_static/timed.js"></script>
+    <script src="../_static/mchoice-i18n.en.js"></script>
+    <script src="../_static/mchoice-i18n.sr-Cyrl.js"></script>
+    <script src="../_static/clickable.js"></script>
+    <script src="../_static/timedclickable.js"></script>
+    <script src="../_static/d3.v2.min.js"></script>
+    <script src="../_static/jquery.ba-bbq.min.js"></script>
+    <script src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script src="../_static/pytutor.js"></script>
+    <script src="../_static/codelens.js"></script>
+    <script src="../_static/skulpt.min.js"></script>
+    <script src="../_static/skulpt-stdlib.js"></script>
+    <script src="../_static/datafile.js"></script>
+    <script src="../_static/dragndrop.js"></script>
+    <script src="../_static/timeddnd.js"></script>
+    <script src="../_static/dragndrop-i18n.en.js"></script>
+    <script src="../_static/dragndrop-i18n.sr-Cyrl.js"></script>
+    <script src="../_static/fitb.js"></script>
+    <script src="../_static/timedfitb.js"></script>
+    <script src="../_static/fitb-i18n.en.js"></script>
+    <script src="../_static/fitb-i18n.sr-Cyrl.js"></script>
+    <script src="../_static/matrixeq.js"></script>
+    <script src="../_static/lib/prettify.js"></script>
+    <script src="../_static/lib/hammer.min.js"></script>
+    <script src="../_static/parsons.js"></script>
+    <script src="../_static/parsons-i18n.en.js"></script>
+    <script src="../_static/parsons-i18n.sr-Cyrl.js"></script>
+    <script src="../_static/timedparsons.js"></script>
+    <script src="../_static/poll.js"></script>
+    <script src="../_static/reveal.js"></script>
+    <script src="../_static/shortanswer.js"></script>
+    <script src="../_static/timed_shortanswer.js"></script>
+    <script src="../_static/showEval.js"></script>
+    <script src="../_static/tabbedstuff.js"></script>
+    <script src="../_static/runestonevideo.js"></script>
+    <script src="../_static/webglinteractive.js"></script>
+    <script src="../_static/FileSaver.min.js"></script>
+    <script src="../_static/Blob.js"></script>
+    <script src="../_static/karelCorner.js"></script>
+    <script src="../_static/karelRobot.js"></script>
+    <script src="../_static/karelWorld.js"></script>
+    <script src="../_static/karelChat.js"></script>
+    <script src="../_static/karelRobotDrawer.js"></script>
+    <script src="../_static/karelUI.js"></script>
+    <script src="../_static/karel.js"></script>
+    <script src="../_static/karel-i18n.en.js"></script>
+    <script src="../_static/karel-i18n.sr-Cyrl.js"></script>
+    <script src="../_static/notes.js"></script>
+    <script src="../_static/pygamelib-init.js"></script>
+    <script src="../_static/gallery.js"></script>
+    <script src="../_static/associations.js"></script>
+    <script src="../_static/associations-i18n.en.js"></script>
+    <script src="../_static/associations-i18n.sr-Cyrl.js"></script>
+    <script src="../_static/editor.js"></script>
+    <script src="../_static/jszip.js"></script>
+    <script src="../_static/editor-i18n.en.js"></script>
+    <script src="../_static/editor-i18n.sr-Cyrl.js"></script>
+    <script src="../_static/dbDirective.js"></script>
+    <script src="../_static/sql.js"></script>
+    <script src="../_static/simanim.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../_static/jquery-fix.js"></script>
+    <script src="../_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="../_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../_static/bootstrap-sphinx.js"></script>
+    <script src="../_static/waypoints.min.js"></script>
+    <script src="../_static/rangy-core.js"></script>
+    <script src="../_static/rangy-textrange.js"></script>
+    <script src="../_static/rangy-cssclassapplier.js"></script>
+    <script src="../_static/user-highlights.js"></script>
+    <script src="../_static/jquery.idle-timer.js"></script>
+    <script src="../_static/processing-1.4.1.min.js"></script>
+    <script src="../_static/jquery.hotkey.js"></script>
+    <script src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../_static/course-errors.js"></script>
+    <script src="../_static/petlja.js"></script>
+    <script src="../_static/require.js"></script>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -452,7 +456,6 @@
                 <a href=../04_racunarske_mreze/04_mreze_01f_staticke_veb_strane.html><div class="studioLecture" id=activity-04_mreze_01f_staticke_veb_strane><i class="fas fa-file-alt activity-icon"></i>Статичке веб-стране HTML/CSS</div></a>
                 <a href=../04_racunarske_mreze/04_mreze_01g_dizajn_veb_strane_css.html><div class="studioLecture" id=activity-04_mreze_01g_dizajn_veb_strane_css><i class="fas fa-file-alt activity-icon"></i>Дизајн веб-стране - CSS</div></a>
                 <a href=../04_racunarske_mreze/04_mreze_01h_kreiranje_veb_sajta.html><div class="studioLecture" id=activity-04_mreze_01h_kreiranje_veb_sajta><i class="fas fa-file-alt activity-icon"></i>Креирање веб-сајта</div></a>
-                <a href=../04_racunarske_mreze/04_mreze_01d_kviz.html><div class="studioLecture" id=activity-04_mreze_01d_kviz><i class="far fa-question-circle activity-icon"></i>Рачунарске мреже - квиз</div></a>
                 </div>
             </div>
                 
@@ -475,7 +478,7 @@
                     <i class="fas fa-angle-up caret-position d-none"></i>
                 </div>
                 <div class="courseContentsSubSection d-none"><a href=../05_serverske_veb_aplikacije_01_flask/05_veb_ap_01a_flask_uvod.html><div class="studioLecture" id=activity-05_veb_ap_01a_flask_uvod><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - увод</div></a>
-                <a href=../05_serverske_veb_aplikacije_01_flask/05_veb_ap_01b_flask_prvi_program.html><div class="studioLecture" id=activity-05_veb_ap_01b_flask_prvi_program><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - први програм, путање</div></a>
+                <a href=../05_serverske_veb_aplikacije_01_flask/05_veb_ap_01b_flask_prvi_program.html><div class="studioLecture" id=activity-05_veb_ap_01b_flask_prvi_program><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - прва веб-апликација, путање</div></a>
                 <a href=../05_serverske_veb_aplikacije_01_flask/05_veb_ap_01c_flask_sabloni.html><div class="studioLecture" id=activity-05_veb_ap_01c_flask_sabloni><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - шаблони</div></a>
                 <a href=../05_serverske_veb_aplikacije_01_flask/05_veb_ap_01d_flask_staticke_datoteke.html><div class="studioLecture" id=activity-05_veb_ap_01d_flask_staticke_datoteke><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - пратеће статичке датотеке и линкови унутар веб-апликације</div></a>
                 <a href=../05_serverske_veb_aplikacije_01_flask/05_veb_ap_01e_flask_parametri_get.html><div class="studioLecture" id=activity-05_veb_ap_01e_flask_parametri_get><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - Метода GET</div></a>
@@ -527,9 +530,23 @@
   
     <div id="main-content">
     
-  <div class="section" id="flask">
-<h1>Коришћење база података из Flask апликација<a class="headerlink" href="#flask" title="Permalink to this headline">¶</a></h1>
-<p>На самом почетку нашег рада са базама података, рекли смо да је један од начина интеракције са
+  <section id="flask">
+<h1>Коришћење база података из Flask апликација<a class="headerlink" href="#flask" title="Permalink to this heading">¶</a></h1>
+
+    <div  id="P1q6vlm0Tjo" class="ytvideo"  style="text-align: center; margin: 15px; cursor:pointer;">
+        <div style="background-image: url('https://img.youtube.com/vi/P1q6vlm0Tjo/mqdefault.jpg'); background-repeat: no-repeat;background-position: center; height: 210px; width: 310px; margin: 0 auto; border: 1px solid #20c997">
+            <img src="../_static/images/play_button.svg" style="margin-top: 78px;" /> 
+        </div>
+      
+
+        </div>
+    <div id="modal-P1q6vlm0Tjo" class="ytvideoclose" style="display: none; background-color: transparent; z-index: 10000;">
+        <div style="background-color: white; position: relative; width:  780px; height:  500px; z-index: 100;" id="YTmodal-P1q6vlm0Tjo">
+        </div>
+    </div>
+    
+    
+    <p>На самом почетку нашег рада са базама података, рекли смо да је један од начина интеракције са
 системом за управљање базама података (СУБП) управо апликативни интерфејс.</p>
 <p>Сваки сајт за пуштање музике, свака онлајн продавница, електронски дневник, свака апликација на мобилном
 уређају путем које се плаћају рачуни и тако даље, користи неку базу података. Да би то било могуће,
@@ -556,15 +573,15 @@ SQLite, на сличан начин ћете моћи да користите �
 <p>Неки од примера који следе су јако обимни. Имајте у виду да, када правите овакве веб-апликације, не морате да пишете комплетан програмски кôд од почетка. Препоручена пракса је да узмете већ припремљене примере програмског кôда и да га прилагодите на начин на који вам је потребно.</p>
 
     </div></div>
-<div class="section" id="id1">
-<h2>Повезивање са базом и постављање упита<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h2>Повезивање са базом и постављање упита<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>Као што смо већ нагласили, свака иоле сложенија веб-апликација укључује неколико различитих фајлова (
 датотека, докумената), па је логична конвенција да се све оне чувају унутар једног фолдера (директоријума, фасцикле)
 намењеног тој веб-апликацији. За први пример веб-апликације која се повезује на базу података направићемо фолдер
 под именом <code class="docutils literal notranslate"><span class="pre">01_database</span></code> и у њему ћемо креирати фајл <code class="docutils literal notranslate"><span class="pre">app.py</span></code> са програмским кôдом.</p>
 <p>У исти фолдер треба да ставимо и базу података. У овом примеру ћемо користити базу података фиктивне компаније за
 продају музичких композиција коју смо већ спомињали и коју можете да преузмете овде:</p>
-<p><a class="reference external" href="https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/OnlineNastava/kurs-gim-cetvrti-prirodni-inf/_static/db/music.sql">music.db</a></p>
+<p><a class="reference external" href="https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/OnlineNastava/kurs-gim-cetvrti-prirodni-inf/_static/db/music.zip">music.db</a></p>
 <p>Да би се могло приступити SQLite бази података, потребно је прво повезати се са базом коришћењем функције
 <code class="docutils literal notranslate"><span class="pre">sqlite3.connect</span></code>. Потребно је да наведемо назив базе података (у нашем случају назив је: music.db).
 Конекцију је на крају потребно затворити.</p>
@@ -631,14 +648,14 @@ SQLite, на сличан начин ћете моћи да користите �
 <a class="reference internal image-reference" href="../_images/Slika_521a.png"><img alt="../_images/Slika_521a.png" class="align-center" src="../_images/Slika_521a.png" style="width: 780px;" /></a>
 <p>Да бисмо имали тачну путању до фајла која нам је неопходна да покренемо програм, можемо да употребимо опцију
 <code class="docutils literal notranslate"><span class="pre">Copy</span> <span class="pre">adress</span></code> када урадимо десни клик мишем у прозору <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">Explorer</span></code>.</p>
-<a class="reference internal image-reference" href="../_images/Slika_521b.png"><img alt="../_images/Slika_521b.png" class="align-center" src="../_images/Slika_521b.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/Slika_521b.png"><img alt="../_images/Slika_521b.png" class="align-center" src="../_images/Slika_521b.png" style="width: 400px;" /></a>
 <p>Након тога, као што смо и раније радили, у командној линији се постављамо у директоријум у коме смо
 креирали датотеку <code class="docutils literal notranslate"><span class="pre">app.py</span></code> тако што напишемо:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">naziv_fajla_sa_putanjom</span>
 </pre></div>
 </div>
 <p>Након покретања Flask апликацију командом <code class="docutils literal notranslate"><span class="pre">flask</span> <span class="pre">run</span></code>, апликацији можемо приступити из прегледача веба:</p>
-<a class="reference internal image-reference" href="../_images/Slika_521c.png"><img alt="../_images/Slika_521c.png" class="align-center" src="../_images/Slika_521c.png" style="width: 780px;" /></a>
+<a class="screenshot-shadow reference internal image-reference" href="../_images/Slika_521c.png"><img alt="../_images/Slika_521c.png" class="screenshot-shadow align-center" src="../_images/Slika_521c.png" style="width: 500px;" /></a>
 <p>На слици је приказан изглед апликације када се покрене <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:5000/artists</span></code> из прегледача веба:</p>
 <a class="reference internal image-reference" href="../_images/Slika_521d.png"><img alt="../_images/Slika_521d.png" class="align-center" src="../_images/Slika_521d.png" style="width: 300px;" /></a>
 <p>Уколико је потребно да нешто изменимо у нашој апликацији и да видимо измене, потребно је да урадимо следеће:
@@ -750,14 +767,14 @@ SQLite, на сличан начин ћете моћи да користите �
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;artists.html&quot;</span><span class="p">,</span> <span class="n">artists</span><span class="o">=</span><span class="n">artists</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h2>База података music.db<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id2">
+<h2>База података music.db<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <p>Приликом креирања веб-апликација које се повезују на базу података, важно је добро се упознати са том базом.
 Преузету SQLite базу података <code class="docutils literal notranslate"><span class="pre">music.db</span></code>  можемо да отовримо из програма SQLite Studio командом менија
 <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">a</span> <span class="pre">database</span></code>. Пронаћи фајл са базом на рачунару под <code class="docutils literal notranslate"><span class="pre">File</span></code>. У прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> погледати
 списак табела, а за сваку табелу и списак колона.</p>
-<a class="reference internal image-reference" href="../_images/Slika_521e.png"><img alt="../_images/Slika_521e.png" class="align-center" src="../_images/Slika_521e.png" style="width: 500px;" /></a>
+<a class="screenshot-shadow reference internal image-reference" href="../_images/Slika_521e.png"><img alt="../_images/Slika_521e.png" class="screenshot-shadow align-center" src="../_images/Slika_521e.png" style="width: 400px;" /></a>
 
     <div class="note-wrapper questionnote-type">
         <div class="note-icon-holder"> </div>
@@ -767,8 +784,8 @@ SQLite, на сличан начин ћете моћи да користите �
 Креирати одговарајући шаблон <code class="docutils literal notranslate"><span class="pre">tracks.html</span></code>.</p>
 
     </div></div>
-</div>
-</div>
+</section>
+</section>
 
 
     </div>
