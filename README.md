@@ -2,9 +2,9 @@
 
 Ovaj repozitorijum posvećen je kursu za Baze podataka, računarske mreže i serversko veb programiranje za četvrti razred gimnazije prirodni smer. 
 
-Kurs je na Petljom portalu dotupan ovde: [https://petlja.org/kurs/4654/0](https://petlja.org/kurs/4654/)
+Kurs je na Petljinom portalu dotupan ovde: [https://petlja.org/kurs/4654/0](https://petlja.org/kurs/4654/)
 
-Kurs možete itegrisati u svoj LMS koristeći SCORM pakete koji se mogu preuzeti sa: https://github.com/Petlja/gim4_rac_baze_p/releases
+Kurs možete integrisati u svoj LMS koristeći SCORM pakete koji se mogu preuzeti sa: https://github.com/Petlja/gim4_rac_baze_p/releases
 
 ## Konverzija u *HTML*
 
