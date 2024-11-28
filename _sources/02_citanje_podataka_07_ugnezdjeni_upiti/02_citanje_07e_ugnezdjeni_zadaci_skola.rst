@@ -162,7 +162,7 @@
 
 Покушај прво да самостално решиш задатак.
    
-.. dbpetlja:: db_ugnezdjeni_upiti_zadaci_02
+.. dbpetlja:: db_ugnezdjeni_upiti_zadaci_02_fix1
    :dbfile: dnevnik.sql
    :solutionquery: SELECT u.id, u.ime, u.prezime, u.razred, u.odeljenje
                    FROM ocena o JOIN
@@ -213,7 +213,7 @@
 
 Покушај прво да самостално решиш задатак.
    
-.. dbpetlja:: db_ugnezdjeni_upiti_zadaci_02
+.. dbpetlja:: db_ugnezdjeni_upiti_zadaci_02_fix2
    :dbfile: dnevnik.sql
    :solutionquery: SELECT u.id, u.ime, u.prezime, COUNT(*) AS broj_izostanaka
                    FROM izostanak i JOIN 
