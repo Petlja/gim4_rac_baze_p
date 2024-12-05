@@ -180,7 +180,7 @@
    :solutionquery: UPDATE izostanak
                    SET status = 'оправдан'
                    WHERE status = 'нерегулисан' AND
-                         id_ucenik IN (SELECT id_ucenik
+                         id_ucenik IN (SELECT id
                                        FROM ucenik
                                        WHERE razred = 2 AND odeljenje = 1)
    :checkquery: SELECT * FROM izostanak
