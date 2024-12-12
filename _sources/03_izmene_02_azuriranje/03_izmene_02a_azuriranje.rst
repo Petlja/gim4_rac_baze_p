@@ -145,17 +145,17 @@
 
 .. questionnote::
 
-   Наставник је грешком уписао да је писмени задатак из предмета чији
-   је идентификатор 1 одржан 15. октобра 2020. године, а одржан је
-   заправо 16. октобра 2020. године. Напиши упит који исправља ову грешку.
+   Наставник је грешком уписао да је контролна вежба из предмета чији
+   је идентификатор 1 одржан 1. октобра 2020. године, а одржан је
+   заправо 2. октобра 2020. године. Напиши упит који исправља ову грешку.
 
    
 .. dbpetlja:: db_azuriranje_02
    :dbfile: dnevnik.sql
    :solutionquery: UPDATE ocena
-                   SET datum = '2020-10-16'
-                   WHERE id_predmet = 1 AND vrsta = 'писмени задатак'
-   :checkquery: SELECT * FROM ocena WHERE id_predmet = 1 AND vrsta = 'писмени задатак'
+                   SET datum = '2020-10-02'
+                   WHERE id_predmet = 1 AND vrsta = 'контролна вежба' and datum = '2020-10-01'
+   :checkquery: SELECT * FROM ocena WHERE id_predmet = 1 AND vrsta = 'контролна вежба' and datum = '2020-10-02'
 
 .. questionnote::
 
