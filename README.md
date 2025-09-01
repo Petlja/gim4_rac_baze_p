@@ -6,7 +6,7 @@ Kurs je na Petljinom portalu dotupan ovde: [https://petlja.org/kurs/4654/0](http
 
 Kurs možete integrisati u svoj LMS koristeći SCORM pakete koji se mogu preuzeti sa: https://github.com/Petlja/gim4_rac_baze_p/releases
 
-## Konverzija u *HTML*
+## Konverzija u *HTML* 
 
 U ovom repozitorijumu se nalazi izvorna forma sadržaja koju pomoću alata [PetljaDoc](https://github.com/Petlja/PetljaDoc) možete konvertovati u skup *HTML* strana.
 
