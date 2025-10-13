@@ -121,6 +121,7 @@
    :dbfile: dnevnik.sql
    :solutionquery: SELECT datum, COUNT(*) AS broj
                    FROM izostanak
+                   WHERE status = 'неоправдан'
                    GROUP BY datum
                    HAVING broj < 10
    :showresult:
